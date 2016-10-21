@@ -1,0 +1,33 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+</head><body><dom-module id="od-page-nav">
+  <template>
+
+    <style>
+      :host {
+        @apply(--layout-horizontal);
+        @apply(--layout-justified);
+      }
+      .button {
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:hover {
+        color: white;
+        background: lightgrey;
+      }
+    </style>
+
+    <div id="prev" class="button">Prev</div>
+    <div id="next" class="button">Next</div>
+
+  </template>
+
+  <script>Polymer({is:"od-page-nav",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"prev-entry":[{name:"fade-in-animation",node:this.$.prev},{name:"slide-from-right-animation",node:this.$.prev}],"next-entry":[{name:"fade-in-animation",node:this.$.next},{name:"slide-from-left-animation",node:this.$.next}],"prev-exit":[{name:"fade-out-animation",node:this.$.prev},{name:"slide-right-animation",node:this.$.prev}],"next-exit":[{name:"fade-out-animation",node:this.$.next},{name:"slide-left-animation",node:this.$.next}]}}}},listeners:{tap:"_onTap","hide-prev":"hidePrev"},ready:function(){this.$.prev.style.opacity=0},_onTap:function(t){var e=Polymer.dom(t).rootTarget;"next"===e.id?this.fire("next-tap"):"prev"===e.id&&this.fire("prev-tap")},showPrevButton:function(){this.playAnimation("prev-entry"),this.$.prev.style.opacity=1},showNextButton:function(){this.playAnimation("next-entry"),this.$.next.style.opacity=1},hidePrevButton:function(){this.playAnimation("prev-exit"),this.$.prev.style.opacity=0},hideNextButton:function(){this.playAnimation("next-exit"),this.$.next.style.opacity=0},getPrevButton:function(){return this.$.prev},getNextButton:function(){return this.$.next}});</script>
+</dom-module>
+</body></html>

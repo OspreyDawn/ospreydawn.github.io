@@ -1,0 +1,138 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+</head><body><dom-module id="grey-box-about">
+  <template>
+
+    <style>
+      td {
+        padding: 0.5rem 0 0.25rem 1rem;
+      }
+      td:nth-child(1) {
+        font-weight: bold;
+      }
+      td:nth-child(2) {
+        color: grey;
+      }
+      td:nth-child(3) {
+        text-align: right;
+      }
+      .flex {
+        @apply(--layout-flex);
+      }
+      .container {
+        max-width: 77.5rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+        @apply(--layout-horizontal);
+        @apply(--layout-start);
+      }
+      .container > div {
+        margin-top: 10rem;
+      }
+      .aboutContainer {
+        max-width: 700px;
+        text-align: right;
+      }
+      .button {
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:hover {
+        color: white;
+        background: lightgrey;
+      }
+      #aboutIcon {
+        float: right;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: lightgrey;
+      }
+      #xpTable {
+        float: right;
+        text-align: left;
+      }
+      #whereDetail {
+        float: right;
+        @apply(--layout-horizontal);
+      }
+      #countryIcon {
+        width: 65px;
+        height: 90px;
+        background: lightgrey;
+        margin-top: 1.5rem;
+        margin-right: 1rem;
+      }
+      #contactDetail {
+        @apply(--layout-vertical);
+      }
+    </style>
+
+    <div class="container">
+      <div id="backButton" class="button" on-tap="showHero">Back</div>
+      <span class="flex"></span>
+      <div id="aboutContainer" class="aboutContainer">
+        <div id="aboutDetail">
+          <div id="aboutIcon"></div>
+          <div style="clear: right"></div>
+          <h2>About Me</h2>
+          <p>
+            Art &amp; design is in my blood and has been since I first put a pencil to paper at elementary school.
+            Growing up surrounded by technology allowed me to latch on to new concepts and techniques at an early age.
+            Today my convictions are as strong as they have ever been as I’m constantly striving to improve myself
+            and spread the wonder that is elegant design.
+          </p>
+        </div>
+        <div id="xpDetail">
+          <h3>Experience</h3>
+          <table id="xpTable">
+            <tbody>
+              <tr>
+                <td>Alphero</td>
+                <td>UI &amp; Motion Designer</td>
+                <td>JUL 15 - NOV 15</td>
+              </tr>
+              <tr>
+                <td>ClickSuite</td>
+                <td>User Researcher, UX Designer</td>
+                <td>FEB 15 - JUL 15</td>
+              </tr>
+              <tr>
+                <td>Binge List</td>
+                <td>Product Designer</td>
+                <td>NOV 14 - JAN 15</td>
+              </tr>
+              <tr>
+                <td>Fiero</td>
+                <td>Co-Founder</td>
+                <td>DEC 12 - APR 14</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="clear: right"></div>
+        </div>
+        <div id="whereDetail">
+          <div id="countryIcon"></div>
+          <div id="whereText">
+            <h3>Where am I?</h3>
+            <p>New Zealand</p>
+          </div>
+        </div>
+        <div style="clear: right"></div>
+        <div id="contactDetail">
+          <h3>Get in touch</h3>
+          <a href="#">@OspreyDawn</a>
+          <a href="#">hello@ospreydawn.com</a>
+        </div>
+      </div>
+    </div>
+
+  </template>
+
+  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var o=this.$.aboutContainer.children,e=Array.prototype.slice.call(o);return e.push(this.$.backButton),{}}}},showHero:function(){this.fire("to-hero")}});</script>
+</dom-module>
+</body></html>

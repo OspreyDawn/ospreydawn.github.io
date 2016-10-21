@@ -1,0 +1,55 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+</head><body><dom-module id="od-nav-bar">
+  <template>
+
+    <style>
+      .flex {
+        @apply(--layout-flex);
+      }
+      .container {
+        max-width: 77.5rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+      }
+      #navBar {
+        padding: 1rem 2rem;
+        @apply(--layout-horizontal);
+      }
+      #logo {
+        width: 28px;
+        height: 42px;
+        background: lightgrey;
+        cursor: pointer;
+      }
+      #mainNavItems {
+        margin-left: 1rem;
+        @apply(--layout-vertical);
+      }
+      #heroLinks {
+        @apply(--layout-horizontal);
+      }
+      #divider {
+        margin: 0 1rem;
+      }
+    </style>
+
+    <div id="navBar" class="container">
+      <div id="logo" on-tap="showHero"></div>
+      <div id="mainNavItems">
+        <div id="title">MAX O'BRIEN</div>
+        <div id="heroLinks">
+          <a href="#" class="heroLink" on-tap="showWork">WORK</a>
+          <div id="divider">|</div>
+          <a href="#" class="heroLink" on-tap="showThoughts">THOUGHTS</a>
+        </div>
+      </div>
+      <span class="flex"></span>
+      <div id="emaiLink">hello@ospreydawn.com</div>
+    </div>
+
+  </template>
+
+  <script>Polymer({is:"od-nav-bar",getNav:function(){return this.$.navBar},getLogo:function(){return this.$.logo},showHero:function(){this.fire("show-hero")},showWork:function(){this.fire("show-work")},showThoughts:function(){this.fire("show-thoughts")}});</script>
+</dom-module>
+</body></html>

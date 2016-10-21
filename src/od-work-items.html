@@ -1,0 +1,65 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+<link rel="import" href="od-page-nav.html">
+
+</head><body><dom-module id="od-work-items">
+  <template>
+
+    <style>
+      .container {
+        height: 60vh;
+        @apply(--layout-vertical);
+        @apply(--layout-wrap);
+      }
+      .container:hover > div > .pjtMeta {
+        opacity: 0.28;
+      }
+      .container:hover > div:hover > .pjtMeta {
+        opacity: 1;
+      }
+      .container:hover > div:hover > .pjtImg {
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.21);
+      }
+      .workItem {
+        min-width: 20rem;
+        min-height: 16.5rem;
+        margin-right: 4rem;
+        margin-bottom: 2rem;
+        transition: opacity 0.3s;
+        @apply(--layout-vertical);
+      }
+      .pjtMeta {
+        transition: opacity 0.3s;
+      }
+      .pjtImg {
+        height: 12.5rem;
+        margin-bottom: 1rem;
+        background-color: white;
+        border: 1px solid lightgrey;
+        transition: box-shadow 0.3s;
+      }
+      .pjtSubtitle {
+        color: grey;
+      }
+    </style>
+
+    <div id="itemContainer" class="container">
+      <template is="dom-repeat" items="{{testArray}}">
+        <div class="workItem">
+          <div class="pjtImg"></div>
+          <div class="pjtMeta">
+            <div class="pjtTitle">Project Name</div>
+            <div class="pjtSubtitle">Year | Type</div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <od-page-nav id="pageNav" on-prev-tap="prevTap" on-next-tap="nextTap"></od-page-nav>
+
+  </template>
+
+  <script>Polymer({is:"od-work-items",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{viewModifier:{value:0},pageSelect:{value:0},totalPages:{value:0},animationConfig:{value:function(){return[]}}},ready:function(){this.testArray=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],this.viewModifier=100-5.5/.775,this.totalPages=Math.round(this.testArray.length/6)},prevTap:function(t){if(1===this.pageSelect&&this.$.pageNav.hidePrevButton(),this.pageSelect+1===this.totalPages&&this.$.pageNav.showNextButton(),0<this.pageSelect){--this.pageSelect;var e=this.pageSelect*this.viewModifier;this.animationConfig.prev={name:"transform-animation",node:this.$.itemContainer,transformFrom:"translateX(-"+(e+this.viewModifier)+"%)",transformTo:"translateX(-"+e+"%)"},this.$.itemContainer.style.transform="translateX(-"+e+"%)"}},nextTap:function(t){if(0===this.pageSelect&&this.$.pageNav.showPrevButton(),this.pageSelect+1<this.totalPages){++this.pageSelect;var e=this.pageSelect*this.viewModifier;this.animationConfig.next={name:"transform-animation",node:this.$.itemContainer,transformFrom:"translateX(-"+(e-this.viewModifier)+"%)",transformTo:"translateX(-"+e+"%)"},this.$.itemContainer.style.transform="translateX(-"+e+"%)"}this.pageSelect+1>=this.totalPages&&this.$.pageNav.hideNextButton()}});</script>
+</dom-module>
+</body></html>

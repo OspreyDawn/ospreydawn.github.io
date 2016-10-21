@@ -1,0 +1,37 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+<link rel="import" href="od-portrait.html">
+<link rel="import" href="hero-pager.html">
+<link rel="import" href="grey-box-work.html">
+<link rel="import" href="grey-box-thoughts.html">
+
+</head><body><dom-module id="osprey-dawn">
+  <template>
+
+    <style>
+      :host {
+        @apply(--layout-fullbleed);
+        overflow: hidden;
+      }
+    </style>
+
+    <iron-media-query on-query-matches-changed="changeStyles" query="(max-width: 720px)" query-matches="{{smallScreen}}">
+    </iron-media-query>
+
+    <od-portrait id="portrait"></od-portrait>
+    <neon-animated-pages id="pages" attr-for-selected="id" selected="{{selected}}" on-neon-animation-finish="pageChanged">
+
+      <hero-pager id="hero"></hero-pager>
+      <grey-box-work id="work"></grey-box-work>
+      <grey-box-thoughts id="thoughts"></grey-box-thoughts>
+
+    </neon-animated-pages>
+
+  </template>
+
+  <script>Polymer({is:"osprey-dawn",properties:{prop1:{type:String,value:"osprey-dawn"},selected:{type:String},selectedNum:{value:0},selectedValues:{type:Array}},listeners:{wheel:"changePage","to-about":"aboutPressed","to-hero":"backPressed","show-hero":"toHero","show-work":"toWork","show-thoughts":"toThoughts"},ready:function(){for(var e=[],t=0;t<this.$.pages.children.length;++t)e.push(this.$.pages.children[t].id);this.selectedValues=e,this.selected=this.selectedValues[this.selectedNum]},changeStyles:function(){this.updateStyles()},changePage:function(e){var t=e.wheelDeltaY/120,s=this.selectedValues.length;t<-2&&this.selectedNum<s-1?(0===this.selectedNum&&this.$.portrait.downSlide(),this.selected=this.selectedValues[++this.selectedNum],this.unlisten(this,"wheel","changePage")):2<t&&0<this.selectedNum&&(1===this.selectedNum&&this.$.portrait.upSlide(),this.selected=this.selectedValues[--this.selectedNum],this.unlisten(this,"wheel","changePage"))},toHero:function(){this.selectedNum=0,this.selected=this.selectedValues[this.selectedNum],this.$.portrait.upSlide()},toWork:function(){0===this.selectedNum&&this.$.portrait.downSlide(),this.selectedNum=1,this.selected=this.selectedValues[this.selectedNum]},toThoughts:function(){0===this.selectedNum&&this.$.portrait.downSlide(),this.selectedNum=2,this.selected=this.selectedValues[this.selectedNum]},aboutPressed:function(){this.unlisten(this,"wheel","changePage"),this.$.portrait.aboutSlide()},backPressed:function(){this.listen(this,"wheel","changePage"),this.$.portrait.heroSlide()},pageChanged:function(){this.listen(this,"wheel","changePage")}});</script>
+</dom-module>
+</body></html>

@@ -1,0 +1,77 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+</head><body><dom-module id="grey-box-hero">
+  <template>
+
+    <style>
+      .container {
+        max-width: 77.5rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+        @apply(--layout-horizontal);
+      }
+      .container > div {
+        margin-top: 10rem;
+      }
+      .heroContainer {
+        max-width: 700px;
+      }
+      .heroContainer > div {
+        margin-bottom: 1rem;
+      }
+      .button {
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:hover {
+        color: white;
+        background: lightgrey;
+      }
+      .heroLink {
+
+      }
+      #logo {
+        width: 62px;
+        height: 93px;
+        background: lightgrey;
+      }
+      #sub-title {
+
+      }
+      #title {
+
+      }
+      #hero-links {
+        @apply(--layout-horizontal);
+      }
+      #divider {
+        margin: 0 1rem;
+      }
+    </style>
+
+    <div class="container">
+      <div id="heroContainer" class="heroContainer">
+        <div id="logo"></div>
+        <div id="sub-title">OSPREY DAWN IS</div>
+        <div id="title">MAX O'BRIEN</div>
+        <div id="hero-links">
+          <a href="#" class="heroLink" on-tap="showWork">WORK</a><div id="divider">|</div><a href="#" class="heroLink" on-tap="showThoughts">THOUGHTS</a>
+        </div>
+        <div id="hero-text">
+          A User Interface and User Experience Designer with experience in Game Design, User Research, and Product Design.
+        </div>
+        <div class="button" on-tap="showAbout">More about me.</div>
+        <div id="email-link">hello@ospreydawn.com</div>
+      </div>
+    </div>
+
+  </template>
+
+  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var o=this.$.heroContainer.children;Array.prototype.slice.call(o);return{}}}},showAbout:function(){this.fire("to-about")},showWork:function(){this.fire("show-work")},showThoughts:function(){this.fire("show-thoughts")},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
+</dom-module>
+</body></html>
