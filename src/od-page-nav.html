@@ -1,8 +1,9 @@
 <html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 
-</head><body><dom-module id="od-page-nav">
+</head><body><dom-module id="od-page-nav" attributes="query special-button-text">
   <template>
 
     <style>
@@ -21,10 +22,21 @@
         color: white;
         background: lightgrey;
       }
+      #special {
+        display: none;
+      }
+      /* Mobile Screen Layout Styles */
+      #special[mobile-layout] {
+        display: block;
+      }
     </style>
 
-    <div id="prev" class="button">Prev</div>
-    <div id="next" class="button">Next</div>
+    <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
+    </iron-media-query>
+
+    <div id="prev" class="button">←</div>
+    <div id="special" class="button" mobile-layout$="{{smallScreen}}">[[special-button-text]]</div>
+    <div id="next" class="button">→</div>
 
   </template>
 

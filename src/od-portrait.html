@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 
-</head><body><dom-module id="od-portrait">
+</head><body><dom-module id="od-portrait" attributes="query">
   <template>
 
     <style>
@@ -27,15 +27,35 @@
         background: cornflowerblue;
         margin-right: -11.25rem;
       }
+      /* Mobile Screen Layout Styles */
+      .container[mobile-layout] {
+        @apply(--layout-vertical);
+        @apply(--layout-start);
+      }
+      .container[mobile-layout] .flex {
+        @apply(--layout-flex-none);
+        display: none;
+      }
+      .container[mobile-layout] #portrait {
+        position: relative;
+        bottom: -28rem;
+        width: 20rem;
+        height: 18.7rem;
+        margin: 0 auto;
+        background: salmon;
+      }
     </style>
 
-    <div class="container">
+    <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
+    </iron-media-query>
+
+    <div class="container" mobile-layout$="{{smallScreen}}">
       <div class="flex"></div>
       <div id="portrait"></div>
     </div>
 
   </template>
 
-  <script>Polymer({is:"od-portrait",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"about-slide":{name:"transform-animation",node:this.$.portrait,transformTo:"translateX(-83.5%)",timing:{delay:375}},"hero-slide":{name:"transform-animation",node:this.$.portrait,transformFrom:"translateX(-83.5%)",transformTo:"translateX(0)",timing:{delay:225}},"down-slide":{name:"transform-animation",node:this.$.portrait,transformTo:"translateY(80%)"},"up-slide":{name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(80%)",transformTo:"translateY(0)",timing:{delay:100}}}}}},aboutSlide:function(){this.$.portrait.style.transform="translateX(-83.5%)"},heroSlide:function(){this.$.portrait.style.transform="translateX(0)"},downSlide:function(){this.$.portrait.style.transform="translateY(80%)"},upSlide:function(){this.$.portrait.style.transform="translateY(0)"}});</script>
+  <script>Polymer({is:"od-portrait",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"down-slide":{name:"transform-animation",node:this.$.portrait,transformTo:"translateY(80%)"},"up-slide":{name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(80%)",transformTo:"translateY(0)",timing:{delay:100}}}}}},aboutSlide:function(){750>window.innerWidth?(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateY(175%)",timing:{delay:375}},this.playAnimation("about-slide"),this.$.portrait.style.transform="translateY(175%)"):(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateX(-83.5%)",timing:{delay:375}},this.playAnimation("about-slide"),this.$.portrait.style.transform="translateX(-83.5%)")},heroSlide:function(){750>window.innerWidth?(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(175%)",transformTo:"translateY(0)",timing:{delay:225}},this.playAnimation("hero-slide"),this.$.portrait.style.transform="translateY(0)"):(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateX(-83.5%)",transformTo:"translateX(0)",timing:{delay:225}},this.playAnimation("hero-slide"),this.$.portrait.style.transform="translateY(0)")},downSlide:function(){this.playAnimation("down-slide"),this.$.portrait.style.transform="translateY(80%)"},upSlide:function(){this.playAnimation("up-slide"),this.$.portrait.style.transform="translateY(0)"}});</script>
 </dom-module>
 </body></html>

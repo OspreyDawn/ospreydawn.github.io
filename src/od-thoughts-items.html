@@ -1,16 +1,21 @@
 <html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 
 <link rel="import" href="od-page-nav.html">
 
-</head><body><dom-module id="od-thoughts-items">
+</head><body><dom-module id="od-thoughts-items" attributes="query">
   <template>
 
     <style>
+      :host {
+        touch-action: none;
+      }
       .container {
         height: 60vh;
-        @apply(--layout-horizontal);
+        @apply(--layout-vertical);
+        @apply(--layout-wrap);
       }
       .button {
         display: inline-block;
@@ -24,10 +29,14 @@
         background: lightgrey;
       }
       .thoughtsItem {
-        min-width: 32rem;
+        width: 32rem;
         margin-right: 4rem;
         margin-bottom: 2rem;
         @apply(--layout-vertical);
+      }
+      .thoughtsItem > h2 {
+        margin-top: 1.2rem;
+        margin-bottom: 0;
       }
       .artDate {
         color: grey;
@@ -39,9 +48,28 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      /* Mobile Screen Layout Styles */
+      #itemContainer[mobile-layout] {
+        height: 70vh;
+      }
+      #itemContainer[mobile-layout] .thoughtsItem {
+        width: 100%;
+        height: inherit;
+        margin-right: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      #itemContainer[mobile-layout] .article {
+        margin-bottom: 0;
+      }
+      #itemContainer[mobile-layout] .artFoot{
+        display: none;
+      }
     </style>
 
-    <div id="itemContainer" class="container">
+    <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
+    </iron-media-query>
+
+    <div id="itemContainer" class="container" mobile-layout$="{{smallScreen}}">
       <template is="dom-repeat" items="{{testArray}}">
         <div class="thoughtsItem">
           <h2>Test Article Title</h2>
@@ -101,10 +129,11 @@
         </div>
       </template>
     </div>
-    <od-page-nav id="pageNav" on-prev-tap="prevTap" on-next-tap="nextTap"></od-page-nav>
 
+    <od-page-nav id="pageNav" on-prev-tap="prevTap" on-next-tap="nextTap" query="{{query}}" special-button-text="Continue Reading">
+    </od-page-nav>
   </template>
 
-  <script>Polymer({is:"od-thoughts-items",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{viewModifier:{value:0},pageSelect:{value:0},totalPages:{value:0},animationConfig:{value:function(){return[]}}},ready:function(){this.testArray=[1,2,3],this.viewModifier=100-5.5/.775,this.totalPages=Math.round(this.testArray.length/2)},prevTap:function(t){if(1===this.pageSelect&&this.$.pageNav.hidePrevButton(),this.pageSelect+1===this.totalPages&&this.$.pageNav.showNextButton(),0<this.pageSelect){--this.pageSelect;var e=this.pageSelect*this.viewModifier;this.animationConfig.prev={name:"transform-animation",node:this.$.itemContainer,transformFrom:"translateX(-"+(e+this.viewModifier)+"%)",transformTo:"translateX(-"+e+"%)"},this.$.itemContainer.style.transform="translateX(-"+e+"%)"}},nextTap:function(t){if(0===this.pageSelect&&this.$.pageNav.showPrevButton(),this.pageSelect+1<this.totalPages){++this.pageSelect;var e=this.pageSelect*this.viewModifier;this.animationConfig.next={name:"transform-animation",node:this.$.itemContainer,transformFrom:"translateX(-"+(e-this.viewModifier)+"%)",transformTo:"translateX(-"+e+"%)"},this.$.itemContainer.style.transform="translateX(-"+e+"%)"}this.pageSelect+1>=this.totalPages&&this.$.pageNav.hideNextButton()}});</script>
+  <script>Polymer({is:"od-thoughts-items",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{viewModifier:{value:0},pageSelect:{value:0},totalPages:{value:0},animationConfig:{value:function(){return[]}}},ready:function(){this.testArray=[1,2,3]},measureView:function(){var t=this.$.itemContainer.offsetWidth,e=this.$$(".thoughtsItem").offsetWidth,i=450>window.innerWidth?24:64;450>window.innerWidth?(this.viewModifier=t+i,this.totalPages=this.testArray.length):1240>window.innerWidth?(this.viewModifier=e+i,this.totalPages=this.testArray.length):(this.viewModifier=2*(e+i),this.totalPages=Math.round(this.testArray.length/2))},prevTap:function(t){if(1===this.pageSelect&&this.$.pageNav.hidePrevButton(),this.pageSelect+1===this.totalPages&&this.$.pageNav.showNextButton(),0<this.pageSelect){--this.pageSelect;var e=this.pageSelect*this.viewModifier;this.animationConfig.prev={name:"transform-animation",node:this.$.itemContainer,transformFrom:"translateX(-"+(e+this.viewModifier)+"px)",transformTo:"translateX(-"+e+"px)"},this.playAnimation("prev"),this.$.itemContainer.style.transform="translateX(-"+e+"px)"}},nextTap:function(t){if(this.measureView(),0===this.pageSelect&&this.$.pageNav.showPrevButton(),this.pageSelect+1<this.totalPages){++this.pageSelect;var e=this.pageSelect*this.viewModifier;this.animationConfig.next={name:"transform-animation",node:this.$.itemContainer,transformFrom:"translateX(-"+(e-this.viewModifier)+"px)",transformTo:"translateX(-"+e+"px)"},this.playAnimation("next"),this.$.itemContainer.style.transform="translateX(-"+e+"px)"}this.pageSelect+1>=this.totalPages&&this.$.pageNav.hideNextButton()}});</script>
 </dom-module>
 </body></html>

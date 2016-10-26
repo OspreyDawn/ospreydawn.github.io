@@ -1,4 +1,5 @@
 <html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 <link rel="import" href="../bower_components/neon-page-behavior/neon-page-behavior.html">
@@ -6,46 +7,64 @@
 <link rel="import" href="od-nav-bar.html">
 <link rel="import" href="od-work-items.html">
 
-</head><body><dom-module id="grey-box-work">
+</head><body><dom-module id="grey-box-work" attributes="query">
   <template>
 
     <style>
+      :host {
+        touch-action: none;
+      }
       .container {
         max-width: 77.5rem;
-        padding: 0 2rem;
+        padding: 0 1.5rem;
         margin: 0 auto;
       }
       #titleContainer {
         position: relative;
+        left: -3.25rem;
+        z-index: 1;
       }
       #pageTitle {
-        position: relative;
         color: lightgrey;
         font-size: 12.5rem;
         font-weight: bolder;
         line-height: 0.75;
-        left: -3.25rem;
-        z-index: 1;
         pointer-events: none;
       }
       #workContent {
         display: block;
         position: relative;
-        top: -5.25rem;
+        top: -6rem;
         bottom: 0;
         z-index: 2;
       }
+      /* Mobile Screen Layout Styles */
+      #titleContainer[mobile-layout] {
+        position: static;
+        text-align: center;
+      }
+      #titleContainer[mobile-layout] #pageTitle {
+        font-size: 4.5rem;
+      }
+      #workContent[mobile-layout] {
+        top: -1.5rem;
+      }
     </style>
 
-    <od-nav-bar id="navBar"></od-nav-bar>
+    <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
+    </iron-media-query>
 
-    <div id="titleContainer" class="container">
+    <od-nav-bar id="navBar" query="{{query}}"></od-nav-bar>
+
+    <div id="titleContainer" class="container" mobile-layout$="{{smallScreen}}">
       <div id="pageTitle">WORK</div>
-      <od-work-items id="workContent"></od-work-items>
+    </div>
+    <div id="workContent" class="container" mobile-layout$="{{smallScreen}}">
+      <od-work-items query="{{query}}"></od-work-items>
     </div>
 
   </template>
 
-  <script>Polymer({is:"grey-box-work",behaviors:[Polymer.NeonSharedElementAnimatableBehavior,Polymer.NeonPageBehavior],properties:{animationConfigThoughts:{value:function(){return{entry:[{name:"slide-from-top-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-from-top-animation",node:this.$.workContent},{name:"fade-in-animation",node:this.$.workContent}],exit:[{name:"slide-up-animation",node:this.$.pageTitle},{name:"fade-out-animation",node:this.$.pageTitle},{name:"slide-up-animation",node:this.$.workContent,timing:{delay:50}},{name:"fade-out-animation",node:this.$.workContent,timing:{delay:50}}]}}},animationConfig:{value:function(){return{entry:[{name:"hero-animation",id:"hero",toPage:this},{name:"slide-from-bottom-animation",node:this.$.navBar.getNav()},{name:"fade-in-animation",node:this.$.navBar.getNav()},{name:"slide-from-bottom-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"slide-from-bottom-animation",node:this.$.workContent,timing:{delay:175}},{name:"fade-in-animation",node:this.$.workContent,timing:{delay:175}}],exit:[{name:"hero-animation",id:"hero",fromPage:this},{name:"slide-down-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"fade-out-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"slide-down-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-out-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-down-animation",node:this.$.workContent},{name:"fade-out-animation",node:this.$.workContent}]}}},sharedElements:{value:function(){return{hero:this.$.navBar.getLogo()}}}}});</script>
+  <script>Polymer({is:"grey-box-work",behaviors:[Polymer.NeonSharedElementAnimatableBehavior,Polymer.NeonPageBehavior],properties:{mobileScreen:{type:Boolean,value:!1},animationConfigThoughts:{value:function(){return{entry:[{name:"slide-from-top-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-from-top-animation",node:this.$.workContent},{name:"fade-in-animation",node:this.$.workContent}],exit:[{name:"slide-up-animation",node:this.$.pageTitle},{name:"fade-out-animation",node:this.$.pageTitle},{name:"slide-up-animation",node:this.$.workContent,timing:{delay:50}},{name:"fade-out-animation",node:this.$.workContent,timing:{delay:50}}]}}},animationConfig:{value:function(){return{entry:[{name:"hero-animation",id:"hero",toPage:this},{name:"slide-from-bottom-animation",node:this.$.navBar.getNav()},{name:"fade-in-animation",node:this.$.navBar.getNav()},{name:"slide-from-bottom-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"slide-from-bottom-animation",node:this.$.workContent,timing:{delay:175}},{name:"fade-in-animation",node:this.$.workContent,timing:{delay:175}}],exit:[{name:"hero-animation",id:"hero",fromPage:this},{name:"slide-down-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"fade-out-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"slide-down-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-out-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-down-animation",node:this.$.workContent},{name:"fade-out-animation",node:this.$.workContent}]}}},sharedElements:{value:function(){return{}}}},ready:function(){this.async(function(){this.sharedElements.hero=this.$.navBar.getLogo()})}});</script>
 </dom-module>
 </body></html>

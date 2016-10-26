@@ -1,22 +1,26 @@
 <html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 
-</head><body><dom-module id="grey-box-hero">
+</head><body><dom-module id="grey-box-hero" attributes="query">
   <template>
 
     <style>
+      :host {
+        touch-action: none;
+      }
       .container {
         max-width: 77.5rem;
-        padding: 0 2rem;
+        padding: 0 1.5rem;
         margin: 0 auto;
         @apply(--layout-horizontal);
       }
       .container > div {
-        margin-top: 10rem;
+        margin-top: 2rem;
       }
       .heroContainer {
-        max-width: 700px;
+        max-width: 42rem;
       }
       .heroContainer > div {
         margin-bottom: 1rem;
@@ -52,9 +56,31 @@
       #divider {
         margin: 0 1rem;
       }
+      /* Mobile Screen Layout Styles */
+      .container[mobile-layout] {
+        @apply(--layout-horizontal);
+      }
+      .container[mobile-layout] > div {
+        margin-top: 2rem;
+      }
+      .container[mobile-layout] .heroContainer > div {
+        text-align: center;
+        @apply(--layout-center-justified);
+      }
+      .container[mobile-layout] .button {
+        display: block;
+      }
+      .container[mobile-layout] #logo {
+        width: 28px;
+        height: 42px;
+        margin: 0 auto 1rem auto;
+      }
     </style>
 
-    <div class="container">
+    <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
+    </iron-media-query>
+
+    <div class="container" mobile-layout$="{{smallScreen}}">
       <div id="heroContainer" class="heroContainer">
         <div id="logo"></div>
         <div id="sub-title">OSPREY DAWN IS</div>
@@ -72,6 +98,6 @@
 
   </template>
 
-  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var o=this.$.heroContainer.children;Array.prototype.slice.call(o);return{}}}},showAbout:function(){this.fire("to-about")},showWork:function(){this.fire("show-work")},showThoughts:function(){this.fire("show-thoughts")},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
+  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var n=this.$.heroContainer.children,i=Array.prototype.slice.call(n);return{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-left-animation",nodes:i,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:i},{name:"cascaded-animation",animation:"slide-left-animation",nodes:i}]}}}},showAbout:function(){this.fire("to-about")},showWork:function(){this.fire("show-work")},showThoughts:function(){this.fire("show-thoughts")},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
 </dom-module>
 </body></html>
