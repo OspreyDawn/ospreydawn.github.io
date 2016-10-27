@@ -8,7 +8,9 @@
 
     <style>
       :host {
+        @apply(--layout-fullbleed);
         touch-action: none;
+        overflow: hidden;
       }
       .container {
         max-width: 77.5rem;
@@ -17,7 +19,7 @@
         @apply(--layout-horizontal);
       }
       .container > div {
-        margin-top: 2rem;
+        margin-top: 12.5rem;
       }
       .heroContainer {
         max-width: 42rem;
