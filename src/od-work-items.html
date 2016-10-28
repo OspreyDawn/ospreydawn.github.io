@@ -11,6 +11,7 @@
     <style>
       :host {
         display: block;
+        @apply(--layout-vertical);
       }
       .container {
         height: 65vh;
@@ -48,17 +49,17 @@
         color: grey;
       }
       /* Mobile Screen Layout Styles */
-      #itemContainer[mobile-layout] {
-        height: 62.5vh;
+      .container[mobile-layout] {
+        @apply(--layout-flex);
       }
-      #itemContainer[mobile-layout] .workItem {
+      .container[mobile-layout] .workItem {
         width: 100%;
         height: inherit;
         margin-right: 1.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
       }
-      #itemContainer[mobile-layout] .pjtImg {
-        height: 80%;
+      .container[mobile-layout] .pjtImg {
+        @apply(--layout-flex);
       }
     </style>
 

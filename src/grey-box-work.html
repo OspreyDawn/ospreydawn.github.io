@@ -16,6 +16,9 @@
         touch-action: none;
         overflow: hidden;
       }
+      :host([small-screen]) {
+        @apply(--layout-vertical);
+      }
       .container {
         max-width: 77.5rem;
         padding: 0 1.5rem;
@@ -34,7 +37,7 @@
         pointer-events: none;
       }
       #workContent {
-        display: block;
+        /* display: block; */
         position: relative;
         top: -6rem;
         bottom: 0;
@@ -50,6 +53,12 @@
       }
       #workContent[mobile-layout] {
         top: -1.5rem;
+        margin: 0 0 -0.5rem 0;
+        @apply(--layout-flex);
+        @apply(--layout-horizontal);
+      }
+      #workContent[mobile-layout] #workItems {
+        width: 100%;
       }
     </style>
 
@@ -62,11 +71,11 @@
       <div id="pageTitle">WORK</div>
     </div>
     <div id="workContent" class="container" mobile-layout$="{{smallScreen}}">
-      <od-work-items query="{{query}}"></od-work-items>
+      <od-work-items id="workItems" query="{{query}}"></od-work-items>
     </div>
 
   </template>
 
-  <script>Polymer({is:"grey-box-work",behaviors:[Polymer.NeonSharedElementAnimatableBehavior,Polymer.NeonPageBehavior],properties:{mobileScreen:{type:Boolean,value:!1},animationConfigThoughts:{value:function(){return{entry:[{name:"slide-from-top-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-from-top-animation",node:this.$.workContent},{name:"fade-in-animation",node:this.$.workContent}],exit:[{name:"slide-up-animation",node:this.$.pageTitle},{name:"fade-out-animation",node:this.$.pageTitle},{name:"slide-up-animation",node:this.$.workContent,timing:{delay:50}},{name:"fade-out-animation",node:this.$.workContent,timing:{delay:50}}]}}},animationConfig:{value:function(){return{entry:[{name:"hero-animation",id:"hero",toPage:this},{name:"slide-from-bottom-animation",node:this.$.navBar.getNav()},{name:"fade-in-animation",node:this.$.navBar.getNav()},{name:"slide-from-bottom-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"slide-from-bottom-animation",node:this.$.workContent,timing:{delay:175}},{name:"fade-in-animation",node:this.$.workContent,timing:{delay:175}}],exit:[{name:"hero-animation",id:"hero",fromPage:this},{name:"slide-down-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"fade-out-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"slide-down-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-out-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-down-animation",node:this.$.workContent},{name:"fade-out-animation",node:this.$.workContent}]}}},sharedElements:{value:function(){return{}}}},ready:function(){this.async(function(){this.sharedElements.hero=this.$.navBar.getLogo()})}});</script>
+  <script>Polymer({is:"grey-box-work",behaviors:[Polymer.NeonSharedElementAnimatableBehavior,Polymer.NeonPageBehavior],properties:{smallScreen:{type:Boolean,value:!1,reflectToAttribute:!0},animationConfigThoughts:{value:function(){return{entry:[{name:"slide-from-top-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-from-top-animation",node:this.$.workContent},{name:"fade-in-animation",node:this.$.workContent}],exit:[{name:"slide-up-animation",node:this.$.pageTitle},{name:"fade-out-animation",node:this.$.pageTitle},{name:"slide-up-animation",node:this.$.workContent,timing:{delay:50}},{name:"fade-out-animation",node:this.$.workContent,timing:{delay:50}}]}}},animationConfig:{value:function(){return{entry:[{name:"hero-animation",id:"hero",toPage:this},{name:"slide-from-bottom-animation",node:this.$.navBar.getNav()},{name:"fade-in-animation",node:this.$.navBar.getNav()},{name:"slide-from-bottom-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"fade-in-animation",node:this.$.pageTitle,timing:{delay:125}},{name:"slide-from-bottom-animation",node:this.$.workContent,timing:{delay:175}},{name:"fade-in-animation",node:this.$.workContent,timing:{delay:175}}],exit:[{name:"hero-animation",id:"hero",fromPage:this},{name:"slide-down-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"fade-out-animation",node:this.$.navBar.getNav(),timing:{delay:175}},{name:"slide-down-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"fade-out-animation",node:this.$.pageTitle,timing:{delay:50}},{name:"slide-down-animation",node:this.$.workContent},{name:"fade-out-animation",node:this.$.workContent}]}}},sharedElements:{value:function(){return{}}}},ready:function(){this.async(function(){this.sharedElements.hero=this.$.navBar.getLogo()})}});</script>
 </dom-module>
 </body></html>

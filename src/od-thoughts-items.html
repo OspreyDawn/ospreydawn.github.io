@@ -10,7 +10,8 @@
 
     <style>
       :host {
-        touch-action: none;
+        @apply(--layout-vertical);
+        @apply(--layout-justified);
       }
       .container {
         height: 60vh;
@@ -49,19 +50,18 @@
         -webkit-text-fill-color: transparent; */
       }
       /* Mobile Screen Layout Styles */
-      #itemContainer[mobile-layout] {
-        height: 70vh;
+      .container[mobile-layout] {
+        height: 65vh;
       }
-      #itemContainer[mobile-layout] .thoughtsItem {
+      .container[mobile-layout] .thoughtsItem {
         width: 100%;
-        height: inherit;
         margin-right: 1.5rem;
         margin-bottom: 0.5rem;
       }
-      #itemContainer[mobile-layout] .article {
+      .container[mobile-layout] .article {
         margin-bottom: 0;
       }
-      #itemContainer[mobile-layout] .artFoot{
+      .container[mobile-layout] .artFoot{
         display: none;
       }
     </style>
