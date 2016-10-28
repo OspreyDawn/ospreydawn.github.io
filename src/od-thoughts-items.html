@@ -64,6 +64,9 @@
       .container[mobile-layout] .artFoot{
         display: none;
       }
+      #pageNav[mobile-layout] {
+        margin-bottom: 3.625rem;
+      }
     </style>
 
     <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
@@ -130,7 +133,7 @@
       </template>
     </div>
 
-    <od-page-nav id="pageNav" on-prev-tap="prevTap" on-next-tap="nextTap" query="{{query}}" special-button-text="Continue Reading">
+    <od-page-nav id="pageNav" on-prev-tap="prevTap" on-next-tap="nextTap" query="{{query}}" special-button-text="Continue Reading" mobile-layout$="{{smallScreen}}">
     </od-page-nav>
   </template>
 
