@@ -20,10 +20,15 @@
         display: none;
       }
       @media (max-width: 750px) and (orientation:landscape) {
+        neon-animated-pages {
+          position: relative;
+          z-index: 0;
+        }
         #orientOverlay {
           display: block;
           background: white;
           position: absolute;
+          z-index: 1;
           width: 100%;
           height: 100%;
           @apply(--layout-horizontal);
@@ -45,6 +50,6 @@
 
   </template>
 
-  <script>Polymer({is:"osprey-dawn",properties:{prop1:{type:String,value:"osprey-dawn"},mediaQuery:{type:String,value:"max-width: 750px"},selected:{type:String},selectedNum:{value:0},selectedValues:{type:Array}},listeners:{wheel:"changePage","to-about":"aboutPressed","to-hero":"backPressed","show-hero":"toHero","show-work":"toWork","show-thoughts":"toThoughts"},ready:function(){for(var e=[],t=0;t<this.$.pages.children.length;++t)e.push(this.$.pages.children[t].id);this.selectedValues=e,this.selected=this.selectedValues[this.selectedNum]},changePage:function(e){var t=e.wheelDeltaY/120,s=this.selectedValues.length;t<-2&&this.selectedNum<s-1?(0===this.selectedNum&&this.$.portrait.downSlide(),this.selected=this.selectedValues[++this.selectedNum],this.unlisten(this,"wheel","changePage")):2<t&&0<this.selectedNum&&(1===this.selectedNum&&this.$.portrait.upSlide(),this.selected=this.selectedValues[--this.selectedNum],this.unlisten(this,"wheel","changePage"))},toHero:function(){this.selectedNum=0,this.selected=this.selectedValues[this.selectedNum],this.$.portrait.upSlide()},toWork:function(){0===this.selectedNum&&this.$.portrait.downSlide(),this.selectedNum=1,this.selected=this.selectedValues[this.selectedNum]},toThoughts:function(){0===this.selectedNum&&this.$.portrait.downSlide(),this.selectedNum=2,this.selected=this.selectedValues[this.selectedNum]},aboutPressed:function(){this.unlisten(this,"wheel","changePage"),this.$.portrait.aboutSlide()},backPressed:function(){this.listen(this,"wheel","changePage"),this.$.portrait.heroSlide()},pageChanged:function(){this.listen(this,"wheel","changePage")}});</script>
+  <script>Polymer({is:"osprey-dawn",properties:{prop1:{type:String,value:"osprey-dawn"},mediaQuery:{type:String,value:"max-width: 450px"},selected:{type:String},selectedNum:{value:0},selectedValues:{type:Array}},listeners:{wheel:"changePage","to-about":"aboutPressed","to-hero":"backPressed","show-hero":"toHero","show-work":"toWork","show-thoughts":"toThoughts"},ready:function(){for(var e=[],t=0;t<this.$.pages.children.length;++t)e.push(this.$.pages.children[t].id);this.selectedValues=e,this.selected=this.selectedValues[this.selectedNum]},changePage:function(e){var t=e.wheelDeltaY/120,s=this.selectedValues.length;t<-2&&this.selectedNum<s-1?(0===this.selectedNum&&this.$.portrait.downSlide(),this.selected=this.selectedValues[++this.selectedNum],this.unlisten(this,"wheel","changePage")):2<t&&0<this.selectedNum&&(1===this.selectedNum&&this.$.portrait.upSlide(),this.selected=this.selectedValues[--this.selectedNum],this.unlisten(this,"wheel","changePage"))},toHero:function(){this.selectedNum=0,this.selected=this.selectedValues[this.selectedNum],this.$.portrait.upSlide()},toWork:function(){0===this.selectedNum&&this.$.portrait.downSlide(),this.selectedNum=1,this.selected=this.selectedValues[this.selectedNum]},toThoughts:function(){0===this.selectedNum&&this.$.portrait.downSlide(),this.selectedNum=2,this.selected=this.selectedValues[this.selectedNum]},aboutPressed:function(){this.unlisten(this,"wheel","changePage"),this.$.portrait.aboutSlide()},backPressed:function(){this.listen(this,"wheel","changePage"),this.$.portrait.heroSlide()},pageChanged:function(){this.listen(this,"wheel","changePage")}});</script>
 </dom-module>
 </body></html>

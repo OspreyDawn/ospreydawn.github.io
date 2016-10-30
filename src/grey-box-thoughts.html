@@ -13,7 +13,6 @@
     <style>
       :host {
         @apply(--layout-fullbleed);
-        touch-action: none;
         overflow: hidden;
       }
       :host([small-screen]) {
@@ -45,9 +44,10 @@
       }
       /* Mobile Screen Layout Styles */
       #titleContainer[mobile-layout] {
+        width: 84vw;
         position: static;
         text-align: center;
-        @apply(--layout-horizontal);
+        @apply(--layout-vertical);
         @apply(--layout-center-center);
       }
       #titleContainer[mobile-layout] #pageTitle {

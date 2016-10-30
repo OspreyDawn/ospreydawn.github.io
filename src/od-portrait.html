@@ -29,10 +29,15 @@
         background: cornflowerblue;
         margin-right: -11.25rem;
       }
+      .container[tablet-layout] #portrait {
+        margin-bottom: -25rem;
+      }
       /* Mobile Screen Layout Styles */
+      :host([small-screen]) {
+      }
       .container[mobile-layout] {
         @apply(--layout-vertical);
-        @apply(--layout-start);
+        @apply(--layout-justified);
       }
       .container[mobile-layout] .flex {
         @apply(--layout-flex-none);
@@ -40,10 +45,10 @@
       }
       .container[mobile-layout] #portrait {
         position: relative;
-        bottom: -28rem;
         width: 20rem;
         height: 18.7rem;
         margin: 0 auto;
+        top: calc(100vh - 18.7rem);
         background: salmon;
       }
     </style>
@@ -51,13 +56,16 @@
     <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
     </iron-media-query>
 
-    <div class="container" mobile-layout$="{{smallScreen}}">
+    <iron-media-query query="(max-width: 1280px)" query-matches="{{narrowScreen}}">
+    </iron-media-query>
+
+    <div class="container" mobile-layout$="{{smallScreen}}" tablet-layout$="{{narrowScreen}}">
       <div class="flex"></div>
       <div id="portrait"></div>
     </div>
 
   </template>
 
-  <script>pageStates={HERO:0,ABOUT:1,BODY:2},Polymer({currentState:pageStates.HERO,is:"od-portrait",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"down-slide":{name:"transform-animation",node:this.$.portrait,transformTo:"translateY(80%)"},"up-slide":{name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(80%)",transformTo:"translateY(0)",timing:{delay:100}}}}}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},aboutSlide:function(){this.currentState=pageStates.ABOUT,this.smallScreen?(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateY(175%)",timing:{delay:375}},this.playAnimation("about-slide")):(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateX(-83.5%)",timing:{delay:375}},this.playAnimation("about-slide"))},heroSlide:function(){this.currentState=pageStates.HERO,this.smallScreen?(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(175%)",transformTo:"translateY(0)",timing:{delay:225}},this.playAnimation("hero-slide")):(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateX(-83.5%)",transformTo:"translateX(0)",timing:{delay:225}},this.playAnimation("hero-slide"))},downSlide:function(){this.currentState=pageStates.BODY,this.playAnimation("down-slide")},upSlide:function(){this.currentState=pageStates.HERO,this.playAnimation("up-slide")},_onNeonAnimationFinish:function(){switch(this.currentState){case pageStates.HERO:this.$.portrait.style.transform="none";break;case pageStates.ABOUT:this.smallScreen?this.$.portrait.style.transform="translateY(175%)":this.$.portrait.style.transform="translateX(-83.5%)";break;case pageStates.BODY:this.$.portrait.style.transform="translateY(80%)"}}});</script>
+  <script>pageStates={HERO:0,ABOUT:1,BODY:2},Polymer({currentState:pageStates.HERO,is:"od-portrait",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{smallScreen:{type:Boolean,value:!1,reflectToAttribute:!0},animationConfig:{value:function(){return{"down-slide":{name:"transform-animation",node:this.$.portrait,transformTo:"translateY(80%)"},"up-slide":{name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(80%)",transformTo:"translateY(0)",timing:{delay:100}}}}}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){this.rePosition()},rePosition:function(){this.smallScreen&&700>window.innerHeight?this.$.portrait.style.top="28rem":this.smallScreen&&window.innerHeight>700&&(this.$.portrait.style.top="calc(100vh - 18.7rem)")},aboutSlide:function(){this.currentState=pageStates.ABOUT,this.smallScreen?(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateY(175%)",timing:{delay:375}},this.playAnimation("about-slide")):(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateX(-83.5%)",timing:{delay:375}},this.playAnimation("about-slide"))},heroSlide:function(){this.currentState=pageStates.HERO,this.smallScreen?(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(175%)",transformTo:"translateY(0)",timing:{delay:225}},this.playAnimation("hero-slide")):(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateX(-83.5%)",transformTo:"translateX(0)",timing:{delay:225}},this.playAnimation("hero-slide"))},downSlide:function(){this.currentState=pageStates.BODY,this.playAnimation("down-slide")},upSlide:function(){this.currentState=pageStates.HERO,this.playAnimation("up-slide")},_onNeonAnimationFinish:function(){switch(this.currentState){case pageStates.HERO:this.$.portrait.style.transform="none",this.style.overflow="hidden";break;case pageStates.ABOUT:this.smallScreen?this.$.portrait.style.transform="translateY(175%)":this.$.portrait.style.transform="translateX(-83.5%)",this.style.overflow="visible";break;case pageStates.BODY:this.$.portrait.style.transform="translateY(80%)"}}}),window.addEventListener("resize",function(t){document.querySelector("od-portrait").rePosition()});</script>
 </dom-module>
 </body></html>
