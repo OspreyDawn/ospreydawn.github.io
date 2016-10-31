@@ -29,6 +29,15 @@
         background: cornflowerblue;
         margin-right: -11.25rem;
       }
+      #iconField {
+        width: 200%;
+        height: 150%;
+        background: black;
+        opacity: 0.07;
+        position: relative;
+        left: calc((54.5rem - 200%)/ 2);
+        top: calc(51rem - 150%);
+      }
       .container[tablet-layout] #portrait {
         margin-bottom: -25rem;
       }
@@ -48,8 +57,13 @@
         width: 20rem;
         height: 18.7rem;
         margin: 0 auto;
-        top: calc(100vh - 18.7rem);
         background: salmon;
+      }
+      .container[mobile-layout] #iconField {
+        width: 100vw;
+        height: 100vh;
+        left: calc((20rem - 100vw)/ 2);
+        top: calc(18.7rem - 100vh);
       }
     </style>
 
@@ -61,7 +75,7 @@
 
     <div class="container" mobile-layout$="{{smallScreen}}" tablet-layout$="{{narrowScreen}}">
       <div class="flex"></div>
-      <div id="portrait"></div>
+      <div id="portrait"><div id="iconField">TEST</div></div>
     </div>
 
   </template>
