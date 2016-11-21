@@ -9,15 +9,15 @@
         display: block;
         position: absolute;
         z-index: 0;
-        width: 64px;
-        height: 64px;
-        opacity: 0.28;
-        top: calc(50% - 32px);
-        left: calc(50% - 32px);
+        width: 40px;
+        height: 40px;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        opacity: 0;
       }
     </style>
   </template>
 
-  <script>calcAnim=function(n){var t,i,e,a=[],o=Math.random()<.5,r=24e3,c=Math.random()*r,d=2500*Math.random(),s=function(){return Math.random()<.5?1:-1};c<r/2&&(c+=r/2),o?(t=window.innerWidth/2*s(),i=window.innerHeight/2*Math.random()*s()):(t=window.innerWidth/2*Math.random()*s(),i=window.innerHeight/2*s()),a=[{transform:"translateX(0) translateY(0) rotate(0deg)",opacity:.28},{transform:"translateX("+t+"px) translateY("+i+"px) rotate(360deg)",opacity:0}],e={duration:c,delay:d};var m=n.animate(a,e);m.onfinish=function(){calcAnim(n)}},Polymer({is:"od-ambient-icons",properties:{iconNameList:{type:Array,value:["creative-commons","twitter","facebook","gavel","expand","images","video","audio","cc-attribution"]}},listeners:{"icon-animation-finish":"reRun"},ready:function(){for(i=0;i<this.iconNameList.length;i++)calcAnim(this.createIcon(this.iconNameList[i]))},test:function(){console.log("fired!")},createIcon:function(n){var t=document.createElement("iron-icon");return t.setAttribute("icon","od-icons:"+n),Polymer.dom(this.root).appendChild(t),t}});</script>
+  <script>calcAnim=function(t,n,a,i){var e,o,r,c=[],s=Math.random()<.5,m=24e3,d=Math.random()*m,h=n?2500*Math.random()+2500+300:0,l=function(){return Math.random()<.5?1:-1};d<m/2&&(d+=m/2),s?(e=a/2*l(),o=i/2*Math.random()*l()):(e=a/2*Math.random()*l(),o=i/2*l()),c=[{transform:"translateX(0) translateY(0) rotate(0deg)",opacity:.28},{transform:"translateX("+e+"px) translateY("+o+"px) rotate(360deg)",opacity:0}],r={duration:d,delay:h};var u=t.animate(c,r);u.onfinish=function(){calcAnim(t,!1,a,i)}},Polymer({is:"od-ambient-icons",properties:{iconNameList:{type:Array,value:["creative-commons","twitter","facebook","gavel","expand","images","video","audio","cc-attribution"]},canvasWidth:{value:0},canvasHeight:{value:0},iconsToAnimate:{type:Array,value:[]}},ready:function(){for(window.addEventListener("WebComponentsReady",function(t){return function(){for(t.canvasWidth=t.$$("iron-icon").parentElement.offsetWidth,t.canvasHeight=t.$$("iron-icon").parentElement.offsetHeight,i=0;i<t.iconsToAnimate.length;i++)calcAnim(t.iconsToAnimate[i],!0,t.canvasWidth,t.canvasHeight)}}(this)),i=0;i<this.iconNameList.length;i++)this.createIcon(this.iconNameList[i])},createIcon:function(t){var n=document.createElement("iron-icon");return n.setAttribute("icon","od-icons:"+t),Polymer.dom(this.root).appendChild(n),this.iconsToAnimate.push(n),n}});</script>
 </dom-module>
 </body></html>

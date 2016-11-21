@@ -1,0 +1,26 @@
+<html><head><link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+</head><body><dom-module id="od-animated-portrait">
+  <template>
+    <style>
+      :host {
+        width: 100%;
+        height: 100%;
+      }
+      #portraitPath {
+        fill: lightgrey;
+        fill-opacity: 0;
+        stroke: lightgrey;
+        stroke-width: 2;
+      }
+    </style>
+
+    <svg id="portrait" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 780">
+      <path id="portraitPath" d="M820 780s-6.4-117-51.2-156c-44.9-39-205-104-205-104s-102.5-52-51.2-104c20.7-21.1 32.8-59.2 40.2-100.4 11.9-.3 27.8-26.5 36.4-61.5 9.1-37.2 6.7-69.8-5.5-72.8-.6-.2-1.3-.2-1.9-.2-5.6 0-12.1 5.9-18.4 15.8.4-16.2.5-30.8.5-40.7C563.8 104 512.5 0 410 0S256.2 104 256.2 156c0 10 .1 24.6.5 40.7-6.2-9.9-12.7-15.8-18.4-15.8-.7 0-1.3.1-1.9.2-12.2 3.1-14.6 35.7-5.5 72.8 8.7 35.1 24.5 61.3 36.4 61.5 7.4 41.3 19.5 79.4 40.2 100.4 51.2 52-51.2 104-51.2 104s-160.1 65-205 104C6.4 663 0 780 0 780h820z"></path>
+    </svg>
+  </template>
+
+  <script>Polymer({is:"od-animated-portrait"}),window.addEventListener("WebComponentsReady",function(){var t,a=[],e=document.querySelector("#portraitPath"),o=e.getTotalLength();t=[{strokeDasharray:o,strokeDashoffset:-o},{strokeDasharray:o,strokeDashoffset:0}],a=[{fillOpacity:0},{fillOpacity:1}];var i=(e.animate(t,2500),e.animate(a,{delay:2500,duration:300}));i.onfinish=function(){e.style.fillOpacity=1}});</script>
+</dom-module>
+</body></html>
