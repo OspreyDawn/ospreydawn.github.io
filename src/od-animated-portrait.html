@@ -13,6 +13,7 @@
         fill-opacity: 0;
         stroke: lightgrey;
         stroke-width: 2;
+        transition: stroke-dashoffset 2.5s ease-out, fill-opacity 0.3s ease-in 2.5s;
       }
     </style>
 
@@ -21,6 +22,6 @@
     </svg>
   </template>
 
-  <script>Polymer({is:"od-animated-portrait"}),window.addEventListener("WebComponentsReady",function(){var t,a=[],e=document.querySelector("#portraitPath"),o=e.getTotalLength();t=[{strokeDasharray:o,strokeDashoffset:-o},{strokeDasharray:o,strokeDashoffset:0}],a=[{fillOpacity:0},{fillOpacity:1}];var i=(e.animate(t,2500),e.animate(a,{delay:2500,duration:300}));i.onfinish=function(){e.style.fillOpacity=1}});</script>
+  <script>Polymer({is:"od-animated-portrait",ready:function(){var t=this.$$("#portraitPath"),e=t.getTotalLength();t.style.strokeDasharray=e+" "+e,t.style.strokeDashoffset=-e,window.addEventListener("WebComponentsReady",function(){t.style.strokeDashoffset=0,t.style.fillOpacity=1})}});</script>
 </dom-module>
 </body></html>
