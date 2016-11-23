@@ -47,8 +47,15 @@
         margin-bottom: 1rem;
         overflow: hidden;
         background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+        color: black;
+        -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        color: transparent;
+      }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+ CSS styles go here */
+        .article {
+          background: rgba(255, 255, 255, 0);
+        }
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] {
@@ -85,7 +92,7 @@
             <a href="#">#HashTag</a>
           </div>
           <div class="article">
-            <p>
+
               When we humans navigate the world around us, we do so through the
               analysation of all the data that is absorbed by our senses and
               combine it with our inherent knowledge. There are the usual senses
@@ -93,10 +100,7 @@
               taste and smell but there are an abundance of others that are implicit
               in the everyday, things like thermoception (the ability to detect
               temperature) and proprioception (the ability to sense where your body
-              is in space).
-            </p>
-            <p>
-              As soon as we enter the digital world, we lose almost all of our senses;
+              is in space).<p></p>As soon as we enter the digital world, we lose almost all of our senses;
               we are primarily relying on learned knowledge accumulated through past
               experiences. Vision is our primary sense stimulated through the use
               of visual displays, sometimes sound is present trhough speakers and
@@ -109,10 +113,7 @@
               that accounts for this. This puts enormous strain on a user's past
               knowledge to navigate an interface; since the base knowledge of the
               everyday user varies wildly so does the effective mileage of any given
-              interface.
-            </p>
-            <p>
-              There's a reason why Apple used skeuomorphism when they first released
+              interface.<p></p>There's a reason why Apple used skeuomorphism when they first released
               the iPhone. The visual replication of real, tangible objects in an
               interface to communicate how one might interact with them in a digital
               way makes sense; certain physical objects provide affordances that
@@ -124,8 +125,8 @@
               when touched much like one would expect to see in the real world.
               iOS was brand new at the time so they had to communicate how to navigate
               the world that they had created in terms that they knew the everyday
-              user would understand.
-            </p>
+              user would understand.<p></p>
+
           </div>
           <div class="artFoot">
             <div class="button">Continue Reading</div>
