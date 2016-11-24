@@ -14,7 +14,7 @@
         @apply(--layout-justified);
       }
       .container {
-        height: 60vh;
+        height: calc(100vh - 13.5rem);
         @apply(--layout-vertical);
         @apply(--layout-wrap);
       }
@@ -64,7 +64,7 @@
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] {
-        height: 65vh;
+        height: calc(100vh - 10.5rem);
       }
       .container[mobile-layout] .thoughtsItem {
         width: 100%;
@@ -78,7 +78,7 @@
         display: none;
       }
       #pageNav[mobile-layout] {
-        margin-bottom: 3.625rem;
+
       }
     </style>
 

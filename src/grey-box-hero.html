@@ -16,6 +16,7 @@
         padding: 0 1.5rem;
         margin: 0 auto;
         @apply(--layout-horizontal);
+        @apply(--layout-justified);
       }
       .container > div {
         margin-top: 6.75rem;
@@ -25,6 +26,9 @@
       }
       .heroContainer > div {
         margin-bottom: 1rem;
+      }
+      .compressor {
+        width: 35rem;
       }
       .button {
         display: inline-block;
@@ -71,6 +75,9 @@
         text-align: center;
         @apply(--layout-center-justified);
       }
+      .container[mobile-layout] .compressor {
+        display: none;
+      }
       .container[mobile-layout] .button {
         display: block;
       }
@@ -86,7 +93,7 @@
 
     <div class="container" mobile-layout$="{{smallScreen}}">
       <div id="heroContainer" class="heroContainer">
-        <div id="logo" on-tap="loadAnimation"></div>
+        <div id="logo"></div>
         <div id="sub-title">OSPREY DAWN IS</div>
         <div id="title">MAX O'BRIEN</div>
         <div id="hero-links">
@@ -98,6 +105,7 @@
         <div class="button" on-tap="showAbout">More about me.</div>
         <div id="email-link">hello@ospreydawn.com</div>
       </div>
+      <div class="compressor"></div>
     </div>
 
   </template>

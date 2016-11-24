@@ -14,7 +14,7 @@
         @apply(--layout-vertical);
       }
       .container {
-        height: 65vh;
+        height: calc(100vh - 13.5rem);
         @apply(--layout-vertical);
         @apply(--layout-wrap);
       }
@@ -29,7 +29,7 @@
       }
       .workItem {
         width: 20rem;
-        height: 16.5rem;
+        height: 15rem;
         margin-right: 4rem;
         margin-bottom: 0.5rem;
         transition: opacity 0.3s;
@@ -50,7 +50,7 @@
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] {
-        @apply(--layout-flex);
+        height: calc(100vh - 10.5rem);
       }
       .container[mobile-layout] .workItem {
         width: 100%;
@@ -61,7 +61,7 @@
         @apply(--layout-flex);
       }
       #pageNav[mobile-layout] {
-        margin-bottom: 3.625rem;
+
       }
     </style>
 
