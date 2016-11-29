@@ -74,6 +74,6 @@
 
   </template>
 
-  <script>Polymer({is:"od-nav-bar",properties:{mobileScreen:{type:Boolean,value:!1}},getNav:function(){return this.$.navBar},getLogo:function(){return this.$$("#logo")},showHero:function(){this.fire("show-hero")},showWork:function(){this.fire("show-work")},showThoughts:function(){this.fire("show-thoughts")}});</script>
+  <script>Polymer({is:"od-nav-bar",properties:{mobileScreen:{type:Boolean,value:!1}},getNav:function(){return this.$.navBar},getLogo:function(){return this.$$("#logo")},showHero:function(o){this.fire("show-hero",{targetIndex:0})},showWork:function(o){this.fire("show-work",{targetIndex:1})},showThoughts:function(o){this.fire("show-thoughts",{targetIndex:2})}});</script>
 </dom-module>
 </body></html>
