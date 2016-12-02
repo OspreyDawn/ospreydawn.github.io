@@ -12,23 +12,14 @@
         border: 2px solid salmon;
         @apply(--layout-vertical);
       }
-      /* #trackArea {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        @apply(--layout-vertical);
-        @apply(--layout-wrap);
-      } */
     </style>
 
     <div class="container" id="container">
-      
       <content></content>
     </div>
 
   </template>
 
-  <script>Polymer({is:"touch-test-area",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return[]}}},listeners:{"container.track":"handleTrack","made-grid":"trackAreaGen","neon-animation-finish":"_onNeonAnimationFinish"},viewWidth:0,threshold:0,xPos:0,xRelease:0,indexSelector:0,indexLength:0,ready:function(){window.addEventListener("made-grid",function(e){return function(t){e.trackAreaGen(e.$.container,t)}}(this))},trackAreaGen:function(e,t){this.viewWidth=t.detail.width,this.indexLength=t.detail.length,e.style.width=this.viewWidth*this.indexLength+"px"},handleTrack:function(e){switch(e.detail.state){case"start":this.xPos=e.detail.x;break;case"track":e.currentTarget.style.left=e.detail.x-this.xPos+"px";break;case"end":this.xRelease=e.detail.x-this.xPos,this.snapElement(e.currentTarget),this.xPos=0}},keyGen:function(e,t,i,n){this.animationConfig.translate={name:"transform-animation",node:e,transformFrom:"translateX("+t+"px)",transformTo:"translateX("+i+"px)",timing:{duration:n}},this.xEnd=i},execAnim:function(e,t,i){switch(indexInit=this.indexSelector,distance=this.viewWidth,t){case"next":this.indexSelector++;break;case"prev":this.indexSelector--;break;default:this.indexSelector}i?(currentPosition=this.xRelease-distance*indexInit,duration=150):(currentPosition=-1*(distance*indexInit),duration=500),nextPosition=distance*this.indexSelector,this.xEnd=-nextPosition,this.keyGen(e,currentPosition,-nextPosition,duration),this.playAnimation("translate"),this.fire("item-page-changed",{vector:t,indexSelector:this.indexSelector})},snapElement:function(e){var t=null;this.xRelease<-this.threshold&&this.indexSelector<this.indexLength-1?t="next":this.xRelease>this.threshold&&this.indexSelector>0&&(t="prev"),e.style.left="auto",this.execAnim(e,t,!0)},_onNeonAnimationFinish:function(){this.$$(".container").style.transform="translateX("+this.xEnd+"px)"}});</script>
+  <script>Polymer({is:"touch-test-area",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return[]}}},listeners:{"container.track":"handleTrack","neon-animation-finish":"_onNeonAnimationFinish"},content:null,viewWidth:0,threshold:0,xPos:0,xRelease:0,indexSelector:0,indexLength:0,ready:function(){window.addEventListener("made-grid",function(t){return function(e){t.content=e.detail.content,console.log(t.content)}}(this))},handleTrack:function(t){switch(t.detail.state){case"start":this.xPos=t.detail.x;break;case"track":this.content.style.left=t.detail.x-this.xPos+"px";break;case"end":this.xRelease=t.detail.x-this.xPos,this.snapElement(this.content),this.xPos=0}},keyGen:function(t,e,n,i){this.animationConfig.translate={name:"transform-animation",node:t,transformFrom:"translateX("+e+"px)",transformTo:"translateX("+n+"px)",timing:{duration:i}},this.xEnd=n},execAnim:function(t,e,n){switch(indexInit=this.indexSelector,distance=this.viewWidth,e){case"next":this.indexSelector++;break;case"prev":this.indexSelector--;break;default:this.indexSelector}n?(currentPosition=this.xRelease-distance*indexInit,duration=150):(currentPosition=-1*(distance*indexInit),duration=500),nextPosition=distance*this.indexSelector,this.xEnd=-nextPosition,this.keyGen(t,currentPosition,-nextPosition,duration),this.playAnimation("translate"),this.fire("item-page-changed",{vector:e,indexSelector:this.indexSelector})},snapElement:function(t){var e=null;this.xRelease<-this.threshold&&this.indexSelector<this.indexLength-1?e="next":this.xRelease>this.threshold&&this.indexSelector>0&&(e="prev"),t.style.left="auto",this.execAnim(t,e,!0)},_onNeonAnimationFinish:function(){this.content.style.transform="translateX("+this.xEnd+"px)"}});</script>
 </dom-module>
 </body></html>
