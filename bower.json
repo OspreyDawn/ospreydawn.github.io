@@ -7,7 +7,9 @@
     "neon-elements": "PolymerElements/neon-elements#^1.0.0",
     "iron-swipeable-pages": "^1.2.6",
     "iron-elements": "PolymerElements/iron-elements#^1.0.10",
-    "iron-media-query": "PolymerElements/iron-media-query#^1.0.8"
+    "iron-media-query": "PolymerElements/iron-media-query#^1.0.8",
+    "marked-element": "PolymerElements/marked-element#^1.2.0",
+    "app-elements": "PolymerElements/app-elements#^0.10.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

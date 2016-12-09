@@ -1,4 +1,5 @@
-<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<html><head><link rel="import" href="../bower_components/app-elements/app-elements.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
@@ -7,6 +8,7 @@
 <link rel="import" href="hero-pager.html">
 <link rel="import" href="grey-box-work.html">
 <link rel="import" href="grey-box-thoughts.html">
+<link rel="import" href="od-page-maker.html">
 
 </head><body><dom-module id="osprey-dawn">
   <template>
@@ -44,20 +46,27 @@
       }
     </style>
 
-    <od-portrait id="portrait" query="{{mediaQuery}}"></od-portrait>
+    <app-location route="{{route}}" use-hash-as-path="">
+    </app-location>
 
-    <neon-animated-pages id="pages" attr-for-selected="id" selected="{{selected}}" on-neon-animation-finish="pageChanged">
+    <app-route route="{{route}}" pattern="/:page" data="{{pageData}}">
+    </app-route>
 
-      <hero-pager id="hero" query="{{mediaQuery}}"></hero-pager>
-      <grey-box-work id="work" query="{{mediaQuery}}"></grey-box-work>
-      <grey-box-thoughts id="thoughts" query="{{mediaQuery}}"></grey-box-thoughts>
+    <od-portrait id="portrait" query="{{mediaQuery}}">
+    </od-portrait>
 
+    <neon-animated-pages id="pages" attr-for-selected="id" selected="{{selected}}" on-neon-animation-finish="neonPageLoaded">
+
+      <hero-pager id="Home" query="{{mediaQuery}}"></hero-pager>
+      <grey-box-work id="Work" query="{{mediaQuery}}"></grey-box-work>
+      <grey-box-thoughts id="Thoughts" query="{{mediaQuery}}"></grey-box-thoughts>
     </neon-animated-pages>
+
     <div id="orientOverlay"><p>Please rotate to Portrait to view this website</p></div>
     <div id="loadOverlay"></div>
 
   </template>
 
-  <script>Polymer({is:"osprey-dawn",properties:{prop1:{type:String,value:"osprey-dawn"},mediaQuery:{type:String,value:"max-width: 450px"},selected:{type:String},indexSelector:{value:0},pageIndex:{type:Array},indexLength:{value:0}},listeners:{wheel:"wheelFire","to-about":"aboutPressed","to-hero":"backPressed","change-page":"pageDestiny","show-hero":"pageDestiny","show-work":"pageDestiny","show-thoughts":"pageDestiny"},ready:function(){for(var e=[],t=0;t<this.$.pages.children.length;++t)e.push(this.$.pages.children[t].id);this.pageIndex=e,this.indexLength=this.pageIndex.length,this.selected=this.pageIndex[this.indexSelector],window.addEventListener("WebComponentsReady",function(e){return function(){e.$.loadOverlay.style.display="none"}}(this))},pageDestiny:function(e){0===this.indexSelector&&this.$.portrait.downSlide(),0===e.detail.targetIndex&&this.$.portrait.upSlide(),this.indexSelector=e.detail.targetIndex,this.selected=this.pageIndex[this.indexSelector]},translateWheel:function(e){if(0==e.deltaMode)return e;var t=16*e.deltaY,i=new WheelEvent("newWheel",{deltaY:t,deltaMode:0});return i},wheelFire:function(e){var t=this.translateWheel(e),i=t.deltaY,n=this.indexSelector;if(16<i&&this.indexSelector<this.indexLength-1)++n;else{if(!(i<-16&&this.indexSelector>0))return;--n}(16<i||i<-16)&&(this.fire("change-page",{targetIndex:n}),this.unlisten(this,"wheel","wheelFire"))},pageChanged:function(){this.listen(this,"wheel","wheelFire"),this.fire("page-changed",{targetIndex:this.indexSelector})},aboutPressed:function(){this.unlisten(this,"wheel","wheelFire"),this.$.portrait.aboutSlide()},backPressed:function(){this.listen(this,"wheel","wheelFire"),this.$.portrait.heroSlide()}});</script>
+  <script>Polymer({is:"osprey-dawn",properties:{prop1:{type:String,value:"osprey-dawn"},route:{type:Object,observer:"handleRoute"},mediaQuery:{type:String,value:"max-width: 450px"},heroState:{type:Boolean,value:!0},selected:{type:String},siteIndex:{type:Array,value:[]},indexSelector:{value:0,observer:"indexChanged"},indexPrevious:{value:0},indexLength:{value:0},itemPages:{type:Array,value:[]}},listeners:{wheel:"wheelFire","create-page":"createPage","delete-page":"deletePage"},ready:function(){for(var e=0;e<this.$.pages.children.length;++e)this.siteIndex.push(this.$.pages.children[e].id);this.indexLength=this.siteIndex.length,this.selected=this.siteIndex[this.indexSelector],window.addEventListener("WebComponentsReady",function(e){return function(){e.$.loadOverlay.style.display="none"}}(this))},indexChanged:function(){this.fire("site-index-changed",{indexTarget:this.indexSelector,prevTarget:this.indexPrevious})},translateWheel:function(e){if(0===e.deltaMode)return e;var t=16*e.deltaY,i=new WheelEvent("newWheel",{deltaY:t,deltaMode:0});return i},wheelFire:function(e){var t=this.translateWheel(e),i=t.deltaY;if(this.indexPrevious=this.indexSelector,16<i&&this.indexSelector<this.indexLength-1)++this.indexSelector;else{if(!(i<-16&&this.indexSelector>0))return;--this.indexSelector}(16<i||i<-16)&&(window.location="#/"+this.siteIndex[this.indexSelector],this.unlisten(this,"wheel","wheelFire"))},createPage:function(){newPage=document.createElement("od-page-maker"),newPage.setAttribute("id","itemPage"),this.appendChild(newPage),this.itemPages.push(newPage),newPage.style.zIndex=this.itemPages.length+1,this.fire("call-page",{pageCall:"enter"}),this.fire("wheel-state",{active:!1})},deletePage:function(){length=this.itemPages.length-1,page=this.itemPages[length],this.removeChild(page),this.fire("wheel-state",{active:!0})},neonPageLoaded:function(){this.listen(this,"wheel","wheelFire"),this.fire("page-loaded",{targetIndex:this.indexSelector})},handleRoute:function(){if(this.indexPrevious=this.indexSelector,this.pageData){switch(this.pageData.page){case"About":this.heroState=!1,this.unlisten(this,"wheel","wheelFire"),this.fire("hero-index-changed",{indexTarget:1}),this.indexSelector=0;break;case"Home":this.indexSelector=0;break;case"Work":this.indexSelector=1;break;case"Thoughts":this.indexSelector=2;break;default:return void console.log("wtfm8")}this.heroState||"About"==this.pageData.page||(this.heroState=!0,this.listen(this,"wheel","wheelFire"),this.fire("hero-index-changed",{indexTarget:0})),this.selected=this.siteIndex[this.indexSelector]}}});</script>
 </dom-module>
 </body></html>

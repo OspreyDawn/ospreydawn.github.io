@@ -115,7 +115,7 @@
     </iron-media-query>
 
     <div class="container" mobile-layout$="{{smallScreen}}">
-      <div id="backButton" class="button" on-tap="showHero">←</div>
+      <div id="backBtn" class="button" on-tap="showHero">←</div>
       <span class="flex"></span>
       <div id="aboutContainer" class="aboutContainer">
         <div id="aboutDetail">
@@ -175,6 +175,6 @@
 
   </template>
 
-  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var a=this.$.aboutContainer.children,i=Array.prototype.slice.call(a);return i.push(this.$.backButton),{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-right-animation",nodes:i,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:i},{name:"cascaded-animation",animation:"slide-right-animation",nodes:i}]}}}},showHero:function(){this.fire("to-hero")}});</script>
+  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var a=this.$.aboutContainer.children,n=Array.prototype.slice.call(a);return n.push(this.$.backBtn),{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:n,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-right-animation",nodes:n,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:n},{name:"cascaded-animation",animation:"slide-right-animation",nodes:n}]}}}},showHero:function(){window.location="#/Home"}});</script>
 </dom-module>
 </body></html>

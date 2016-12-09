@@ -97,7 +97,7 @@
         <div id="sub-title">OSPREY DAWN IS</div>
         <div id="title">MAX O'BRIEN</div>
         <div id="hero-links">
-          <a href="#" class="heroLink" on-tap="showWork">WORK</a><div id="divider">|</div><a href="#" class="heroLink" on-tap="showThoughts">THOUGHTS</a>
+          <a href="#/Work" class="heroLink">WORK</a><div id="divider">|</div><a href="#/Thoughts" class="heroLink">THOUGHTS</a>
         </div>
         <div id="hero-text">
           A User Interface and User Experience Designer with experience in Game Design, User Research, and Product Design.
@@ -110,6 +110,6 @@
 
   </template>
 
-  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior,Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){var n=this.$.heroContainer.children,i=Array.prototype.slice.call(n);return{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-left-animation",nodes:i,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:i},{name:"cascaded-animation",animation:"slide-left-animation",nodes:i}]}}}},ready:function(){window.addEventListener("WebComponentsReady",function(n){return function(){n.loadAnimation()}}(this))},loadAnimation:function(){var n=this.$.heroContainer.children,i=Array.prototype.slice.call(n);this.animationConfig["load-in"]=[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:2500,duration:1e3}},{name:"cascaded-animation",animation:"slide-from-top-animation",nodes:i,timing:{delay:2500,duration:1e3}}],this.playAnimation("load-in")},showAbout:function(){this.fire("to-about")},showWork:function(){this.fire("show-work",{targetIndex:1})},showThoughts:function(){this.fire("show-thoughts",{targetIndex:2})},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
+  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior,Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){var n=this.$.heroContainer.children,i=Array.prototype.slice.call(n);return{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-left-animation",nodes:i,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:i},{name:"cascaded-animation",animation:"slide-left-animation",nodes:i}]}}}},ready:function(){window.addEventListener("WebComponentsReady",function(n){return function(){n.loadAnimation()}}(this))},loadAnimation:function(){var n=this.$.heroContainer.children,i=Array.prototype.slice.call(n);this.animationConfig["load-in"]=[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:2500,duration:1e3}},{name:"cascaded-animation",animation:"slide-from-top-animation",nodes:i,timing:{delay:2500,duration:1e3}}],this.playAnimation("load-in")},showAbout:function(){window.location="#/About"},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
 </dom-module>
 </body></html>

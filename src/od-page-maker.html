@@ -1,0 +1,70 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+<link rel="import" href="od-article-generator.html">
+
+</head><body><dom-module id="od-page-maker">
+  <template>
+    <style>
+      :host {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      .container {
+        max-width: 44rem;
+        padding: 0 1.5rem;
+        margin: 0 auto;
+        padding-top: 2rem;
+        @apply(--layout-vertical);
+      }
+      .button {
+        display: inline-block;
+        position: fixed;
+        padding: 1rem;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        cursor: pointer;
+        @apply(--layout-self-start);
+      }
+      .button:hover {
+        color: white;
+        background: lightgrey;
+      }
+      #overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.28);
+        opacity: 0;
+      }
+      #page {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: white;
+        opacity: 0;
+        overflow: scroll;
+      }
+      #article {
+        margin:  4rem 0 10rem 0;
+      }
+    </style>
+
+    <div id="overlay"></div>
+
+    <div id="page">
+      <div class="container">
+        <div class="button" id="exitBtn" on-tap="closePage">←</div>
+        <div id="article">
+          <od-article-generator></od-article-generator>
+          <a href="#" on-tap="pageGen">Make a new Page.</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>pageState={OUTVIEW:0,INVIEW:1},Polymer({is:"od-page-maker",currentState:pageState.OUTVIEW,behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return[]}}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){window.addEventListener("call-page",function(e){return function(a){e.pageAnim(a)}}(this))},pageGen:function(){this.fire("create-page")},closePage:function(){this.fire("call-page",{pageCall:"exit"})},pageAnim:function(e){"enter"===e.detail.pageCall?(this.currentState=pageState.INVIEW,this.$.page.style.opacity=1,this.animationConfig["animate-page"]=[{name:"fade-in-animation",node:this.$.overlay},{name:"slide-from-right-animation",node:this.$.page,timing:{delay:250}}]):"exit"===e.detail.pageCall?(this.currentState=pageState.OUTVIEW,this.animationConfig["animate-page"]=[{name:"fade-out-animation",node:this.$.overlay,timing:{delay:250}},{name:"slide-right-animation",node:this.$.page}]):console.log("oops"),this.playAnimation("animate-page")},_onNeonAnimationFinish:function(){switch(this.currentState){case pageState.OUTVIEW:this.$.overlay.style.opacity=0,this.$.page.style.opacity=0,this.fire("delete-page");break;case pageState.INVIEW:this.$.overlay.style.opacity=1;break;default:console.log("wellshit")}}});</script>
+</dom-module>
+</body></html>
