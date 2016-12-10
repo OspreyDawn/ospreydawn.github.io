@@ -1,0 +1,56 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/marked-element/marked-element.html">
+
+</head><body><dom-module id="item-page">
+  <template>
+    <style>
+      :host {
+        width: 100%;
+        height: 100%;
+        background: white;
+        position: absolute;
+        overflow: auto;
+      }
+      .container {
+        max-width: 44rem;
+        padding: 0 1.5rem;
+        margin: 0 auto;
+        padding-top: 2rem;
+        @apply(--layout-vertical);
+      }
+      .button {
+        display: inline-block;
+        position: fixed;
+        padding: 1rem;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        cursor: pointer;
+        @apply(--layout-self-start);
+      }
+      .button:hover {
+        color: white;
+        background: lightgrey;
+      }
+      #article {
+        margin:  4rem 0 10rem 0;
+      }
+    </style>
+
+    <iron-ajax auto="" url="content/test_article/test_article.md" handle-as="text" last-response="{{response}}">
+    </iron-ajax>
+
+    <div class="container">
+      <div class="button" id="exitBtn" on-tap="closePage">←</div>
+      <a href="#/Work" on-tap="pageGen">Make a new Page.</a>
+      <div id="article">
+        <marked-element markdown="{{response}}">
+          <div class="markdown-html"></div>
+        </marked-element>
+      </div>
+    </div>
+  </template>
+
+  <script>Polymer({is:"item-page",closePage:function(){this.fire("close-page")},pageGen:function(){this.fire("open-page")}});</script>
+</dom-module>
+</body></html>

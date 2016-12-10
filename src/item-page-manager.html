@@ -1,0 +1,30 @@
+<html><head><link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+
+<link rel="import" href="item-page.html">
+
+</head><body><dom-module id="item-page-manager">
+  <template>
+    <style>
+      :host {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      #overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.28);
+        opacity: 0;
+      }
+    </style>
+
+    <div id="overlay"></div>
+
+  </template>
+
+  <script>pageState={OUTVIEW:0,INVIEW:1},Polymer({is:"item-page-manager",currentState:pageState.OUTVIEW,behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"overlay-fade-in":{name:"fade-in-animation",node:this.$.overlay},"overlay-fade-out":{name:"fade-out-animation",node:this.$.overlay,timing:{delay:250}}}}},deleteAction:{type:Boolean,value:!1},currentPage:{value:null},currentOverlay:{value:null},pageArray:{type:Array,value:[]}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){window.addEventListener("open-page",function(e){return function(){e.style.display="block",e.initPage()}}(this)),window.addEventListener("close-page",function(e){return function(){e.deletePage()}}(this))},initPage:function(){0===this.pageArray.length&&this.fire("wheel-state",{active:!1}),this.createPage(),this.initOverlay(),this.playAnimation("overlay-fade-in"),this.pageEnterAnim(this.currentPage)},initOverlay:function(){this.currentState=pageState.INVIEW,this.$.overlay.style.zIndex=3+this.pageArray.length},createPage:function(){var e=document.createElement("item-page");this.appendChild(e),e.setAttribute("id","item"+this.pageArray.length),e.style.display="none",e.style.zIndex=4+this.pageArray.length,this.pageArray.push(e),this.currentPage=e},deletePage:function(){this.currentState=pageState.OUTVIEW,this.deleteAction=!0,this.pageExitAnim(this.currentPage),this.playAnimation("overlay-fade-out")},pageEnterAnim:function(e){e.style.display="block",this.animationConfig["page-enter"]={name:"slide-from-right-animation",node:e,timing:{delay:250}},this.playAnimation("page-enter")},pageExitAnim:function(e){this.animationConfig["page-exit"]={name:"slide-right-animation",node:e},this.playAnimation("page-exit")},_onNeonAnimationFinish:function(){switch(this.currentState){case pageState.OUTVIEW:this.deleteAction&&(this.removeChild(this.currentPage),this.pageArray.splice(-1,1),this.currentPage=this.pageArray[this.pageArray.length-1],this.deleteAction=!1),this.pageArray.length>0?this.$.overlay.style.zIndex=this.$.overlay.style.zIndex=3+this.pageArray.length:(this.$.overlay.style.opacity=0,this.style.display="none",this.fire("wheel-state",{active:!0}));break;case pageState.INVIEW:this.$.overlay.style.opacity=1;break;default:console.log("wellshit")}}});</script>
+</dom-module>
+</body></html>
