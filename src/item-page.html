@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/marked-element/marked-element.html">
 
-</head><body><dom-module id="item-page">
+</head><body><dom-module id="item-page" attribute="host item exit-to">
   <template>
     <style>
       :host {
@@ -37,20 +37,26 @@
       }
     </style>
 
-    <iron-ajax auto="" url="content/test_article/test_article.md" handle-as="text" last-response="{{response}}">
+    <iron-ajax auto="" url="src/content/{{host}}_items/{{item}}/{{item}}.json" handle-as="json" last-response="{{response}}">
+    </iron-ajax>
+
+    <iron-ajax auto="" url="{{response.text}}" handle-as="text" last-response="{{textResponse}}">
     </iron-ajax>
 
     <div class="container">
       <div class="button" id="exitBtn" on-tap="closePage">←</div>
-      <a href="#/Work" on-tap="pageGen">Make a new Page.</a>
       <div id="article">
-        <marked-element markdown="{{response}}">
+        <a href="#/Work/work_item1">work-item1</a>
+        <a href="#/Work/work_item2"> work-item2</a>
+        <a href="#/Thoughts/thoughts_item1"> thoughts-item1</a>
+        <a href="#/Thoughts/thoughts_item2"> thoughts-item2</a>
+        <marked-element markdown="{{textResponse}}">
           <div class="markdown-html"></div>
         </marked-element>
       </div>
     </div>
   </template>
 
-  <script>Polymer({is:"item-page",closePage:function(){this.fire("close-page")},pageGen:function(){this.fire("open-page")}});</script>
+  <script>Polymer({is:"item-page",closePage:function(){this.fire("close-page")}});</script>
 </dom-module>
 </body></html>

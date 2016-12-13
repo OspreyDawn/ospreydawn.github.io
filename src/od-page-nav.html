@@ -22,6 +22,13 @@
         color: white;
         background: lightgrey;
       }
+      .button a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+      }
       #special {
         display: none;
       }
@@ -35,11 +42,11 @@
     </iron-media-query>
 
     <div id="prev" class="button">←</div>
-    <div id="special" class="button" mobile-layout$="{{smallScreen}}" on-tap="openPage">[[special-button-text]]</div>
+    <div id="special" class="button" mobile-layout$="{{smallScreen}}"><a href="#/Thoughts/work_item1">[[special-button-text]]</a></div>
     <div id="next" class="button">→</div>
 
   </template>
 
-  <script>prevBtnStates={SHOWPREV:0,HIDEPREV:1},nextBtnStates={SHOWNEXT:0,HIDENEXT:1},Polymer({is:"od-page-nav",prevCurrentState:prevBtnStates.HIDEPREV,nextCurrentState:nextBtnStates.SHOWNEXT,behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"prev-entry":[{name:"fade-in-animation",node:this.$.prev},{name:"slide-from-right-animation",node:this.$.prev}],"next-entry":[{name:"fade-in-animation",node:this.$.next},{name:"slide-from-left-animation",node:this.$.next}],"prev-exit":[{name:"fade-out-animation",node:this.$.prev},{name:"slide-right-animation",node:this.$.prev}],"next-exit":[{name:"fade-out-animation",node:this.$.next},{name:"slide-left-animation",node:this.$.next}]}}}},listeners:{tap:"_onTap","hide-prev":"hidePrev","neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){this.$.prev.style.opacity=0},openPage:function(){this.fire("open-page")},_onTap:function(t){var e=Polymer.dom(t).rootTarget;"next"===e.id?this.fire("next-tap"):"prev"===e.id&&this.fire("prev-tap")},showPrevButton:function(){this.prevCurrentState=prevBtnStates.SHOWPREV,this.playAnimation("prev-entry")},showNextButton:function(){this.nextCurrentState=nextBtnStates.SHOWNEXT,this.playAnimation("next-entry")},hidePrevButton:function(){this.prevCurrentState=prevBtnStates.HIDEPREV,this.playAnimation("prev-exit")},hideNextButton:function(){this.nextCurrentState=nextBtnStates.HIDENEXT,this.playAnimation("next-exit")},getPrevButton:function(){return this.$.prev},getNextButton:function(){return this.$.next},_onNeonAnimationFinish:function(){switch(this.prevCurrentState){case prevBtnStates.SHOWPREV:this.$.prev.style.opacity=1,this.$.next.style.pointerEvents="auto";break;case prevBtnStates.HIDEPREV:this.$.prev.style.opacity=0,this.$.next.style.pointerEvents="none";break;default:console.log("lolwut")}switch(this.nextCurrentState){case nextBtnStates.SHOWNEXT:this.$.next.style.opacity=1,this.$.next.style.pointerEvents="auto";break;case nextBtnStates.HIDENEXT:this.$.next.style.opacity=0,this.$.next.style.pointerEvents="none";break;default:console.log("lolwut")}}});</script>
+  <script>prevBtnStates={SHOWPREV:0,HIDEPREV:1},nextBtnStates={SHOWNEXT:0,HIDENEXT:1},Polymer({is:"od-page-nav",prevCurrentState:prevBtnStates.HIDEPREV,nextCurrentState:nextBtnStates.SHOWNEXT,behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return{"prev-entry":[{name:"fade-in-animation",node:this.$.prev},{name:"slide-from-right-animation",node:this.$.prev}],"next-entry":[{name:"fade-in-animation",node:this.$.next},{name:"slide-from-left-animation",node:this.$.next}],"prev-exit":[{name:"fade-out-animation",node:this.$.prev},{name:"slide-right-animation",node:this.$.prev}],"next-exit":[{name:"fade-out-animation",node:this.$.next},{name:"slide-left-animation",node:this.$.next}]}}}},listeners:{tap:"_onTap","hide-prev":"hidePrev","neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){this.$.prev.style.opacity=0},_onTap:function(t){var e=Polymer.dom(t).rootTarget;"next"===e.id?this.fire("next-tap"):"prev"===e.id&&this.fire("prev-tap")},showPrevButton:function(){this.prevCurrentState=prevBtnStates.SHOWPREV,this.playAnimation("prev-entry")},showNextButton:function(){this.nextCurrentState=nextBtnStates.SHOWNEXT,this.playAnimation("next-entry")},hidePrevButton:function(){this.prevCurrentState=prevBtnStates.HIDEPREV,this.playAnimation("prev-exit")},hideNextButton:function(){this.nextCurrentState=nextBtnStates.HIDENEXT,this.playAnimation("next-exit")},getPrevButton:function(){return this.$.prev},getNextButton:function(){return this.$.next},_onNeonAnimationFinish:function(){switch(this.prevCurrentState){case prevBtnStates.SHOWPREV:this.$.prev.style.opacity=1,this.$.next.style.pointerEvents="auto";break;case prevBtnStates.HIDEPREV:this.$.prev.style.opacity=0,this.$.next.style.pointerEvents="none";break;default:console.log("lolwut")}switch(this.nextCurrentState){case nextBtnStates.SHOWNEXT:this.$.next.style.opacity=1,this.$.next.style.pointerEvents="auto";break;case nextBtnStates.HIDENEXT:this.$.next.style.opacity=0,this.$.next.style.pointerEvents="none";break;default:console.log("lolwut")}}});</script>
 </dom-module>
 </body></html>

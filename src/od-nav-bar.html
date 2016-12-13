@@ -23,6 +23,11 @@
         background: lightgrey;
         cursor: pointer;
       }
+      #logo a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
       #mainNavItems {
         margin-left: 1rem;
         @apply(--layout-vertical);
@@ -48,9 +53,7 @@
 
     <div id="navBar" class="container" mobile-layout$="{{smallScreen}}">
       <template is="dom-if" if="{{!smallScreen}}">
-        <a href="#/Home">
-          <div id="logo" on-tap="showHero"></div>
-        </a>
+        <div id="logo"><a href="#/Home"></a></div>
         <div id="mainNavItems">
           <div id="title">MAX O'BRIEN</div>
           <div id="heroLinks">
@@ -67,7 +70,7 @@
         <div class="flex">
           <a href="#/Work" class="heroLink">WORK</a>
         </div>
-        <div id="logo" on-tap="showHero"></div>
+        <div id="logo"><a href="#/Home"></a></div>
         <div class="flex">
           <a href="#/Thoughts" class="heroLink">THOUGHTS</a>
         </div>
@@ -76,6 +79,6 @@
 
   </template>
 
-  <script>Polymer({is:"od-nav-bar",properties:{mobileScreen:{type:Boolean,value:!1}},getNav:function(){return this.$.navBar},getLogo:function(){return this.$$("#logo")},showHero:function(o){window.location="#/Home"}});</script>
+  <script>Polymer({is:"od-nav-bar",properties:{mobileScreen:{type:Boolean,value:!1}},getNav:function(){return this.$.navBar},getLogo:function(){return this.$$("#logo")}});</script>
 </dom-module>
 </body></html>
