@@ -3,8 +3,11 @@
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 
+<link rel="import" href="styles/od-global-styles.html">
+
 </head><body><dom-module id="grey-box-about" attributes="query">
   <template>
+    <style include="od-global-styles"><style>
 
     <style>
       td {
@@ -15,9 +18,11 @@
         font-weight: bold;
       }
       td:nth-child(2) {
-        color: grey;
+        padding-left: 1rem;
+        color: var(--light-grey);
       }
       td:nth-child(3) {
+        padding-left: 1rem;
         text-align: right;
         min-width: 4.5rem;
       }
@@ -38,22 +43,15 @@
         max-width: 700px;
         text-align: right;
       }
-      .button {
-        display: inline-block;
-        padding: 1rem;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .button:hover {
-        color: white;
-        background: lightgrey;
+      .container iron-icon {
+        width: 100%;
+        height: 100%;
+        fill: var(--default-blue);
       }
       #aboutIcon {
         float: right;
         width: 2.25rem;
         height: 2.25rem;
-        background: lightgrey;
       }
       #xpTable {
         float: right;
@@ -64,9 +62,8 @@
         @apply(--layout-horizontal);
       }
       #countryIcon {
-        width: 65px;
+        width: 90px;
         height: 90px;
-        background: lightgrey;
         margin-top: 1.5rem;
         margin-right: 1rem;
       }
@@ -75,6 +72,7 @@
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] td:nth-child(3) {
+        width: 5.25rem;
         padding-left: 0;
       }
       .container[mobile-layout] .flex {
@@ -119,7 +117,7 @@
       <span class="flex"></span>
       <div id="aboutContainer" class="aboutContainer">
         <div id="aboutDetail">
-          <div id="aboutIcon"></div>
+          <div id="aboutIcon"><iron-icon icon="od-icons:info"></iron-icon></div>
           <div style="clear: right"></div>
           <h2>About Me</h2>
           <p>
@@ -158,7 +156,7 @@
           <div style="clear: right"></div>
         </div>
         <div id="whereDetail">
-          <div id="countryIcon"></div>
+          <div id="countryIcon"><iron-icon icon="od-icons:nz"></iron-icon></div>
           <div id="whereText">
             <h3>Where am I?</h3>
             <p>New Zealand</p>
@@ -167,14 +165,14 @@
         <div style="clear: right"></div>
         <div id="contactDetail">
           <h3>Get in touch</h3>
-          <a href="#">@OspreyDawn</a>
-          <a href="#">hello@ospreydawn.com</a>
+          <a href="https://twitter.com/ospreydawn">@OspreyDawn</a>
+          <a href="mailto:hello@ospreydawn.com">hello@ospreydawn.com</a>
         </div>
       </div>
     </div>
 
   </template>
 
-  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var a=this.$.aboutContainer.children,n=Array.prototype.slice.call(a);return n.push(this.$.backBtn),{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:n,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-right-animation",nodes:n,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:n},{name:"cascaded-animation",animation:"slide-right-animation",nodes:n}]}}}},showHero:function(){window.location="#/Home"}});</script>
+  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var a=this.$.aboutContainer.children,n=Array.prototype.slice.call(a);return n.push(this.$.backBtn),{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:n,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-right-animation",nodes:n,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:n},{name:"cascaded-animation",animation:"slide-right-animation",nodes:n}]}}}},getAnimatable:function(){return this.$.aboutContainer},showHero:function(){window.location="#/Home"}});</script>
 </dom-module>
 </body></html>

@@ -1,0 +1,10 @@
+{
+  "work" : [
+    "/src/content/work_items/work_item1/work_item1.json",
+    "/src/content/work_items/work_item2/work_item2.json"
+  ],
+  "thoughts" : [
+    "/src/content/thoughts_items/thoughts_item1/thoughts_item1.json",
+    "/src/content/thoughts_items/thoughts_item2/thoughts_item2.json"
+  ]
+}

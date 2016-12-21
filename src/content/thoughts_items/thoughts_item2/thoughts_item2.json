@@ -1,3 +1,16 @@
 {
-  "text": "src/content/thoughts_items/thoughts_item2/thoughts_item2.md"
+  "link" : "#/Thoughts/thoughts_item2",
+  "title" : "This is another Thoughts Article.",
+  "meta" : [
+    "#more",
+    "#random",
+    "#tags"
+  ],
+  "date" : "12th of August, 2016",
+  "text": "src/content/thoughts_items/thoughts_item2/thoughts_item2.md",
+  "preview" : [
+    "There will be some meta tags.",
+    "There will be some text.",
+    "Expect to see some quotes, images and other embedded objects."
+    ]
 }

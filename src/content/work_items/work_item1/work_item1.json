@@ -1,3 +1,11 @@
 {
-  "text": "src/content/work_items/work_item1/work_item1.md"
+  "link" : "#/Work/work_item1",
+  "text": "/src/content/work_items/work_item1/work_item1.md",
+  "img" : "/src/content/work_items/work_item1/test_img.jpg",
+  "meta" : [
+    "#random",
+    "#meta",
+    "#tags"
+    ],
+  "date" : "12th of August, 2016"
 }

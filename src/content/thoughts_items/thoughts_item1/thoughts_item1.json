@@ -1,3 +1,16 @@
 {
-  "text": "src/content/thoughts_items/thoughts_item1/thoughts_item1.md"
+  "link" : "#/Thoughts/thoughts_item1",
+  "title" : "Interface design with The Design of Everyday Things in mind; Communicating complex interactions.",
+  "meta" : [
+    "#random",
+    "#meta",
+    "#tags"
+  ],
+  "date" : "11th of July, 2016",
+  "text": "src/content/thoughts_items/thoughts_item1/thoughts_item1.md",
+  "preview" : [
+    "When we humans navigate the world around us, we do so through the analysation of all the data that is absorbed by our senses and combine it with our inherent knowledge. There are the usual senses people can identify which are the most obvious like sight, sound, touch, taste and smell but there are an abundance of others that are implicit in the everyday, things like thermoception (the ability to detect temperature) and proprioception (the ability to sense where your body is in space).",
+    "As soon as we enter the digital world, we lose almost all of our senses; we are primarily relying on learned knowledge accumulated through past experiences. Vision is our primary sense stimulated through the use of visual displays, sometimes sound is present trhough speakers and even rarer still is the use of touch through vibration. These seem to be the only three senses stimulated in mainstream digital devices. Out of the three, vision is the only sense that permeates all digital experiences that humans encounter on a daily basis; one sense out of many. Not only do interfaces have to have to account for this lack of sensorial input but they have to communicate a visual language that accounts for this. This puts enormous strain on a user's past knowledge to navigate an interface; since the base knowledge of the everyday user varies wildly so does the effective mileage of any given interface.",
+    "There's a reason why Apple used skeuomorphism when they first released the iPhone. The visual replication of real, tangible objects in an interface to communicate how one might interact with them in a digital way makes sense; certain physical objects provide affordances that contextual-less digital artefacts can't. Prior to the iPhone, there had been no uniform visual language to relay how one might interact with an interface totally reliant on touch. The Notepad app looked like an actual note pad, with yellow paper pages and stitching, buttons had visual cues to make them look three dimensional that depressed when touched much like one would expect to see in the real world. iOS was brand new at the time so they had to communicate how to navigate the world that they had created in terms that they knew the everyday user would understand."
+  ]
 }

@@ -1,0 +1,81 @@
+<html><head><link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700" rel="stylesheet">
+
+</head><body><dom-module id="od-global-styles">
+  <template>
+    <style>
+      :root {
+        /* ### Colors ### */
+
+        /* Greys */
+        --white-grey: #C6C8CE;
+        --light-grey: #95989A;
+        --default-grey: #56646E;
+        --deep-grey: #383F51;
+
+        /* Blues */
+        --white-blue: #DCE2F6;
+        --light-blue: #B9C6EC;
+        --default-blue: #5D7ACF;
+        --deep-blue: #443F9A;
+
+        /* ### Typefaces ### */
+
+        --lato: 'Lato', sans-serif;
+        --montserrat: 'Montserrat', sans-serif;
+
+        --od-body-font-style: {
+          font-family: var(--lato);
+          font-weight: 400;
+          color: var(--default-grey);
+        };
+
+        --od-header-font-style: {
+          font-family: var(--montserrat);
+          font-weight: 400;
+          color: var(--deep-grey);
+        }
+
+        --od-link-font-style: {
+          font-family: var(--montserrat);
+          font-weight: 400;
+          color: var(--default-blue);
+          text-decoration: none;
+        }
+
+        --od-bold-font-style: {
+          font-family: var(--montserrat);
+          font-weight: 700;
+        }
+      }
+      :host {
+        @apply(--od-body-font-style);
+      }
+      h1, h2, h3, h4, h5, h6 {
+        @apply(--od-header-font-style);
+      }
+      a {
+        @apply(--od-link-font-style);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid var(--default-blue);
+        border-radius: 5px;
+        cursor: pointer;
+        color: var(--default-blue);
+        font-size: calc((14/16) * 1rem);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        text-decoration: none;
+        color: white;
+        background: var(--default-blue);
+        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.28);
+      }
+    </style>
+  </template>
+</dom-module>
+</body></html>

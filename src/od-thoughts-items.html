@@ -9,8 +9,12 @@
 
     <style>
       :host {
+        width: 100%;
         @apply(--layout-vertical);
         @apply(--layout-justified);
+      }
+      .flex {
+        @apply(--layout-flex);
       }
       .container {
         height: calc(100vh - 13.5rem);
@@ -29,31 +33,24 @@
         border: 1px solid lightgrey;
         border-radius: 5px;
         cursor: pointer;
+        color: inherit;
+        text-decoration: none;
       }
       .button:hover {
         color: white;
         background: lightgrey;
       }
-      .button a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        color: inherit;
-        text-decoration: none;
-      }
       .thoughtsItem {
         width: 32rem;
+        height: 100%;
         margin-right: 4rem;
         margin-bottom: 2rem;
         overflow: hidden;
         @apply(--layout-vertical);
       }
-      .thoughtsItem > h2 {
-        margin-top: 1.2rem;
-        margin-bottom: 0;
-      }
       .artDate {
         color: grey;
+        margin-top: 0;
       }
       .article {
         margin-bottom: 1rem;
@@ -74,6 +71,18 @@
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
       }
+      .artMeta {
+        margin-bottom: 1rem;
+      }
+      #title {
+        min-height: 6.75rem;
+        margin-bottom: 1rem;
+        @apply(--layout-horizontal);
+      }
+      #title > h2 {
+        margin: 0;
+        @apply(--layout-self-end);
+      }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] {
         height: calc(100vh - 10.5rem);
@@ -86,7 +95,7 @@
       .container[mobile-layout] .article {
         margin-bottom: 0;
       }
-      .container[mobile-layout] .artFoot{
+      .container[mobile-layout] .artFoot {
         display: none;
       }
     </style>
@@ -94,67 +103,43 @@
     <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
     </iron-media-query>
 
+    <iron-ajax auto="" url="{{indexURL}}" handle-as="json" last-response="{{response}}" on-response="handleResponse">
+    </iron-ajax>
+
+    <iron-ajax auto="" url="{{itemURL}}" handle-as="json" last-response="{{itemResponse}}" on-response="handleItemResponse">
+    </iron-ajax>
+
     <touch-test-area id="touchArea" view-width="{{viewWidth}}" index-length="{{indexLength}}" threshold="{{threshold}}">
       <div id="itemContainer" class="container" mobile-layout$="{{smallScreen}}">
         <template is="dom-repeat" items="{{testArray}}">
           <div class="thoughtsItem">
-            <h2>Test Article Title</h2>
-            <p class="artDate">August 21st, 2016</p>
+            <div id="title"><h2>{{item.title}}</h2></div>
+            <p class="artDate">{{item.date}}</p>
+
             <div class="artMeta">
-              <a href="#">#HashTag</a>,
-              <a href="#">#HashTag</a>,
-              <a href="#">#HashTag</a>,
-              <a href="#">#HashTag</a>
+              <template is="dom-repeat" items="{{item.meta}}">
+                <a href="#">{{item}}</a>
+              </template>
             </div>
-            <div class="article">
 
-                When we humans navigate the world around us, we do so through the
-                analysation of all the data that is absorbed by our senses and
-                combine it with our inherent knowledge. There are the usual senses
-                people can identify which are the most obvious like sight, sound, touch,
-                taste and smell but there are an abundance of others that are implicit
-                in the everyday, things like thermoception (the ability to detect
-                temperature) and proprioception (the ability to sense where your body
-                is in space).<p></p>As soon as we enter the digital world, we lose almost all of our senses;
-                we are primarily relying on learned knowledge accumulated through past
-                experiences. Vision is our primary sense stimulated through the use
-                of visual displays, sometimes sound is present trhough speakers and
-                even rarer still is the use of touch through vibration. These seem
-                to be the only three senses stimulated in mainstream digital devices.
-                Out of the three, vision is the only sense that permeates all digital
-                experiences that humans encounter on a daily basis; one sense out of
-                many. Not only do interfaces have to have to account for this lack
-                of sensorial input but they have to communicate a visual language
-                that accounts for this. This puts enormous strain on a user's past
-                knowledge to navigate an interface; since the base knowledge of the
-                everyday user varies wildly so does the effective mileage of any given
-                interface.<p></p>There's a reason why Apple used skeuomorphism when they first released
-                the iPhone. The visual replication of real, tangible objects in an
-                interface to communicate how one might interact with them in a digital
-                way makes sense; certain physical objects provide affordances that
-                contextual-less digital artefacts can't. Prior to the iPhone, there
-                had been no uniform visual language to relay how one might interact
-                with an interface totally reliant on touch. The Notepad app looked
-                like an actual note pad, with yellow paper pages and stitching, buttons
-                had visual cues to make them look three dimensional that depressed
-                when touched much like one would expect to see in the real world.
-                iOS was brand new at the time so they had to communicate how to navigate
-                the world that they had created in terms that they knew the everyday
-                user would understand.<p></p>
-
+            <div class="article flex">
+              <template is="dom-repeat" items="{{item.preview}}">
+                {{item}}<p></p>
+              </template>
             </div>
+
             <div class="artFoot">
-              <div class="button"><a href="#/Thoughts/thoughts_item1">Continue Reading</a></div>
+              <a class="button" href="{{item.link}}">Continue Reading</a>
             </div>
           </div>
         </template>
       </div>
     </touch-test-area>
 
-    <od-page-nav id="pageNav" on-prev-tap="_prevTap" on-next-tap="_nextTap" query="{{query}}" special-button-text="Continue Reading" special-button-link="openPage" mobile-layout$="{{smallScreen}}">
+    <od-page-nav id="pageNav" on-prev-tap="_prevTap" on-next-tap="_nextTap" query="{{query}}" special-button-text="Continue Reading" special-button-link="{{articleLink}}" mobile-layout$="{{smallScreen}}">
     </od-page-nav>
   </template>
 
-  <script>pressedStates={PREVPRESS:0,NEXTPRESS:1},Polymer({is:"od-thoughts-items",currentState:pressedStates.NEXTPRESS,properties:{animationConfig:{value:function(){return[]}}},viewWidth:0,threshold:0,indexSelector:0,indexLength:0,prevPosition:0,nextPosition:0,listeners:{"item-page-changed":"navVisibility"},ready:function(){this.testArray=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],window.addEventListener("resize",function(t){return function(){t.calcGrid(t.$$("#itemContainer"),t.$$(".thoughtsItem"))}}(this)),window.addEventListener("WebComponentsReady",function(t){return function(){"#/Thoughts"===window.location.hash&&t.calcGrid(t.$$("#itemContainer"),t.$$(".thoughtsItem"))}}(this)),window.addEventListener("page-loaded",function(t){return function(e){2===e.detail.targetIndex&&t.calcGrid(t.$$("#itemContainer"),t.$$(".thoughtsItem"))}}(this))},calcGrid:function(t,e){var i,n,s=null,o=t.offsetWidth,r=t.offsetHeight,h=parseInt(window.getComputedStyle(e).marginRight);itemMarginBottom=parseInt(window.getComputedStyle(e).marginBottom),itemW=e.offsetWidth+h,itemH=e.offsetHeight+itemMarginBottom,i=Math.round(o/itemW),n=Math.floor(r/itemH),s=Math.ceil(this.testArray.length/(i*n)),this.smallScreen?this.threshold=200:this.threshold=400,this.viewWidth=itemW*i,this.indexLength=s,this.fire("made-grid",{width:this.viewWidth,length:this.indexLength,content:t})},translateView:function(t){var e=this.$.touchArea;switch(t){case"next":e.execAnim(e.content,t,!1);break;case"prev":e.execAnim(e.content,t,!1);break;default:console.log("udunfuckdup")}},navVisibility:function(t){indexInit=this.indexSelector,this.indexSelector=t.detail.indexSelector,0===this.indexSelector&&indexInit>0&&this.$.pageNav.hidePrevButton(),1===this.indexSelector&&"next"===t.detail.vector&&this.$.pageNav.showPrevButton(),this.indexSelector===this.indexLength-2&&"prev"===t.detail.vector&&this.$.pageNav.showNextButton(),this.indexSelector===this.indexLength-1&&indexInit===this.indexLength-2&&this.$.pageNav.hideNextButton()},_prevTap:function(){this.currentState=pressedStates.PREVPRESS,this.indexSelector>0&&this.translateView("prev"),this.fire("item-page-changed",{vector:"prev",indexSelector:this.indexSelector})},_nextTap:function(){this.currentState=pressedStates.NEXTPRESS,this.indexSelector<this.indexLength&&this.translateView("next"),this.fire("item-page-changed",{vector:"next",indexSelector:this.indexSelector})}});</script>
+  <script>pressedStates={PREVPRESS:0,NEXTPRESS:1},Polymer({is:"od-thoughts-items",currentState:pressedStates.NEXTPRESS,properties:{animationConfig:{value:function(){return[]}},isCurrentPage:{type:Boolean},manifestLinks:{type:Array,value:[],notify:!0},initArray:{type:Array,value:[],notify:!0},testArray:{type:Array,value:[],notify:!0}},manifestLinks:{type:Array,value:[],notify:!0},manifestIndex:0,viewWidth:0,threshold:0,indexSelector:0,indexLength:0,prevPosition:0,nextPosition:0,listeners:{"item-page-changed":"navVisibility","site-index-changed":"pageStatus"},ready:function(){this.indexURL="/src/content/item-index.json",window.addEventListener("site-index-changed",function(t){return function(e){t.pageStatus(e)}}(this)),window.addEventListener("resize",function(t){return function(){t.isCurrentPage&&t.calcGrid(t.$$("#itemContainer"),t.$$(".thoughtsItem"))}}(this)),window.addEventListener("WebComponentsReady",function(t){return function(){t.isCurrentPage&&t.calcGrid(t.$$("#itemContainer"),t.$$(".thoughtsItem"))}}(this)),window.addEventListener("page-loaded",function(t){return function(e){2===e.detail.targetIndex&&t.calcGrid(t.$$("#itemContainer"),t.$$(".thoughtsItem"))}}(this))},pageStatus:function(t){2===t.detail.indexTarget&&(this.isCurrentPage=!0)},handleResponse:function(){var t=[];for(i=0;i<this.response.thoughts.length;i++)this.manifestLinks.push(this.response.thoughts[i]),t.push(i);this.testArray=t,this.itemURL=this.manifestLinks[this.manifestIndex]},handleItemResponse:function(){this.initArray.push(this.itemResponse),++this.manifestIndex,this.manifestIndex<this.manifestLinks.length?this.itemURL=this.manifestLinks[this.manifestIndex]:this.manifestIndex===this.manifestLinks.length&&(this.testArray=[],this.testArray=this.initArray),this.articleLink=this.testArray[this.indexSelector].link},calcGrid:function(t,e){var i,n,s=null,a=t.offsetWidth,r=t.offsetHeight,h=parseInt(window.getComputedStyle(e).marginRight);itemMarginBottom=parseInt(window.getComputedStyle(e).marginBottom),itemW=e.offsetWidth+h,itemH=e.offsetHeight+itemMarginBottom,i=Math.floor(a/itemW),n=Math.floor(r/itemH),0===i&&(i=1),rawPageNum=this.testArray.length/(i*n),1===rawPageNum?calcPages=0:rawPageNum>1?calcPages=Math.ceil(rawPageNum):calcPages=Math.floor(rawPageNum),s=calcPages,this.smallScreen?this.threshold=200:this.threshold=400,this.viewWidth=itemW*i,this.indexLength=s,0===this.indexLength?this.$.pageNav.style.visibility="hidden":this.$.pageNav.style.visibility="visible",this.fire("made-grid",{width:this.viewWidth,length:this.indexLength,content:t})},translateView:function(t){var e=this.$.touchArea;switch(t){case"next":e.execAnim(e.content,t,!1);break;case"prev":e.execAnim(e.content,t,!1);break;default:console.log("udunfuckdup")}},navVisibility:function(t){indexInit=this.indexSelector,this.indexSelector=t.detail.indexSelector,0===this.indexSelector&&indexInit>0&&this.$.pageNav.hidePrevButton(),1===this.indexSelector&&"next"===t.detail.vector&&this.$.pageNav.showPrevButton(),this.indexSelector===this.indexLength-2&&"prev"===t.detail.vector&&this.$.pageNav.showNextButton(),this.indexSelector===this.indexLength-1&&indexInit===this.indexLength-2&&this.$.pageNav.hideNextButton(),this.articleLink=this.testArray[this.indexSelector].link},_prevTap:function(){this.currentState=pressedStates.PREVPRESS,this.indexSelector>0&&this.translateView("prev"),this.fire("item-page-changed",{vector:"prev",indexSelector:this.indexSelector})},_nextTap:function(){this.currentState=pressedStates.NEXTPRESS,this.indexSelector<this.indexLength&&this.translateView("next"),this.fire("item-page-changed",{vector:"next",indexSelector:this.indexSelector})}});</script>
 </dom-module>
 </body></html>

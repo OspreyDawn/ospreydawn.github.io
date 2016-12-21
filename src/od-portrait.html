@@ -29,8 +29,8 @@
       #portrait {
         position: relative;
         z-index: 0;
-        width: 54.5rem;
-        height: 51rem;
+        width: 48.625rem;
+        height: 45.5625rem;
         margin-right: -11.25rem;
       }
       od-ambient-icons {
@@ -42,15 +42,20 @@
         left: calc((54.5rem - 200%)/ 2);
         top: calc(51rem - 150%);
       }
+      od-animated-portrait {
+        position: relative;
+        z-index: 1;
+        left: 3rem;
+      }
       .mask {
         display: block;
         position: absolute;
-        z-index: 1;
-        width: 20rem;
-        height: 20rem;
-        border-radius: 10rem;
+        z-index: 0;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 9rem;
         background: white;
-        top: calc(50% - 10rem);
+        top: calc(50% - 16rem);
         left: calc(50% - 10rem);
       }
       .container[tablet-layout] #portrait {
@@ -79,12 +84,15 @@
         left: calc((20rem - 100vw)/ 2);
         top: calc((18.7rem - 100vh) + 15rem);
       }
-      .container[mobile-layout] od-ambient-icons .mask {
-        width: 7rem;
-        height: 7rem;
-        border-radius: 3.5rem;
-        top: calc(50% - 3.5em);
-        left: calc(50% - 3.5rem);
+      .container[mobile-layout] od-animated-portrait {
+        left: 1.5rem;
+      }
+      .container[mobile-layout] .mask {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+        top: calc(50% - 1.5em);
+        left: calc(50% - 1.5rem);
       }
     </style>
 
@@ -97,13 +105,14 @@
     <div id="container" class="container" mobile-layout$="{{smallScreen}}" tablet-layout$="{{narrowScreen}}">
       <div class="flex"></div>
       <div id="portrait">
-        <od-ambient-icons><div class="mask"></div></od-ambient-icons>
+        <od-ambient-icons small-screen="{{smallScreen}}"></od-ambient-icons>
+        <div class="mask"></div>
         <od-animated-portrait></od-animated-portrait>
       </div>
     </div>
 
   </template>
 
-  <script>xStates={RIGHT:0,LEFT:1},yStates={UP:0,DOWN:1},Polymer({currentXState:xStates.RIGHT,currentYState:yStates.UP,is:"od-portrait",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{smallScreen:{type:Boolean,value:!1,reflectToAttribute:!0},animationConfig:{value:function(){return[]}}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){this.rePosition(),window.addEventListener("resize",function(t){return function(){t.rePosition()}}(this)),window.addEventListener("hero-index-changed",function(t){return function(i){t.slidePortraitX(i)}}(this)),window.addEventListener("site-index-changed",function(t){return function(i){t.slidePortraitY(i)}}(this))},rePosition:function(){this.smallScreen?700>window.innerHeight?this.$.portrait.style.top="28rem":this.$.portrait.style.top="calc(100vh - 18.7rem)":900>window.innerHeight?this.$.portrait.style.top="10rem":this.$.portrait.style.top="auto"},slidePortraitX:function(t){1===t.detail.indexTarget?this.aboutSlide():0===t.detail.indexTarget&&this.heroSlide()},slidePortraitY:function(t){0===t.detail.prevTarget&&this.downSlide(),0===t.detail.indexTarget&&this.upSlide()},aboutSlide:function(){this.currentXState=xStates.LEFT,this.smallScreen?(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateY(175%)",timing:{delay:375}},this.playAnimation("about-slide")):(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateX(-83.5%)",timing:{delay:375}},this.playAnimation("about-slide"))},heroSlide:function(){this.currentXState=xStates.RIGHT,this.smallScreen?(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(175%)",transformTo:"translateY(0)",timing:{delay:225}},this.playAnimation("hero-slide")):(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateX(-83.5%)",transformTo:"translateX(0)",timing:{delay:225}},this.playAnimation("hero-slide"))},downSlide:function(){this.currentYState=yStates.DOWN,this.animationConfig["down-slide"]={name:"transform-animation",node:this.$.container,transformTo:"translateY(70%)"},this.playAnimation("down-slide")},upSlide:function(){this.currentYState=yStates.UP,this.animationConfig["up-slide"]={name:"transform-animation",node:this.$.container,transformFrom:"translateY(70%)",transformTo:"translateY(0)",timing:{delay:100}},this.playAnimation("up-slide")},_onNeonAnimationFinish:function(){switch(this.currentXState===xStates.LEFT?this.style.overflow="visible":this.style.overflow="hidden",this.currentXState){case xStates.RIGHT:this.$.portrait.style.transform="none";break;case xStates.LEFT:this.smallScreen?this.$.portrait.style.transform="translateY(175%)":this.$.portrait.style.transform="translateX(-83.5%)"}switch(this.currentYState){case yStates.UP:this.$.container.style.transform="none";break;case yStates.DOWN:this.$.container.style.transform="translateY(70%)"}}});</script>
+  <script>xStates={RIGHT:0,LEFT:1},yStates={UP:0,DOWN:1},Polymer({currentXState:xStates.RIGHT,currentYState:yStates.UP,is:"od-portrait",behaviors:[Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){return[]}},pagesReady:{type:Boolean,value:!1},smallScreen:{type:Boolean,value:!1,reflectToAttribute:!0},loadIn:{type:Boolean,value:!1},xIndex:{value:0},yIndex:{value:0}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},ready:function(){this.rePosition(),window.addEventListener("resize",function(t){return function(){t.rePosition()}}(this)),window.addEventListener("hero-index-changed",function(t){return function(n){t.slidePortraitX(n)}}(this)),window.addEventListener("site-index-changed",function(t){return function(n){0!=n.detail.indexTarget&&(t.loadIn=!1),t.slidePortraitY(n)}}(this)),window.addEventListener("WebComponentsReady",function(t){return function(){t.loadIn&&t.loadAnimation()}}(this))},rePosition:function(){this.smallScreen?700>window.innerHeight?(this.loadIn=!0,this.$.portrait.style.top="28rem"):this.$.portrait.style.top="calc(100vh - 18.7rem)":900>window.innerHeight?this.$.portrait.style.top="2rem":this.$.portrait.style.top="auto"},slidePortraitX:function(t){1===t.detail.indexTarget?this.aboutSlide():0===t.detail.indexTarget&&this.heroSlide(),this.xIndex=t.detail.indexTarget},slidePortraitY:function(t){this.pagesReady=t.detail.pagesReady,this.pagesReady&&(0===t.detail.prevTarget&&this.downSlide(),0===t.detail.indexTarget&&this.upSlide())},aboutSlide:function(){this.currentXState=xStates.LEFT,this.smallScreen?(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateY(175%)",timing:{delay:375}},this.playAnimation("about-slide")):(this.animationConfig["about-slide"]={name:"transform-animation",node:this.$.portrait,transformTo:"translateX(-83.5%)",timing:{delay:375}},this.playAnimation("about-slide"))},heroSlide:function(){this.currentXState=xStates.RIGHT,this.smallScreen?(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(175%)",transformTo:"translateY(0)",timing:{delay:225}},this.playAnimation("hero-slide")):(this.animationConfig["hero-slide"]={name:"transform-animation",node:this.$.portrait,transformFrom:"translateX(-83.5%)",transformTo:"translateX(0)",timing:{delay:225}},this.playAnimation("hero-slide"))},downSlide:function(){this.currentYState=yStates.DOWN,this.animationConfig["down-slide"]={name:"transform-animation",node:this.$.container,transformTo:"translateY(60%)"},this.playAnimation("down-slide")},upSlide:function(){this.currentYState=yStates.UP,this.animationConfig["up-slide"]={name:"transform-animation",node:this.$.container,transformFrom:"translateY(60%)",transformTo:"translateY(0)",timing:{delay:100}},this.playAnimation("up-slide")},loadAnimation:function(){travelDelta=448+this.$.portrait.offsetHeight-window.innerHeight,0===this.xIndex?travelEnd="translateY(0)":this.smallScreen?travelEnd="translateY(175%)":travelEnd="translateX(-83.5%)",this.animationConfig["load-in"]=[{name:"transform-animation",node:this.$.portrait,transformFrom:"translateY(-"+travelDelta+"px)",transformTo:travelEnd,timing:{delay:2750,duration:1e3,easing:"ease-in-out"}}],this.playAnimation("load-in")},_onNeonAnimationFinish:function(){switch(this.currentXState===xStates.LEFT?this.style.overflow="visible":this.style.overflow="hidden",this.currentXState){case xStates.RIGHT:this.$.portrait.style.transform="none";break;case xStates.LEFT:this.smallScreen?this.$.portrait.style.transform="translateY(175%)":this.$.portrait.style.transform="translateX(-83.5%)"}switch(this.currentYState){case yStates.UP:this.$.container.style.transform="none";break;case yStates.DOWN:this.$.container.style.transform="translateY(60%)"}}});</script>
 </dom-module>
 </body></html>
