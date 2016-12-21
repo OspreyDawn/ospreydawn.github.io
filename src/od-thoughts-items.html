@@ -32,6 +32,11 @@
         height: 100%;
         margin-right: 4rem;
         margin-bottom: 2rem;
+        @apply(--layout-vertical);
+      }
+      .artMain {
+        width: 100%;
+        height: 100%;
         overflow: hidden;
         @apply(--layout-vertical);
       }
@@ -100,19 +105,22 @@
       <div id="itemContainer" class="container" mobile-layout$="{{smallScreen}}">
         <template is="dom-repeat" items="{{testArray}}">
           <div class="thoughtsItem">
-            <div id="title"><h2>{{item.title}}</h2></div>
-            <p class="artDate">{{item.date}}</p>
 
-            <div class="artMeta">
-              <template is="dom-repeat" items="{{item.meta}}">
-                <a href="#">{{item}}</a>
-              </template>
-            </div>
+            <div class="artMain">
+              <div id="title"><h2>{{item.title}}</h2></div>
+              <p class="artDate">{{item.date}}</p>
 
-            <div class="article flex">
-              <template is="dom-repeat" items="{{item.preview}}">
-                {{item}}<p></p>
-              </template>
+              <div class="artMeta">
+                <template is="dom-repeat" items="{{item.meta}}">
+                  <a href="#">{{item}}</a>
+                </template>
+              </div>
+
+              <div class="article flex">
+                <template is="dom-repeat" items="{{item.preview}}">
+                  {{item}}<p></p>
+                </template>
+              </div>
             </div>
 
             <div class="artFoot">
