@@ -4,11 +4,11 @@
 
 <link rel="import" href="od-page-nav.html">
 <link rel="import" href="touch-test-area.html">
+<link rel="import" href="styles/od-global-styles.html">
 
 </head><body><dom-module id="od-work-items" attribute="query">
   <template>
-
-    <style>
+    <style include="od-global-styles">
       :host {
         display: block;
         @apply(--layout-vertical);
@@ -44,7 +44,6 @@
       .workItem  a {
         display: block;
         width: 100%;
-        color: inherit;
         text-decoration: none;
         @apply(--layout-vertical);
       }
@@ -58,8 +57,13 @@
         border: 1px solid lightgrey;
         transition: box-shadow 0.3s;
       }
+      .pjtTitle {
+        @apply(--od-header-font-style);
+        color: var(--deep-grey);
+      }
       .pjtSubtitle {
-        color: grey;
+        @apply(--od-body-font-style);
+        color: var(--light-grey);
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] {

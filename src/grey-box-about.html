@@ -7,9 +7,7 @@
 
 </head><body><dom-module id="grey-box-about" attributes="query">
   <template>
-    <style include="od-global-styles"><style>
-
-    <style>
+    <style include="od-global-styles">
       td {
         padding: 0.5rem 0 0.25rem 1rem;
       }
@@ -43,11 +41,6 @@
         max-width: 700px;
         text-align: right;
       }
-      .container iron-icon {
-        width: 100%;
-        height: 100%;
-        fill: var(--default-blue);
-      }
       #aboutIcon {
         float: right;
         width: 2.25rem;
@@ -69,6 +62,11 @@
       }
       #contactDetail {
         @apply(--layout-vertical);
+      }
+      #aboutIcon iron-icon, #countryIcon iron-icon {
+        width: 100%;
+        height: 100%;
+        fill: var(--default-blue);
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] td:nth-child(3) {
@@ -113,7 +111,9 @@
     </iron-media-query>
 
     <div class="container" mobile-layout$="{{smallScreen}}">
-      <div id="backBtn" class="button" on-tap="showHero">←</div>
+      <div id="backBtn" class="arrowButton">
+        <a class="arrowButtonLink" href="#/Home" on-tap="tempStyle"><iron-icon icon="od-icons:arrow"></iron-icon><div class="arrowButtonText">Home</div></a>
+      </div>
       <span class="flex"></span>
       <div id="aboutContainer" class="aboutContainer">
         <div id="aboutDetail">
@@ -173,6 +173,6 @@
 
   </template>
 
-  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var a=this.$.aboutContainer.children,n=Array.prototype.slice.call(a);return n.push(this.$.backBtn),{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:n,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-right-animation",nodes:n,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:n},{name:"cascaded-animation",animation:"slide-right-animation",nodes:n}]}}}},getAnimatable:function(){return this.$.aboutContainer},showHero:function(){window.location="#/Home"}});</script>
+  <script>Polymer({is:"grey-box-about",behaviors:[Polymer.NeonAnimatableBehavior],properties:{animationConfig:{value:function(){var t=this.$.aboutContainer.children,n=Array.prototype.slice.call(t);return n.push(this.$.backBtn),{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:n,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-right-animation",nodes:n,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:n},{name:"cascaded-animation",animation:"slide-right-animation",nodes:n}]}}}},tempStyle:function(){button=this.$$(".arrowButtonText"),button.style.opacity=1,button.style.transform="translateX(-1rem)",setTimeout(function(t){return function(){button=t.$$(".arrowButtonText"),button.style.opacity="",button.style.transform=""}}(this),550)},getAnimatable:function(){return this.$.aboutContainer}});</script>
 </dom-module>
 </body></html>

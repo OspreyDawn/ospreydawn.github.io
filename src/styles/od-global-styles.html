@@ -1,4 +1,6 @@
-<html><head><link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700" rel="stylesheet">
+<html><head><link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700" rel="stylesheet">
 
 </head><body><dom-module id="od-global-styles">
   <template>
@@ -74,6 +76,37 @@
         color: white;
         background: var(--default-blue);
         box-shadow: 0 4px 7px rgba(0, 0, 0, 0.28);
+      }
+      .arrowButton {
+        display: block;
+        height: 3rem;
+        padding: 1rem;
+        position: relative;
+        @apply(--layout-horizontal);
+      }
+      .arrowButton iron-icon {
+        width: 3rem;
+        height: 3rem;
+        fill: var(--default-blue);
+        transition: transform 0.2s ease-in-out;
+      }
+      .arrowButton:hover iron-icon {
+        transform: translateX(-1rem);
+      }
+      .arrowButton .arrowButtonLink {
+        @apply(--layout-flex);
+        @apply(--od-link-font-style);
+        margin: auto 0 auto 1rem;
+      }
+      .arrowButton .arrowButtonText {
+        display: inline-block;
+        padding-left: 1rem;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out 0.05s, transform 0.2s ease-in-out 0.05s;
+      }
+      .arrowButton:hover .arrowButtonText {
+        opacity: 1;
+        transform: translateX(-1rem);
       }
     </style>
   </template>

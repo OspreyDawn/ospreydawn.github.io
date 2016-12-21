@@ -3,11 +3,11 @@
 
 <link rel="import" href="od-page-nav.html">
 <link rel="import" href="touch-test-area.html">
+<link rel="import" href="styles/od-global-styles.html">
 
 </head><body><dom-module id="od-thoughts-items" attributes="query">
   <template>
-
-    <style>
+    <style include="od-global-styles">
       :host {
         width: 100%;
         @apply(--layout-vertical);
@@ -26,19 +26,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-      }
-      .button {
-        display: inline-block;
-        padding: 1rem;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        cursor: pointer;
-        color: inherit;
-        text-decoration: none;
-      }
-      .button:hover {
-        color: white;
-        background: lightgrey;
       }
       .thoughtsItem {
         width: 32rem;

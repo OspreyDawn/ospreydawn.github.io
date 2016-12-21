@@ -6,12 +6,11 @@
 
 <link rel="import" href="od-nav-bar.html">
 <link rel="import" href="od-work-items.html">
-<link rel="import" href="touch-test-area.html">
+<link rel="import" href="styles/od-global-styles.html">
 
 </head><body><dom-module id="grey-box-work" attributes="query">
   <template>
-
-    <style>
+    <style include="od-global-styles">
       :host {
         @apply(--layout-fullbleed);
         overflow: hidden;
@@ -27,12 +26,13 @@
       #titleContainer {
         position: relative;
         left: -3.25rem;
+        opacity: 0.14;
         z-index: 1;
       }
       #pageTitle {
-        color: lightgrey;
+        @apply(--od-bold-font-style);
+        color: var(--default-blue);
         font-size: 12.5rem;
-        font-weight: bolder;
         line-height: 0.75;
         pointer-events: none;
       }
@@ -68,7 +68,7 @@
     <od-nav-bar id="navBar" query="{{query}}"></od-nav-bar>
 
     <div id="titleContainer" class="container" mobile-layout$="{{smallScreen}}">
-      <div id="pageTitle">WORK</div>
+      <div id="pageTitle"><div id="titleOverlay"></div>WORK</div>
     </div>
     <div id="workContent" class="container" mobile-layout$="{{smallScreen}}">
       <od-work-items id="workItems" query="{{query}}"></od-work-items>

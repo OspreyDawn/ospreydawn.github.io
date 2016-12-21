@@ -6,11 +6,11 @@
 
 <link rel="import" href="od-nav-bar.html">
 <link rel="import" href="od-thoughts-items.html">
+<link rel="import" href="styles/od-global-styles.html">
 
 </head><body><dom-module id="grey-box-thoughts" attributes="query">
   <template>
-
-    <style>
+    <style include="od-global-styles">
       :host {
         @apply(--layout-fullbleed);
         overflow: hidden;
@@ -26,12 +26,13 @@
       #titleContainer {
         position: relative;
         left: -3.25rem;
+        opacity: 0.14;
         z-index: 0;
       }
       #pageTitle {
-        color: lightgrey;
+        @apply(--od-bold-font-style);
+        color: var(--default-blue);
         font-size: 12.5rem;
-        font-weight: bolder;
         line-height: 0.75;
         pointer-events: none;
       }
@@ -68,7 +69,7 @@
     <od-nav-bar id="navBar" query="{{query}}"></od-nav-bar>
 
     <div id="titleContainer" class="container" mobile-layout$="{{smallScreen}}">
-      <div id="pageTitle">THOUGHTS</div>
+      <div id="pageTitle"><div id="titleOverlay"></div>THOUGHTS</div>
     </div>
     <div id="thoughtsContent" class="container" mobile-layout$="{{smallScreen}}">
       <od-thoughts-items id="thoughtsItems" query="{{query}}"></od-thoughts-items>
