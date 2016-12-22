@@ -72,13 +72,13 @@
 
     <div id="navBar" class="container" mobile-layout$="{{smallScreen}}">
       <template is="dom-if" if="{{!smallScreen}}">
-        <div id="logo"><a href="#/Home"><iron-icon icon="od-icons:logo"></iron-icon></a></div>
+        <div id="logo"><a href="#/home"><iron-icon icon="od-icons:logo"></iron-icon></a></div>
         <div id="mainNavItems">
           <div id="title">MAX O'BRIEN</div>
           <div id="heroLinks">
-            <a href="#/Work" class="heroLink">WORK</a>
+            <a href="#/work" class="heroLink">WORK</a>
             <div id="divider">|</div>
-            <a href="#/Thoughts" class="heroLink">THOUGHTS</a>
+            <a href="#/thoughts" class="heroLink">THOUGHTS</a>
           </div>
         </div>
         <span class="flex"></span>
@@ -87,9 +87,9 @@
 
       <template is="dom-if" if="{{smallScreen}}">
         <div class="flex">
-          <a href="#/Work" class="heroLink">WORK</a>
+          <a href="#/work" class="heroLink">WORK</a>
         </div>
-        <div id="logo"><a href="#/Home"><iron-icon icon="od-icons:logo"></iron-icon></a></div>
+        <div id="logo"><a href="#/home"><iron-icon icon="od-icons:logo"></iron-icon></a></div>
         <div class="flex">
           <a href="#/Thoughts" class="heroLink">THOUGHTS</a>
         </div>

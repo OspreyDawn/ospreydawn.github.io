@@ -19,18 +19,17 @@
         max-width: 44rem;
         padding: 0 1.5rem;
         margin: 0 auto;
-        padding-top: 2rem;
         @apply(--layout-vertical);
       }
       .nav {
         width: 100%;
         height: 7rem;
         padding: 0;
-        position: fixed;
+        position: absolute;
         background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0));
         opacity: 1;
         transform: translateZ(0);
-        transition: transform 0.3s, opacity 0.3s;
+        transition: height 0.3s, transform 0.3s, opacity 0.3s;
       }
       .footer {
         width: 100%;
@@ -40,17 +39,20 @@
         background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
         transform: translateZ(0);
       }
+      .arrowButton {
+        padding: 1rem 0;
+      }
       #headerTitle {
         display: inline-block;
         text-align: center;
         margin: 0;
       }
       #article {
-        margin:  4rem 0 10rem 0;
+        margin:  7rem 0 10rem 0;
       }
     </style>
 
-    <iron-ajax auto="" url="src/content/{{host}}_items/{{item}}/{{item}}.json" handle-as="json" last-response="{{response}}" on-response="headerGen">
+    <iron-ajax auto="" url="src/content/{{host}}_items/{{item}}/{{item}}.json" handle-as="json" last-response="{{response}}" on-response="manageResponse">
     </iron-ajax>
 
     <iron-ajax auto="" url="{{response.text}}" handle-as="text" last-response="{{textResponse}}">
@@ -59,17 +61,17 @@
     <div class="nav">
       <div class="container">
         <div class="arrowButton">
-          <a class="arrowButtonLink" href="{{exit}}" on-tap="tempStyle"><iron-icon icon="od-icons:arrow"></iron-icon><div class="arrowButtonText">{{exit}}</div></a>
+          <a class="arrowButtonLink" href="{{exit}}"><iron-icon icon="od-icons:arrow"></iron-icon><div class="arrowButtonText">{{exit}}</div></a>
         </div>
       </div>
     </div>
 
     <div id="bodyContainer" class="container">
       <div id="article">
-        <a href="#/Work/work_item1">work-item1</a>
-        <a href="#/Work/work_item2"> work-item2</a>
-        <a href="#/Thoughts/thoughts_item1"> thoughts-item1</a>
-        <a href="#/Thoughts/thoughts_item2"> thoughts-item2</a>
+        <a href="#/work/work_item1">work-item1</a>
+        <a href="#/work/work_item2">, work-item2</a>
+        <a href="#/thoughts/thoughts_item1">, thoughts-item1</a>
+        <a href="#/thoughts/thoughts_item2">, thoughts-item2</a>
         <template is="dom-repeat" items="{{response.meta}}">
           <a href="#/{{host}}/tags/{{item}}">{{item}}</a>
         </template>
@@ -83,6 +85,6 @@
     <div class="footer"></div>
   </template>
 
-  <script>Polymer({is:"item-page",properties:{navHidden:{type:Boolean,value:!1},prevScroll:{value:0},currentScroll:{value:0}},listeners:{wheel:"scrollDetect"},headerGen:function(){"Work"===this.host&&(header=document.createElement("iron-image"),this.insertBefore(header,this.$$("#bodyContainer")),header.setAttribute("sizing","cover"),header.setAttribute("preload",""),header.setAttribute("fade",""),header.setAttribute("src",this.response.img),header.style.display="block",header.style.width="100%",header.style.height="28rem",header.style.backgroundColor="black")},scrollDetect:function(){var e,t=function(e){nav=e.$$(".nav").style,nav.opacity=0,nav.transform="translateZ(0) translateY(-50%)"},r=function(e){nav=e.$$(".nav").style,nav.opacity=1,nav.transform="translateZ(0) translateY(0)"};this.currentScroll=this.scrollTop,e=this.currentScroll-this.prevScroll,e>0&&!this.navHidden&&(t(this),this.navHidden=!0),e<0&&this.navHidden&&(r(this),this.navHidden=!1,console.log("firing")),this.prevScroll=this.currentScroll},closePage:function(){this.fire("close-page")}});</script>
+  <script>Polymer({is:"item-page",properties:{navHidden:{type:Boolean,value:!1},navFixed:{type:Boolean,value:!1},projectPage:{type:Boolean,value:!1},prevScroll:{value:0},currentScroll:{value:0}},listeners:{wheel:"scrollDetect"},manageResponse:function(){"work"===this.host?(this.projectPage=!0,this.headerGen()):this.projectPage=!1},headerGen:function(){header=document.createElement("iron-image"),this.insertBefore(header,this.$$(".nav")),header.setAttribute("sizing","cover"),header.setAttribute("preload",""),header.setAttribute("fade",""),header.setAttribute("src",this.response.img),header.style.display="block",header.style.width="100%",header.style.height="28rem",header.style.backgroundColor="black"},scrollDetect:function(){var e,t=this.$$(".nav").style,i=function(e){t.opacity=0,t.transform="translateZ(0) translateY(-50%)"},s=function(e){t.opacity=1,t.transform="translateZ(0) translateY(0)"};this.currentScroll=this.scrollTop,e=this.currentScroll-this.prevScroll,this.projectPage&&(this.navHidden?e<0&&this.navHidden&&(s(this),this.navHidden=!1):(e>0&&this.scrollTop>448&&(i(this),this.navHidden=!0),this.scrollTop>448&&!this.navFixed&&(t.position="fixed",t.top="0",this.navFixed=!0),this.scrollTop<448&&this.navFixed&&(t.position="absolute",t.top="auto",this.navFixed=!1))),this.projectPage||(t.position="fixed",e>0&&!this.navHidden&&(i(this),this.navHidden=!0),e<0&&this.navHidden&&(s(this),this.navHidden=!1)),this.prevScroll=this.currentScroll},closePage:function(){this.fire("close-page")}});</script>
 </dom-module>
 </body></html>
