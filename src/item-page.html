@@ -68,14 +68,17 @@
 
     <div id="bodyContainer" class="container">
       <div id="article">
-        <a href="#/work/work_item1">work-item1</a>
-        <a href="#/work/work_item2">, work-item2</a>
-        <a href="#/thoughts/thoughts_item1">, thoughts-item1</a>
-        <a href="#/thoughts/thoughts_item2">, thoughts-item2</a>
+        <h1>{{response.title}}</h1>
         <template is="dom-repeat" items="{{response.meta}}">
           <a href="#/{{host}}/tags/{{item}}">{{item}}</a>
         </template>
         <p>{{response.date}}</p>
+
+        <a href="#/work/work_item1">work-item1</a>
+        <a href="#/work/work_item2">, work-item2</a>
+        <a href="#/thoughts/thoughts_item1">, thoughts-item1</a>
+        <a href="#/thoughts/thoughts_item2">, thoughts-item2</a>
+
         <marked-element markdown="{{textResponse}}">
           <div class="markdown-html"></div>
         </marked-element>

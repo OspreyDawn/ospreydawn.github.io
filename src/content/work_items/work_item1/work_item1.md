@@ -1,5 +1,3 @@
-# This is a test Work Article.
-
 There will be a header image.
 
 There will be meta tags

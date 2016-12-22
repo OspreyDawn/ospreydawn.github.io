@@ -1,7 +1,3 @@
-# Interface design with The Design of Everyday Things in mind; communicating complex interactions.
-
-#WritingForWritingsSake
-
 When we humans navigate the world around us, we do so through the analysation of all the data that is absorbed by our senses and combine it with our inherent knowledge. There are the usual senses people can identify which are the most obvious like sight, sound, touch, taste and smell but there are an abundance of others that are implicit in the everyday, things like thermoception (the ability to detect temperature) and proprioception (the ability to sense where your body is in space).
 
 As soon as we enter the digital world, we lose almost all of our senses; we are primarily relying on learned knowledge accumulated through past experiences. Vision is our primary sense stimulated through the use of visual displays, sometimes sound is present trhough speakers and even rarer still is the use of touch through vibration. These seem to be the only three senses stimulated in mainstream digital devices. Out of the three, vision is the only sense that permeates all digital experiences that humans encounter on a daily basis; one sense out of many. Not only do interfaces have to have to account for this lack of sensorial input but they have to communicate a visual language that accounts for this. This puts enormous strain on a user's past knowledge to navigate an interface; since the base knowledge of the everyday user varies wildly so does the effective mileage of any given interface.

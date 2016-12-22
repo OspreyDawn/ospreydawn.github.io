@@ -84,6 +84,7 @@
         display: block;
         height: 2rem;
         position: relative;
+        z-index: 10;
         @apply(--layout-horizontal);
       }
       .arrowButton iron-icon {
@@ -109,6 +110,15 @@
       .arrowButton:hover .arrowButtonText {
         opacity: 1;
         transform: translateX(-1rem);
+      }
+      @media (max-width: 450px) {
+        .arrowButton:hover iron-icon {
+          transform: none;
+        }
+        .arrowButton:hover .arrowButtonText {
+          opacity: 0;
+          transform: none;
+        }
       }
     </style>
   </template>

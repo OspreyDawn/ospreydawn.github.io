@@ -1,11 +1,12 @@
 {
   "link" : "#/work/work_item2",
-  "text": "/src/content/work_items/work_item2/work_item2.md",
-  "img" : "/src/content/work_items/work_item2/test_img.png",
+  "title" : "This is Another Test Work Article.",
   "meta" : [
+    "#more",
     "#random",
-    "#meta",
     "#tags"
-    ],
-  "date" : "12th of August, 2016"
+  ],
+  "date" : "11th of July, 2016",
+  "img" : "/src/content/work_items/work_item2/test_img.png",
+  "text": "src/content/work_items/work_item2/work_item2.md"
 }
