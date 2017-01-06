@@ -4,17 +4,21 @@
 
 <link rel="import" href="od-ambient-icons.html">
 <link rel="import" href="od-animated-portrait.html">
+<link rel="import" href="styles/od-global-styles.html">
 
 </head><body><dom-module id="od-portrait" attributes="query">
   <template>
 
-    <style>
+    <style include="od-global-styles">
       :host {
         width: 100vw;
-        height: 100vh;
+        height: var(--desktop-height);
         position: absolute;
         overflow: hidden;
         pointer-events: none;
+      }
+      :host([small-screen]) {
+        height: var(--ios-height);
       }
       .flex {
         @apply(--layout-flex);
