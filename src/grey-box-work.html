@@ -12,12 +12,10 @@
   <template>
     <style include="od-global-styles">
       :host {
-        width: 100vw;
-        height: var(--desktop-height);
+        @apply(--layout-fullbleed);
         overflow: hidden;
       }
       :host([small-screen]) {
-        height: var(--ios-height);
         @apply(--layout-vertical);
       }
       .container {
