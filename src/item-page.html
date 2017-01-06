@@ -11,10 +11,8 @@
     <style include="od-global-styles">
       :host {
         width: 100%;
-        height: 100%;
         background: white;
         position: absolute;
-        overflow: auto;
       }
       .container {
         max-width: 44rem;
@@ -68,7 +66,6 @@
     </div>
 
     <div id="bodyContainer" class="container">
-      <iron-scroll-threshold id="threshold" upper-threshold="50" on-upper-threshold="highFireTest" lower-threshold="50" on-lower-threshold="lowFireTest">
       <div id="article" scroll-target="document">
         <h2>{{response.title}}</h2>
         <p>{{response.date}}</p>
@@ -86,12 +83,11 @@
           <div class="markdown-html"></div>
         </marked-element>
       </div>
-      </iron-scroll-threshold>
     </div>
 
     <div class="footer"></div>
   </template>
 
-  <script>Polymer({is:"item-page",properties:{navHidden:{type:Boolean,value:!1},navFixed:{type:Boolean,value:!1},projectPage:{type:Boolean,value:!1},prevScroll:{value:0},currentScroll:{value:0}},ready:function(){},handleResponse:function(){"work"===this.host?(this.projectPage=!0,this.$.article.style.marginTop="7rem",this.headerGen()):this.projectPage=!1},headerGen:function(){header=document.createElement("iron-image"),this.insertBefore(header,this.$$(".nav")),header.setAttribute("sizing","cover"),header.setAttribute("preload",""),header.setAttribute("fade",""),header.setAttribute("src",this.response.img),header.style.display="block",header.style.width="100%",header.style.height="28rem",header.style.backgroundColor="black"},lowFireTest:function(e){this.$.threshold.toggleScrollListener(!0),console.log("low",e)},highFireTest:function(e){console.log("high",e)}});</script>
+  <script>Polymer({is:"item-page",properties:{navHidden:{type:Boolean,value:!1},navFixed:{type:Boolean,value:!1},projectPage:{type:Boolean,value:!1},prevScroll:{value:0},currentScroll:{value:0}},ready:function(){},handleResponse:function(){"work"===this.host?(this.projectPage=!0,this.$.article.style.marginTop="7rem",this.headerGen()):this.projectPage=!1},headerGen:function(){header=document.createElement("iron-image"),this.insertBefore(header,this.$$(".nav")),header.setAttribute("sizing","cover"),header.setAttribute("preload",""),header.setAttribute("fade",""),header.setAttribute("src",this.response.img),header.style.display="block",header.style.width="100%",header.style.height="28rem",header.style.backgroundColor="black"}});</script>
 </dom-module>
 </body></html>

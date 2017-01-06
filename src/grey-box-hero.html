@@ -11,7 +11,7 @@
   <template>
     <style include="od-global-styles">
       :host {
-        width: 100%;
+        @apply(--layout-fullbleed);
         overflow: hidden;
       }
       .container {
@@ -114,6 +114,6 @@
 
   </template>
 
-  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior,Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){var n=this.$.heroContainer.children,i=Array.prototype.slice.call(n);return{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:i,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-left-animation",nodes:i,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:i},{name:"cascaded-animation",animation:"slide-left-animation",nodes:i}]}}}},ready:function(){this.style.height=window.innerHeight-68+"px"},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
+  <script>Polymer({is:"grey-box-hero",behaviors:[Polymer.NeonAnimatableBehavior,Polymer.NeonAnimationRunnerBehavior],properties:{animationConfig:{value:function(){var n=this.$.heroContainer.children,a=Array.prototype.slice.call(n);return{entry:[{name:"cascaded-animation",animation:"fade-in-animation",nodes:a,timing:{delay:300}},{name:"cascaded-animation",animation:"slide-from-left-animation",nodes:a,timing:{delay:300}}],exit:[{name:"cascaded-animation",animation:"fade-out-animation",nodes:a},{name:"cascaded-animation",animation:"slide-left-animation",nodes:a}]}}}},getAnimatable:function(){return this.$.heroContainer},getHero:function(){return this.$.logo}});</script>
 </dom-module>
 </body></html>
