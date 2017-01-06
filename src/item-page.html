@@ -1,6 +1,7 @@
 <html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-scroll-threshold/iron-scroll-threshold.html">
 <link rel="import" href="../bower_components/marked-element/marked-element.html">
 
 <link rel="import" href="styles/od-global-styles.html">
@@ -48,11 +49,11 @@
         margin: 0;
       }
       #article {
-        margin:  7rem 0 10rem 0;
+        margin:  4rem 0 10rem 0;
       }
     </style>
 
-    <iron-ajax auto="" url="src/content/{{host}}_items/{{item}}/{{item}}.json" handle-as="json" last-response="{{response}}" on-response="manageResponse">
+    <iron-ajax auto="" url="src/content/{{host}}_items/{{item}}/{{item}}.json" handle-as="json" last-response="{{response}}" on-response="handleResponse">
     </iron-ajax>
 
     <iron-ajax auto="" url="{{response.text}}" handle-as="text" last-response="{{textResponse}}">
@@ -67,12 +68,14 @@
     </div>
 
     <div id="bodyContainer" class="container">
-      <div id="article">
-        <h1>{{response.title}}</h1>
+      <iron-scroll-threshold id="threshold" upper-threshold="50" on-upper-threshold="highFireTest" lower-threshold="50" on-lower-threshold="lowFireTest">
+      <div id="article" scroll-target="document">
+        <h2>{{response.title}}</h2>
+        <p>{{response.date}}</p>
+
         <template is="dom-repeat" items="{{response.meta}}">
           <a href="#/{{host}}/tags/{{item}}">{{item}}</a>
         </template>
-        <p>{{response.date}}</p>
 
         <a href="#/work/work_item1">work-item1</a>
         <a href="#/work/work_item2">, work-item2</a>
@@ -83,11 +86,12 @@
           <div class="markdown-html"></div>
         </marked-element>
       </div>
+      </iron-scroll-threshold>
     </div>
 
     <div class="footer"></div>
   </template>
 
-  <script>Polymer({is:"item-page",properties:{navHidden:{type:Boolean,value:!1},navFixed:{type:Boolean,value:!1},projectPage:{type:Boolean,value:!1},prevScroll:{value:0},currentScroll:{value:0}},listeners:{wheel:"scrollDetect"},manageResponse:function(){"work"===this.host?(this.projectPage=!0,this.headerGen()):this.projectPage=!1},headerGen:function(){header=document.createElement("iron-image"),this.insertBefore(header,this.$$(".nav")),header.setAttribute("sizing","cover"),header.setAttribute("preload",""),header.setAttribute("fade",""),header.setAttribute("src",this.response.img),header.style.display="block",header.style.width="100%",header.style.height="28rem",header.style.backgroundColor="black"},scrollDetect:function(){var e,t=this.$$(".nav").style,i=function(e){t.opacity=0,t.transform="translateZ(0) translateY(-50%)"},s=function(e){t.opacity=1,t.transform="translateZ(0) translateY(0)"};this.currentScroll=this.scrollTop,e=this.currentScroll-this.prevScroll,this.projectPage&&(this.navHidden?e<0&&this.navHidden&&(s(this),this.navHidden=!1):(e>0&&this.scrollTop>448&&(i(this),this.navHidden=!0),this.scrollTop>448&&!this.navFixed&&(t.position="fixed",t.top="0",this.navFixed=!0),this.scrollTop<448&&this.navFixed&&(t.position="absolute",t.top="auto",this.navFixed=!1))),this.projectPage||(t.position="fixed",e>0&&!this.navHidden&&(i(this),this.navHidden=!0),e<0&&this.navHidden&&(s(this),this.navHidden=!1)),this.prevScroll=this.currentScroll},closePage:function(){this.fire("close-page")}});</script>
+  <script>Polymer({is:"item-page",properties:{navHidden:{type:Boolean,value:!1},navFixed:{type:Boolean,value:!1},projectPage:{type:Boolean,value:!1},prevScroll:{value:0},currentScroll:{value:0}},ready:function(){},handleResponse:function(){"work"===this.host?(this.projectPage=!0,this.$.article.style.marginTop="7rem",this.headerGen()):this.projectPage=!1},headerGen:function(){header=document.createElement("iron-image"),this.insertBefore(header,this.$$(".nav")),header.setAttribute("sizing","cover"),header.setAttribute("preload",""),header.setAttribute("fade",""),header.setAttribute("src",this.response.img),header.style.display="block",header.style.width="100%",header.style.height="28rem",header.style.backgroundColor="black"},lowFireTest:function(e){this.$.threshold.toggleScrollListener(!0),console.log("low",e)},highFireTest:function(e){console.log("high",e)}});</script>
 </dom-module>
 </body></html>
