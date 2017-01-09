@@ -3,32 +3,24 @@
 <link rel="import" href="../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 
+<link rel="import" href="styles/od-global-styles.html">
+
 </head><body><dom-module id="od-page-nav" attributes="query special-button-text special-button-link">
   <template>
 
-    <style>
+    <style include="od-global-styles">
       :host {
         width: 100%;
         @apply(--layout-horizontal);
         @apply(--layout-justified);
       }
-      .button {
-        display: inline-block;
-        padding: 1rem;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        cursor: pointer;
+      .navBtn {
+        padding: 0.75rem 1rem;
+        z-index: initial;
       }
-      .button:hover {
-        color: white;
-        background: lightgrey;
-      }
-      .button a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        color: inherit;
-        text-decoration: none;
+      .navBtn iron-icon {
+        position: relative;
+        z-index: -1;
       }
       #special {
         display: none;
@@ -42,9 +34,9 @@
     <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">
     </iron-media-query>
 
-    <div id="prev" class="button">←</div>
+    <div id="prev" class="navBtn arrowButton"><iron-icon icon="od-icons:arrow"></iron-icon></div>
     <div id="special" class="button" mobile-layout$="{{smallScreen}}"><a href="{{specialButtonLink}}">[[special-button-text]]</a></div>
-    <div id="next" class="button">→</div>
+    <div id="next" class="navBtn arrowButton"><iron-icon icon="od-icons:next"></iron-icon></div>
 
   </template>
 
