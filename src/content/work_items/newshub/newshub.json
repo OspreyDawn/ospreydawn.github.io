@@ -3,12 +3,13 @@
   "title" : "Newshub for iOS",
   "meta" : [
     "iOS",
-    "UI"
+    "UI",
+    "Motion"
   ],
   "date" : {
-    "day" : "11th",
-    "month" : "July",
-    "year" : "2016"
+    "day" : "",
+    "month" : "",
+    "year" : "2015"
   },
   "thumb" : "/src/content/work_items/newshub/newshub_thumb.jpg",
   "head" : "/src/content/work_items/newshub/newshub_head.jpg",

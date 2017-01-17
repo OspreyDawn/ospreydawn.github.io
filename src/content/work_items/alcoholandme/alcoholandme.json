@@ -1,0 +1,17 @@
+{
+  "link" : "#/work/alcoholandme",
+  "title" : "Alcohol & Me Mobile Website",
+  "meta" : [
+    "UX",
+    "Web",
+    "Mobile"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2015"
+  },
+  "thumb" : "/src/content/work_items/alcoholandme/alcoholandme_thumb.jpg",
+  "head" : "/src/content/work_items/alcoholandme/alcoholandme_head.jpg",
+  "text": "src/content/work_items/alcoholandme/alcoholandme.md"
+}

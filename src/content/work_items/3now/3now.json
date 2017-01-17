@@ -1,0 +1,20 @@
+{
+  "link" : "#/work/3now",
+  "title" : "3NOW OnDemand",
+  "meta" : [
+    "UI",
+    "UX",
+    "Motion",
+    "Web",
+    "iOS",
+    "tvOS"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2015"
+  },
+  "thumb" : "/src/content/work_items/3now/3now_thumb.jpg",
+  "head" : "/src/content/work_items/3now/3now_head.jpg",
+  "text": "src/content/work_items/3now/3now.md"
+}

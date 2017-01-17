@@ -74,12 +74,12 @@
     <div id="bodyContainer" class="container">
       <div id="article" scroll-target="document">
         <h2>{{response.title}}</h2>
-        <p>{{response.date.day}} of {{response.date.month}}, {{response.date.year}}</p>
+        <p>{{response.date.day}} {{response.date.month}} {{response.date.year}}</p>
 
         <template is="dom-repeat" items="{{response.meta}}">
           <a href="#/{{host}}/tags/{{item}}">{{item}}</a>
         </template>
-        
+
         <marked-element markdown="{{textResponse}}">
           <div class="markdown-html"></div>
         </marked-element>

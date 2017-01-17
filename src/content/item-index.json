@@ -1,8 +1,14 @@
 {
   "work" : [
+    "/src/content/work_items/toha/toha.json",
     "/src/content/work_items/1001stories/1001stories.json",
     "/src/content/work_items/newshub/newshub.json",
-    "/src/content/work_items/westpac/westpac.json"
+    "/src/content/work_items/westpac/westpac.json",
+    "/src/content/work_items/3now/3now.json",
+    "/src/content/work_items/alcoholandme/alcoholandme.json",
+    "/src/content/work_items/rnzb/rnzb.json",
+    "/src/content/work_items/bingelist/bingelist.json",
+    "/src/content/work_items/personal/personal.json"
   ],
   "thoughts" : [
     "/src/content/thoughts_items/thoughts_item1/thoughts_item1.json",

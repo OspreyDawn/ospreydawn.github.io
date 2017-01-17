@@ -1,0 +1,18 @@
+{
+  "link" : "#/work/toha",
+  "title" : "Toha Logo & Website",
+  "meta" : [
+    "Logo",
+    "Web",
+    "Mobile",
+    "Front End"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2016"
+  },
+  "thumb" : "/src/content/work_items/toha/toha_thumb.jpg",
+  "head" : "/src/content/work_items/toha/toha_head.jpg",
+  "text": "src/content/work_items/toha/toha.md"
+}

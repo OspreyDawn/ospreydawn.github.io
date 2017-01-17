@@ -1,0 +1,18 @@
+{
+  "link" : "#/work/bingelist",
+  "title" : "BingeList for iOS",
+  "meta" : [
+    "UI",
+    "UX",
+    "Motion",
+    "iOS"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2014"
+  },
+  "thumb" : "/src/content/work_items/bingelist/bingelist_thumb.jpg",
+  "head" : "/src/content/work_items/bingelist/bingelist_head.jpg",
+  "text": "src/content/work_items/bingelist/bingelist.md"
+}

@@ -1,0 +1,17 @@
+{
+  "link" : "#/work/personal",
+  "title" : "Personal Work",
+  "meta" : [
+    "Logo",
+    "Graphic Design",
+    "Illustration"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2013"
+  },
+  "thumb" : "/src/content/work_items/personal/personal_thumb.jpg",
+  "head" : "/src/content/work_items/personal/personal_head.jpg",
+  "text": "src/content/work_items/personal/personal.md"
+}

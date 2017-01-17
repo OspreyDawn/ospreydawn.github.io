@@ -1,0 +1,16 @@
+{
+  "link" : "#/work/rnzb",
+  "title" : "Royal New Zealand Ballet Website",
+  "meta" : [
+    "UX",
+    "Web"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2015"
+  },
+  "thumb" : "/src/content/work_items/rnzb/rnzb_thumb.jpg",
+  "head" : "/src/content/work_items/rnzb/rnzb_head.jpg",
+  "text": "src/content/work_items/rnzb/rnzb.md"
+}

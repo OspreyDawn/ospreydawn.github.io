@@ -1,16 +1,17 @@
 {
   "link" : "#/work/westpac",
-  "title" : "Westpac",
+  "title" : "Westpac Banking Corp. NZ",
   "meta" : [
     "iOS",
     "Android",
     "Web",
-    "UI"
+    "UI",
+    "Motion"
   ],
   "date" : {
-    "day" : "11th",
-    "month" : "July",
-    "year" : "2016"
+    "day" : "",
+    "month" : "",
+    "year" : "2015"
   },
   "thumb" : "/src/content/work_items/westpac/westpac_thumb.jpg",
   "head" : "/src/content/work_items/westpac/westpac_head.jpg",
