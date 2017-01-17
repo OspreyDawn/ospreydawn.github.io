@@ -1,0 +1,16 @@
+{
+  "link" : "#/work/newshub",
+  "title" : "Newshub for iOS",
+  "meta" : [
+    "iOS",
+    "UI"
+  ],
+  "date" : {
+    "day" : "11th",
+    "month" : "July",
+    "year" : "2016"
+  },
+  "thumb" : "/src/content/work_items/newshub/newshub_thumb.jpg",
+  "head" : "/src/content/work_items/newshub/newshub_head.jpg",
+  "text": "src/content/work_items/newshub/newshub.md"
+}

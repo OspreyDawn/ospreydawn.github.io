@@ -1,0 +1,18 @@
+{
+  "link" : "#/work/westpac",
+  "title" : "Westpac",
+  "meta" : [
+    "iOS",
+    "Android",
+    "Web",
+    "UI"
+  ],
+  "date" : {
+    "day" : "11th",
+    "month" : "July",
+    "year" : "2016"
+  },
+  "thumb" : "/src/content/work_items/westpac/westpac_thumb.jpg",
+  "head" : "/src/content/work_items/westpac/westpac_head.jpg",
+  "text": "src/content/work_items/westpac/westpac.md"
+}

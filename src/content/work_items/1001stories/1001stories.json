@@ -1,0 +1,16 @@
+{
+  "link" : "#/work/1001stories",
+  "title" : "1001 Stories Logo",
+  "meta" : [
+    "Logo",
+    "Graphic Design"
+  ],
+  "date" : {
+    "day" : "11th",
+    "month" : "July",
+    "year" : "2016"
+  },
+  "thumb" : "/src/content/work_items/1001stories/1001stories_thumb.jpg",
+  "head" : "/src/content/work_items/1001stories/1001stories_head.jpg",
+  "text": "src/content/work_items/1001stories/1001stories.md"
+}
