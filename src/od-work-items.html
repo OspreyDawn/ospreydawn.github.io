@@ -106,10 +106,10 @@
         <template is="dom-repeat" items="{{testArray}}">
           <div class="workItem">
             <a href="{{item.link}}" draggable="false">
-              <iron-image class="pjtImg" sizing="cover" preload="" fade="" src="{{item.img}}"></iron-image>
+              <iron-image class="pjtImg" sizing="cover" preload="" fade="" src="{{item.thumb}}"></iron-image>
               <div class="pjtMeta">
-                <div class="pjtTitle">Project Name</div>
-                <div class="pjtSubtitle">Year | Type</div>
+                <div class="pjtTitle">{{item.title}}</div>
+                <div class="pjtSubtitle">{{item.date.year}} | <template is="dom-repeat" items="{{item.meta}}">{{item}}, </template></div>
               </div>
             </a>
           </div>
