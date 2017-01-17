@@ -5,4 +5,5 @@ I was involved in exploring and developing the visual styles and animations as w
 ## Related Links
 
 http://www.newshub.co.nz/home.html
+
 https://itunes.apple.com/nz/app/newshub./id385220032?mt=8
