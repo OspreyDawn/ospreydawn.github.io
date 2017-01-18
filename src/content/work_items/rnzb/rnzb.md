@@ -2,8 +2,8 @@ The Royal New Zealand Ballet and ClickSuite have an on-going relationship lastin
 
 I was in charge of taking the research they already had on their users and appropriating it into new, revamped layouts for many of the core pages on the site.
 
-## Related Links
+### Related Links
 
-http://rnzb.org.nz/
+[Royal New Zealand Ballet Website](http://rnzb.org.nz/)
 
-http://www.clicksuite.co.nz/work/rnzb/
+[ClickSuite's Portfolio Entry](http://www.clicksuite.co.nz/work/rnzb/)

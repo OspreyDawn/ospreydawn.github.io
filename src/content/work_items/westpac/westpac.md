@@ -4,8 +4,8 @@ I was involved in exploring visual styles and layouts to help guide the design o
 
 There was a clear love for the work they had done before and my task was to help translate their vision and preferences into a workable, usable application for their customers that adhered to their new brand style guide. From wireframe to mockup to animated prototype.
 
-## Related Links
+### Related Links
 
-https://www.westpac.co.nz/
+[Westpac Home Page](https://www.westpac.co.nz/)
 
-https://itunes.apple.com/nz/app/westpac-one-mobile-banking/id510251434?mt=8
+[Westpac One App](https://itunes.apple.com/nz/app/westpac-one-mobile-banking/id510251434?mt=8)

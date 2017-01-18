@@ -2,8 +2,8 @@
 
 My role included developing wireframes based on task-flows developed by the Senior UX lead, regularly participating in regular meetings with MediaWorks, translating client requests into features, developing multiple visual directions and creating prototypes to demonstrate task flows and animations.
 
-## Related Links
+### Related Links
 
-http://www.3now.co.nz/
+[3NOW Website](http://www.3now.co.nz/)
 
-https://itunes.apple.com/nz/app/3now/id713771599?mt=8
+[3NOW on the App Store](https://itunes.apple.com/nz/app/3now/id713771599?mt=8)

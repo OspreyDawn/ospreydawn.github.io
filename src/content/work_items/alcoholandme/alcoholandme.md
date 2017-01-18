@@ -6,8 +6,8 @@ When I worked at ClickSuite, Alcohol & Me was only functioning as a desktop webs
 
 The mobile site is not live at this time.
 
-## Related Links
+### Related Links
 
-http://alcoholandme.org.nz/
+[Alcohol & Me Website](http://alcoholandme.org.nz/)
 
-http://www.clicksuite.co.nz/work/alcohol-and-me/
+[ClickSuite's Portfolio Entry](http://www.clicksuite.co.nz/work/alcohol-and-me/)

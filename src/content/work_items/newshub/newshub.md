@@ -2,8 +2,8 @@ NewsHub is the name of MediaWorks New Zealand’s effort to offer a unified way 
 
 I was involved in exploring and developing the visual styles and animations as well as generating material such as prototypes and task flow demonstration videos to be shared with our clients at MediaWorks.
 
-## Related Links
+### Related Links
 
-http://www.newshub.co.nz/home.html
+[Newshub Website](http://www.newshub.co.nz/home.html)
 
-https://itunes.apple.com/nz/app/newshub./id385220032?mt=8
+[Newshub on the App Store](https://itunes.apple.com/nz/app/newshub./id385220032?mt=8)
