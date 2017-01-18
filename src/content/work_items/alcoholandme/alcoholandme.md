@@ -1,4 +1,4 @@
-# Alcohol & Me for Mobile Web
+*This article is a placeholder. A more developed write-up will be available soon.*
 
 Alcohol & Me is a socially conscious digital initiative by Lion Co, a beverage and food company in New Zealand. Its purpose is to provide easily digestible information about what really happens when your body consumes alcohol. It achieves this through a series of small tests and modules that focus on specific areas on alcohol consumption.
 

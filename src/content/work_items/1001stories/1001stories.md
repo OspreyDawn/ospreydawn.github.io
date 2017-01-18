@@ -1,6 +1,14 @@
+*This article is a placeholder. A more developed write-up will be available soon.*
+
 1001 Stories is an environmentally conscious movement started by Devi Lockwood to collect stories from around the world. Devi seeks to provide a platform for those whose voice goes unnoticed, all while travelling from country to country on her road bike.
 
 I worked with Devi to come up with a logo that best captured the humanitarian theme that could be used anywhere she travelled. It was imperative that it be easy to spot and that put emphasis on the human side of her collected stories.
+
+### Related Articles
+
+[Getting to Know Your Client is Getting to Know Your Brief.](#/thoughts/thought01-01)
+
+[Fail Fast So You Can Succeed More Often.](#/thoughts/thought01-02)
 
 ### Related Links
 

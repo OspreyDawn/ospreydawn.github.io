@@ -1,3 +1,5 @@
+*This is Part 2 in the The Logo Design Process series. See the previous part [here.](#/thoughts/thought01-01)*
+
 Failure is often seen as something to be avoided at all costs, a negative reminder of our fallibility. Failures should be embraced. When we fail, it forces us to be introspective of our actions. It is the cost of failure that should be managed. When the cost is too high we become frugal and rigid in our decision making. So we must make the cost of failure low so we may fail often and quickly so that we can learn more in a shorter space of time to succeed even faster.
 
 If you are designing properly, you are constantly failing but in a way that helps you understand more than you did when you started. For my design process, I like to cast my net wide. For logos, I aim to do at least 10 different iterations before showing them to a client.

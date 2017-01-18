@@ -1,7 +1,5 @@
-Tauranga City Council, the council of my home-town, are currently exploring the need to publicly archive and share all of the artifacts they have in storage.
+[Toha](https://tgalib.github.io) approaches building digital archives using web technologies, open-source tools, git and github. [Toha](https://tgalib.github.io) is an experimental project to help Tauranga City Council Library both understand in more detail how to build better long term digital preservations practices and achieve that in a low cost and open manner. At the heart of the project is meta-data. Encoding descriptions using W3C semantic web and linked open-data technologies. Github is being used to help record provenance and implement work-flows. Overall the aim is to provide a low-cost flexible approach to digital preservation for small low-budget community digital archiving.
 
-I was brought on to look into developing the aesthetics and branding of the site.
+To show how the base layer of metadata and Github could be used I was asked to build a presentation layer. The idea was to help communicate the purpose and value of digital preservation along with demonstrating good web practice. I developed the visual aesthetics and logo for the project then went on to develop the web microsite. As a small well defined project I took opportunity to learn front-end development and explore new ideas in web app design. The microsite is built  as a responsive, progressive web app using the [Polymer tool kit](https://www.polymer-project.org/1.0/) and JSON-LD using Github Pages as the backing-store.
 
-This is where I learned about Polymer and developed my front-end web development skills.
-
-The project is still under active development.
+The overall project is still a work in progress since there is far to digital preservation than I had ever realised. For the intended purpose of communicating possibilities the microsite works really well. Though small in stature, what has been delivered overall is already very interesting in it's simplicity. Much of what I learnt working on this project lead me to rebuilding my current portfolio site in [Polymer](https://www.polymer-project.org/1.0/).

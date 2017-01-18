@@ -23,6 +23,10 @@ Her words were:
 
 She also emphasised the importance in simplicity of the design so that the focus was on the stories themselves. Along with the words, she provided a look-book and described her aesthetic as a "handwritten acoustic landscape with bicycle wheel, sometimes blue." Devi is a poet, so abstraction abound but every little bit counts. The process of any design is about putting yourself in the mind of the user and understanding their mental disposition. What are their problems, what are their immediate emotional needs and understand them?
 
-One does not learn a person in one interaction, it happens over many. Only by exploring a variety of solutions can you possibly hope to find you and your client on the same page. In the part in this series, I will go in depth into kind of interactions that best facilitate this kind of learning.
+One does not learn a person in one interaction, it happens over many. Only by exploring a variety of solutions can you possibly hope to find you and your client on the same page.
+
+In the next part in this series, I go in depth into kind of interactions that best facilitate this kind of learning.
+
+[Part 2: Fail Fast So You Can Succeed More Often.](#/thoughts/thought01-02)
 
 —
