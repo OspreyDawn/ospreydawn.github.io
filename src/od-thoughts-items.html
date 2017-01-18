@@ -45,6 +45,7 @@
         margin-top: 0;
       }
       .article {
+        line-height: 2;
         margin-bottom: 1rem;
         overflow: hidden;
         -webkit-mask-image: -webkit-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 60%, rgba(255, 255, 255, 0));
@@ -108,7 +109,7 @@
 
             <div class="artMain">
               <div id="title"><h2>{{item.title}}</h2></div>
-              <p class="artDate">{{item.date}}</p>
+              <p class="artDate">{{item.date.day}} {{item.date.month}} {{item.date.year}}</p>
 
               <div class="artMeta">
                 <template is="dom-repeat" items="{{item.meta}}">
