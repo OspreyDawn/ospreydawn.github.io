@@ -1,0 +1,35 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<link rel="import" href="styles/od-global-styles.html">
+<link rel="import" href="od-iconset.html">
+
+</head><body><dom-module id="item-gallery">
+  <template>
+    <style include="od-global-styles">
+      :host {
+        display: block;
+        position: relative;
+        z-index: 0;
+        left: 0;
+        background-color: black;
+        width: 100vw;
+        height: 50vh;
+      }
+      .galleryItem {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+      }
+    </style>
+
+    <template is="dom-repeat" items="{{gallerylist}}">
+      <iron-image class="galleryItem" sizing="contain" preload="" fade="" src="{{item}}"></iron-image>
+    </template>
+
+
+  </template>
+
+  <script>Polymer({is:"item-gallery",properties:{gallerylist:{type:Array}}});</script>
+</dom-module>
+</body></html>

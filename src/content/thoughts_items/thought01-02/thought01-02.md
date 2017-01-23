@@ -8,7 +8,9 @@ When I say iteration, I mean making sure each different sketch is as distinct fr
 
 Here's the first round of failures I came up with for Devi (because let's not beat around the bush, every design is a failure until proven otherwise):
 
-*Gallery to go here*
+<div class="gallery">
+  <iron-image class="galleryItem" sizing="contain" preload fade src="/src/content/thoughts_items/thought01-02/gallery/1001_Stories_Concepts.jpg"></iron-image>
+</div>
 
 1. **Geometric** - Here I was keeping it as simple as I possibly could while keeping it a little rough. This was primarily inspired by one of the images Devi provided in her look book, where geometric shapes are present but were corroded.
 
@@ -58,13 +60,15 @@ Failure is expected at this stage because there is no way for us to know we have
 
 "A merge of bicycle, cardboard, and the word "stories" is our favourite."
 
-*Note: Using this method to explore logos can mean ideas that have unexplored value are cut off prematurely if the initial idea doesn't sell the concept well enough. Something to keep in mind*
+> *Note: Using this method to explore logos can mean ideas that have unexplored value are cut off prematurely if the initial idea doesn't sell the concept well enough. Something to keep in mind*
 
 Not only was Devi learning, but from her responses I was learning too. By providing a variety of options, she was able to pick and choose aspects from each of the explorations to inform her decision making. It helped us both narrow down exactly what her expectations were and adequately describe them. Seeing how Devi was analysing each of the iterations gave me a better look into how she saw herself and her project. More importantly, this in turn helped me better understand how she wanted the project to be viewed by others. This also comes down to the virtue of the fact that she is a natural writer. Unfortunately, not every client is one.
 
 From here, we had a pretty clear direction to go down. I went back and created a new set of logo designs with our new understanding in mind.
 
-*Gallery to go here*
+<div class="gallery">
+  <iron-image class="galleryItem" sizing="contain" preload fade src="/src/content/thoughts_items/thought01-02/gallery/1001_Stories_Development.jpg"></iron-image>
+</div>
 
 1. This one is essentially what they asked for, the previous bicycle logo with the border around it with the word 'stories' handwritten underneath.
 
