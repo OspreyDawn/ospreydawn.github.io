@@ -94,8 +94,11 @@
         fill: var(--default-blue);
         transition: transform 0.2s ease-in-out;
       }
-      .arrowButton:hover iron-icon {
+      .arrowPrev:hover iron-icon {
         transform: translateX(-1rem);
+      }
+      .arrowNext:hover iron-icon {
+        transform: translateX(1rem);
       }
       .arrowButton .arrowButtonLink {
         @apply(--layout-flex);
@@ -108,9 +111,13 @@
         opacity: 0;
         transition: opacity 0.2s ease-in-out 0.05s, transform 0.2s ease-in-out 0.05s;
       }
-      .arrowButton:hover .arrowButtonText {
+      .arrowPrev:hover .arrowButtonText {
         opacity: 1;
         transform: translateX(-1rem);
+      }
+      .arrowNext:hover .arrowButtonText {
+        opacity: 1;
+        transform: translateX(1rem);
       }
       @media (max-width: 450px) {
         .arrowButton:hover iron-icon {

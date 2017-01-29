@@ -1,0 +1,20 @@
+{
+  "link" : "#/thoughts/140113",
+  "title" : "Why UX is Important.",
+  "meta" : [
+    "UX",
+    "UI",
+    "Design Process"
+  ],
+  "date" : {
+    "day" : "13th",
+    "month" : "of January",
+    "year" : "2014"
+  },
+  "preview" : [
+    "A logo is more than just an aesthetically pleasing glyph to represent a corporate entity. A logo is the centrepiece of your brand or experience. It's the calling card that pops up in people's mind whenever they think about a particular thing company or body. It's something you can communicate from a distance or up close. It gives those unfamiliar with a brand insight into what the relationship might be like. It sets expectations and moods that targets particular emotions you want to share with an audience so they can feel what you want them to feel. A logo is not separate from the brand it represents, it encompasses the brand; an easily communicable microcosm that is both digitally and physically flexible. ",
+    "So when Devi Lockwood came to me with a request for a logo for her climate change archival project, it was imperative to understand her motivations, the emotions involved, her goals, the life of her project; where was this thing going to be used? Who will see it?",
+    "Devi, you see, is on a mission to collect 1,001 stories from around the world. Stories, big and small, of climate change and its effects on those who tell them; voices lost in a sea of apathy. And so Devi travels on her bike, hopping between countries over freight ships rather than planes, to give people willing to share their stories about climate change a voice. To listen and create an archive that can be shared and accessed by all. To frame climate change and its effects from a personal perspective and make it more than some abstract metaphysical monster. To centralise and create an archive so that other people, be they researchers or other climate change survivors, can access and understand the current state of the world."
+  ],
+  "text": "src/content/thoughts_items/140113/why-ux-is-important.md"
+}

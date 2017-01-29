@@ -11,7 +11,10 @@
     "/src/content/work_items/personal/personal.json"
   ],
   "thoughts" : [
-    "/src/content/thoughts_items/thought01-02/thought01-02.json",
-    "/src/content/thoughts_items/thought01-01/thought01-01.json"
+    "src/content/thoughts_items/160804/160804.json",
+    "src/content/thoughts_items/160711/160711.json",
+    "src/content/thoughts_items/160704/160704.json",
+    "src/content/thoughts_items/140117/140117.json",
+    "src/content/thoughts_items/140113/140113.json"
   ]
 }

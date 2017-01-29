@@ -1,0 +1,21 @@
+{
+  "link" : "#/thoughts/140117",
+  "title" : "Playing by Heart.",
+  "meta" : [
+    "Research",
+    "Game Design",
+    "Design Thinking"
+  ],
+  "date" : {
+    "day" : "17th",
+    "month" : "of January",
+    "year" : "2014"
+  },
+  "preview" : [
+    "I love games.",
+    "Principles of Game design and general design needn’t be thought as separate entities. While doing my undergrad degree I always looked for ways to apply a game perspective to any of the assignments. Whenever a project enabled me to explore a chosen topic, I took every possible opportunity to bend boundaries of the requirements towards games.",
+    "During my second and third year, two research assignments gave me free-reign to dictate my research questions. These assignments were really fascinating and I found myself exploring completely new areas. For example, I now have a really healthy interest in economics (not the neo-classical kind mind you), although almost zero understanding at this point.",
+    "The following two papers encapsulate my broader personal views on games, their potential beyond entertainment into daily activity, service and application design. I tried to put across the transformative power of games as succinctly as possible. Games and game mechanics, the way they are designed have the ability to make life enjoyable. Everyday activities or tasks don’t have to be boring and indeed research shows when things are made to be fun peoples’ motivation and well-being rise. But what is fun? It’s a floaty term and one I address."
+  ],
+  "text": "src/content/thoughts_items/140117/playing-by-heart.md"
+}

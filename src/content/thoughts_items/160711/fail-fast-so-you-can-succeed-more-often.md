@@ -9,7 +9,7 @@ When I say iteration, I mean making sure each different sketch is as distinct fr
 Here's the first round of failures I came up with for Devi (because let's not beat around the bush, every design is a failure until proven otherwise):
 
 <div class="gallery">
-  <iron-image class="galleryItem" sizing="contain" preload fade src="/src/content/thoughts_items/thought01-02/gallery/1001_Stories_Concepts.jpg"></iron-image>
+  <iron-image class="galleryItem" sizing="contain" preload fade src="/src/content/thoughts_items/160711/gallery/1001_Stories_Concepts.jpg"></iron-image>
 </div>
 
 1. **Geometric** - Here I was keeping it as simple as I possibly could while keeping it a little rough. This was primarily inspired by one of the images Devi provided in her look book, where geometric shapes are present but were corroded.
@@ -67,7 +67,7 @@ Not only was Devi learning, but from her responses I was learning too. By provid
 From here, we had a pretty clear direction to go down. I went back and created a new set of logo designs with our new understanding in mind.
 
 <div class="gallery">
-  <iron-image class="galleryItem" sizing="contain" preload fade src="/src/content/thoughts_items/thought01-02/gallery/1001_Stories_Development.jpg"></iron-image>
+  <iron-image class="galleryItem" sizing="contain" preload fade src="/src/content/thoughts_items/160711/gallery/1001_Stories_Development.jpg"></iron-image>
 </div>
 
 1. This one is essentially what they asked for, the previous bicycle logo with the border around it with the word 'stories' handwritten underneath.

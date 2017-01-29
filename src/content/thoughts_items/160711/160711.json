@@ -1,19 +1,19 @@
 {
-  "link" : "#/thoughts/thought01-02",
+  "link" : "#/thoughts/160711",
   "title" : "Fail Fast So You Can Succeed More Often.",
   "meta" : [
     "Logos,",
     "Design Process"
   ],
   "date" : {
-    "day" : "13th",
-    "month" : "of August",
-    "year" : "2015"
+    "day" : "11th",
+    "month" : "of July",
+    "year" : "2016"
   },
   "preview" : [
     "Failure is often seen as something to be avoided at all costs, a negative reminder of our fallibility. Failures should be embraced. When we fail, it forces us to be introspective of our actions. It is the cost of failure that should be managed. When the cost is too high we become frugal and rigid in our decision making. So we must make the cost of failure low so we may fail often and quickly so that we can learn more in a shorter space of time to succeed even faster.",
     "If you are designing properly, you are constantly failing but in a way that helps you understand more than you did when you started. For my design process, I like to cast my net wide. For logos, I aim to do at least 10 different iterations before showing them to a client.",
     "When I say iteration, I mean making sure each different sketch is as distinct from each other as possible while still meeting the criteria set out from my brief. They need to be as rough and dirty as possible. This keeps the cost of failure low. Also, too much detail into any idea can, beyond taking longer to do, confuse your client. It can make them think you have made decisions without their input or worse, set expectations too early which can lead to rigidity in freedoms as the process goes on. This is especially true if your client isn't as well tuned to the design process."
   ],
-  "text": "src/content/thoughts_items/thought01-02/thought01-02.md"
+  "text": "src/content/thoughts_items/160711/fail-fast-so-you-can-succeed-more-often.md"
 }

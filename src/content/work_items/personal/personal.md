@@ -6,4 +6,4 @@ As a way to survive the 2013 NFL offseason and after a successful attempt earlie
 
 Dig through each team to look into how I came to the design that I did.
 
-http://www.ospreydawn.com/blog/2013/09/16/nfl-redesign/
+<a target="_blank" href="http://www.ospreydawn.com/blog/2013/09/16/nfl-redesign/">Link to article</a>
