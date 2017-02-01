@@ -11,13 +11,13 @@ Vision is the primary sense stimulated through modern digital UI. Sometimes soun
 There's a reason why Apple used skeuomorphism when they first released the iPhone. The visual replication of real, tangible objects in a digital interface to communicate how one might interact with them in an intuitive way makes sense. Certain physical objects provide affordances that contextual-less digital artefacts cannot. Prior to the iPhone, there had been no uniform visual language to relay how one might interact with an interface completely reliant on touch. The Notepad app looking like an actual note pad, with yellow paper pages and stitching, is an example of this. Buttons had visual cues to make them look three dimensional that depressed when touched much like one would expect to see in the real world. When iOS was first released they had to communicate how to navigate the world that they had created in terms that they knew the everyday user could understand.
 
 
-<div class="gallery">
+<div class="gallery vertical">
   <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160804/gallery/skeuo-vs-flat.jpg"></iron-image>
 </div>
 
 This is not the first time this has happened either; think of the traditional desktop user interface. Developed in the early 70’s, researchers at Xerox PARC had created the first graphical user interface, and the mouse to go with it, using the same principles. The screen represented an actual desk, data was given names like 'files' and 'folders' which, at the time, had no meaning in a digital sense. The ‘windows’ on the screen were the files layered on top each other as one might expect on top of a desk. As time has progressed the language has been learned and streamlined for both the desktop and mobile interfaces, sometimes at the expense of the user. This is not due to malice. Assuming users understand interface patterns that came before, designers can streamline task flows but they are just as likely to cause confusion. After all, assuming anything is the first mental block on the path to elegant design.
 
-<div class="gallery">
+<div class="gallery vertical">
   <iron-image class="galleryItem" style="background-color: #0A0203" sizing="contain" preload fade src="/src/content/thoughts_items/160804/gallery/xerox-star-ui.jpg"></iron-image>
 </div>
 
@@ -43,7 +43,7 @@ This is only an approximate model, but it serves well as a way of evaluating the
 
 > *The Design of Everyday Things - Don Norman*
 
-<div class="gallery">
+<div class="gallery vertical">
   <iron-image class="galleryItem" style="background-color: white; margin-bottom: -2rem; position: relative; z-index: -1;" sizing="contain" preload fade src="/src/content/thoughts_items/160804/gallery/doet.jpg"></iron-image>
 </div>
 

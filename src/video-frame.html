@@ -1,0 +1,43 @@
+<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<link rel="import" href="styles/od-global-styles.html">
+
+</head><body><dom-module id="video-frame" attributes="source">
+  <template>
+    <style include="od-global-styles">
+      :host {
+        width: 26rem;
+        height: 28rem;
+        position: relative;
+        @apply(--layout-vertical);
+        overflow: hidden;
+      }
+      #frame {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        @apply(--layout-self-center);
+      }
+      video {
+        width: 51%;
+        height: 84%;
+        position: relative;
+        top: 4.55rem;
+        z-index: 1;
+        @apply(--layout-self-center);
+      }
+    </style>
+
+    <iron-image id="frame" sizing="contain" preload="" fade="" src="/src/content/assets/iphone-frame.jpg"></iron-image>
+    <video autoplay="" loop="">
+      <source src="{{source}}" type="video/mp4">
+      Your browser doesn't support HTML5 video tag.
+    </video>
+
+  </template>
+
+  <script>Polymer({is:"video-frame"});</script>
+</dom-module>
+</body></html>

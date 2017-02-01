@@ -3,7 +3,9 @@ One of the assignments I worked on during the final year of my degree opened my 
 Here’s the App “pitch” video developed over a couple of days that shows the app in action (at least what we wanted it to be) and shows in summary the results of the design work.
 
 <div class="gallery">
-  <iframe class="galleryItem" src="https://player.vimeo.com/video/52553458" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <div class="galleryItem" style="background-color: black; min-width: 20rem;">
+    <iframe src="https://player.vimeo.com/video/52553458" style="width: 100%; max-width: 44rem; height: 100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
 </div>
 
 This was a team project, however all the work presented here was my contribution to the effort. We were tasked with creating an App that could “help people for the better” in one of three categories: food, shelter or safety. We had forty hours each, spread over five weeks, to do it. Not much time considering there were new methods and technologies to learn, figure out what to do, and design it. Added to that three other course related projects to work on as well.

@@ -9,7 +9,8 @@
     "iron-elements": "PolymerElements/iron-elements#^1.0.10",
     "iron-media-query": "PolymerElements/iron-media-query#^1.0.8",
     "marked-element": "PolymerElements/marked-element#^1.2.0",
-    "app-elements": "PolymerElements/app-elements#^0.10.1"
+    "app-elements": "PolymerElements/app-elements#^0.10.1",
+    "google-youtube": "GoogleWebComponents/google-youtube#^1.2.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

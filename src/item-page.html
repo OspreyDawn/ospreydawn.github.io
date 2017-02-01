@@ -1,10 +1,12 @@
-<html><head><link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<html><head><link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-scroll-threshold/iron-scroll-threshold.html">
 <link rel="import" href="../bower_components/marked-element/marked-element.html">
 
 
+<link rel="import" href="video-frame.html">
 <link rel="import" href="styles/od-global-styles.html">
 
 </head><body><dom-module id="item-page" attribute="query host item exit">
@@ -56,12 +58,15 @@
       }
       .galleryItem {
         display: block;
-        position: relative;
+        /* position: relative;
         z-index: 0;
-        left: 0;
+        left: 0; */
         background-color: #F4F6FC;
         width: 100vw;
-        height: 50vh;
+        min-width: 38.75rem;
+        height: 28rem;
+        @apply(--layout-vertical);
+        @apply(--layout-center);
       }
       #headerTitle {
         display: inline-block;
@@ -71,6 +76,12 @@
       #article {
         margin:  4rem 0 10rem 0;
       }
+
+      @media (max-width: 450px){
+          .galleryItem {
+            height: 18rem;
+          }
+        }
     </style>
 
     <iron-media-query query="{{query}}" query-matches="{{smallScreen}}">

@@ -1,4 +1,4 @@
-*This is Part 2 in the The Logo Design Process series. See the previous part [here.](#/thoughts/thought01-01)*
+*This is Part 2 in the The Logo Design Process series. See the previous part [here.](#/thoughts/160704)*
 
 Failure is often seen as something to be avoided at all costs, a negative reminder of our fallibility. Failures should be embraced. When we fail, it forces us to be introspective of our actions. It is the cost of failure that should be managed. When the cost is too high we become frugal and rigid in our decision making. So we must make the cost of failure low so we may fail often and quickly so that we can learn more in a shorter space of time to succeed even faster.
 
@@ -34,7 +34,7 @@ Here's the first round of failures I came up with for Devi (because let's not be
 
 11. **Chain** - It would have been preferable not to use a theme so similar to the bicycle. I wanted to make it apparent to Devi that at this stage of the process that a theme can be represented in different ways. Highlighting a piece of the chain was more to express the idea of togetherness.
 
-Failure is expected at this stage because there is no way for us to know we have adequately encapsulated Devi's expectations for the logo. How we measure success is determined by how engaged Devi is in thinking more acutely about what she really wants. Look at her responses below to each iteration and see how she is analysing them to find what aspects she likes and doesn't like before committing to a direction (Charlotte is her partner):
+Failure is expected at this stage because there is no way for us to know we have adequately encapsulated Devi's expectations for the logo. How we measure success is determined by how engaged Devi is in thinking more acutely about what she really wants. Look at her responses below to each iteration and see how she is analysing them to find what aspects she likes and doesn't like before committing to a direction (Charlotte was her partner):
 
 1. "Geometric is too plain."
 
@@ -81,6 +81,10 @@ From here, we had a pretty clear direction to go down. I went back and created a
 5. Again, here is an example of taking aspects of other logos they liked and applying them to others to make new ones. In this case, I was combining the brush and tape logos.
 
 Alas, despite the extra iterations, the first option is the one they wanted. That is not to say the other options didn't provide any value. Their job was to simply provide a contrast to what they originally requested while taking into account what it was they themselves liked in other logos. The extra choices have an equal chance of solidifying their resolve on their final logo as well as opening up more potential avenues. The process is as long as it needs to be (budget concerns excluded).
+
+<div class="gallery">
+  <iron-image class="galleryItem" style="background-color: black;" sizing="contain" preload fade src="/src/content/work_items/1001stories/1001stories_head.jpg"></iron-image>
+</div>
 
 I never took what Devi said verbatim when translating ideas to the page. Nor was I enforcing my will upon her and championing my 'superior' way of thinking over hers as a 'designer.' Many designers have plenty of horror stories that this attitude stems from. Difficulties that arise with clients of that have their own definition of design is just a sign of a lack of understanding between the two parties (however more often than not, clients just don't want to understand and confronting them about it can only sour the relationship). It's just another factor designers have to deal with that ups the difficulty a notch. However, the earlier you set expectations and communicate the iterative, failure-centric nature of design, the easier it will be to work with them.
 
