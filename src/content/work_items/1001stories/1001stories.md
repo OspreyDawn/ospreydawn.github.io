@@ -1,19 +1,11 @@
-*This article is a placeholder. A more developed write-up will be available soon.*
+1001 Stories is an environmentally conscious movement started by Devi Lockwood to collect individuals' stories from around the world - travelling from country to country on her road bike.  Her particular focus is to capture stories about water. The intention is to build a global oral history archive of these stories.  In doing this Devi seeks to provide a platform for those whose voices go unnoticed.
 
-1001 Stories is an environmentally conscious movement started by Devi Lockwood to collect stories from around the world. Devi seeks to provide a platform for those whose voice goes unnoticed, all while travelling from country to country on her road bike.
+I worked with Devi to come up with a logo that best captured the humanitarian theme that could be used anywhere she travelled. It was important that the result is easy to spot and emphasised the human side of her collected stories. To dig deeper into the development of the 1001 Stories logo, I've written up the [process]() that I use to [develop]() the visual designs and branding.  
 
-I worked with Devi to come up with a logo that best captured the humanitarian theme that could be used anywhere she travelled. It was imperative that it be easy to spot and that put emphasis on the human side of her collected stories.
+## Related Links
 
-### Related Articles
+https://onebikeoneyear.wordpress.com/
 
-[Getting to Know Your Client is Getting to Know Your Brief.](#/thoughts/thought01-01)
+http://devi-lockwood.com/
 
-[Fail Fast So You Can Succeed More Often.](#/thoughts/thought01-02)
-
-### Related Links
-
-[Devi's Blog](https://onebikeoneyear.wordpress.com/)
-
-[Devi's Personal Site](http://devi-lockwood.com/)
-
-[Devi's Article on The Guardian](https://www.theguardian.com/environment/bike-blog/2015/sep/21/one-bike-and-1001-stories-on-climate-change)
+https://www.theguardian.com/environment/bike-blog/2015/sep/21/one-bike-and-1001-stories-on-climate-change
