@@ -1,5 +1,5 @@
 {
-  "link" : "#/thoughts/160811",
+  "link" : "#/thoughts/160808",
   "title" : "Interface Design with the Design of Everyday Things in Mind: Part 2",
   "meta" : [
     "UI",
@@ -7,7 +7,7 @@
     "Design Process"
   ],
   "date" : {
-    "day" : "11th",
+    "day" : "8th",
     "month" : "of August",
     "year" : "2016"
   },
@@ -15,5 +15,5 @@
     "In banking apps, the foremost concern of the user is making sure that the app they are using is secure and deliberate. When dealing with a user's possession as prized as their wealth, there is a greater need for discrepancy between a user's intent and what is presented on screen. For a bank, they have their own processes in the background that each have clear purposes for ensuring a user's security. Banks want to equate the experience of doing business with them with integrity. For the user, they just want to make sure that whatever they're doing, wherever they are, is safe and secure.",
     "This hypothetical app has unique feature that allows users to quickly check their balance without having to login. As soon as they want to do something that needs to be more secure, like making a payment, then they need to unlock their account. By unlocking their account, the app goes through a series of checks on the back end that the user doesn't necessarily need to know the specifics of. However, the *status* of these processes are important to know because the checks require time and a connection to the internet to execute. This means the app has three states: a quick access state, the unlocking state and a logged in state. Communicating these spaces and the transitions between them is incredibly important to ensure there is no discrepancy in expectations of behaviour for any given space a user inhabits."
   ],
-  "text": "src/content/thoughts_items/160811/interface-design-part-two.md"
+  "text": "src/content/thoughts_items/160808/interface-design-part-two.md"
 }

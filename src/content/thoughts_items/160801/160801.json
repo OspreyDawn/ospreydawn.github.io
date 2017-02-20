@@ -1,5 +1,5 @@
 {
-  "link" : "#/thoughts/160804",
+  "link" : "#/thoughts/160801",
   "title" : "Interface Design with the Design of Everyday Things in Mind: Part 1",
   "meta" : [
     "UI",
@@ -7,7 +7,7 @@
     "Design Process"
   ],
   "date" : {
-    "day" : "4th",
+    "day" : "1st",
     "month" : "of August",
     "year" : "2016"
   },
@@ -16,5 +16,5 @@
     "The world we live in has an interface. When we navigate it, we do so through analysation of data collected by our senses and combine it with our inherent knowledge. There are the usual senses people can identify which are the most obvious like sight, sound, touch, taste and smell. However, there are an abundance of others that are implicit in the everyday. Senses like thermo-reception (the ability to detect temperature) and proprioception (the ability to sense where your body is in space). As soon as we enter the digital world however, we lose almost all of our senses; we are primarily relying on learned knowledge accumulated through past experiences.",
     "Vision is the primary sense stimulated through modern digital UI. Sometimes sound is present through speakers and even rarer still is the use of touch through vibration. These seem to be the only three senses stimulated in mainstream digital devices. Out of the three, vision is the only sense that permeates all digital experiences that humans encounter on a daily basis; one sense out of many. Digital interfaces not only have to account for this lack of sensorial input but they do so relying purely on visual methods. This puts enormous strain on a user's inherent knowledge to navigate it. Since the life knowledge of the everyday user varies wildly so does the effective mileage of any given interface. "
   ],
-  "text": "src/content/thoughts_items/160804/interface-design-part-one.md"
+  "text": "src/content/thoughts_items/160801/interface-design-part-one.md"
 }

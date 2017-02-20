@@ -1,4 +1,4 @@
-*This is Part 2 in the The Logo Design Process series. See the previous part [here.](#/thoughts/160811)*
+*This is Part 2 in the The Logo Design Process series. See the previous part [here.](#/thoughts/160804)*
 
 ## Part 2: How Sense & Language Come Together to Make An Elegant Interface.
 
