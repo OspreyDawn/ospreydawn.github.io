@@ -12,13 +12,13 @@ There's a reason why Apple used skeuomorphism when they first released the iPhon
 
 
 <div class="gallery vertical">
-  <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160804/gallery/skeuo-vs-flat.jpg"></iron-image>
+  <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160801/gallery/skeuo-vs-flat.jpg"></iron-image>
 </div>
 
 This is not the first time this has happened either; think of the traditional desktop user interface. Developed in the early 70’s, researchers at Xerox PARC had created the first graphical user interface, and the mouse to go with it, using the same principles. The screen represented an actual desk, data was given names like 'files' and 'folders' which, at the time, had no meaning in a digital sense. The ‘windows’ on the screen were the files layered on top each other as one might expect on top of a desk. As time has progressed the language has been learned and streamlined for both the desktop and mobile interfaces, sometimes at the expense of the user. This is not due to malice. Assuming users understand interface patterns that came before, designers can streamline task flows but they are just as likely to cause confusion. After all, assuming anything is the first mental block on the path to elegant design.
 
 <div class="gallery vertical">
-  <iron-image class="galleryItem" style="background-color: #0A0203" sizing="contain" preload fade src="/src/content/thoughts_items/160804/gallery/xerox-star-ui.jpg"></iron-image>
+  <iron-image class="galleryItem" style="background-color: #0A0203" sizing="contain" preload fade src="/src/content/thoughts_items/160801/gallery/xerox-star-ui.jpg"></iron-image>
 </div>
 
 ### How Humans Interact with the Worlds they Inhabit
@@ -44,7 +44,7 @@ This is only an approximate model, but it serves well as a way of evaluating the
 > *The Design of Everyday Things - Don Norman*
 
 <div class="gallery vertical">
-  <iron-image class="galleryItem" style="background-color: white; margin-bottom: -2rem; position: relative; z-index: -1;" sizing="contain" preload fade src="/src/content/thoughts_items/160804/gallery/doet.jpg"></iron-image>
+  <iron-image class="galleryItem" style="background-color: white; margin-bottom: -2rem; position: relative; z-index: -1;" sizing="contain" preload fade src="/src/content/thoughts_items/160801/gallery/doet.jpg"></iron-image>
 </div>
 
 <p style="margin-top: -3rem;">The more seamless an interface, or system as Norman describes, the easier it is for someone to execute their goal and evaluate a system's effects. The easier it is to determine whether the desirable results are met is what differentiates a well designed interface from a bad one. An interface is what ever a person interacts with to achieve their goal. A door’s handle is as much an interface as an app's GUI is.</p>
@@ -63,4 +63,4 @@ Understanding the complexity of a system requires an intimate knowledge of it fr
 
 In the next part in this series, I will use experience from an interface I helped design for a mobile banking application to put these thoughts into context.
 
-[Part 2: How Sense & Language Come Together to Make An Elegant Interface.](#/thoughts/160811)
+[Part 2: How Sense & Language Come Together to Make An Elegant Interface.](#/thoughts/160808)

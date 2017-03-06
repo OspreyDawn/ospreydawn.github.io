@@ -17,7 +17,7 @@ So how do we solve for transparency and proprioception using only the visual med
 Because the user is transitioning to three different spaces over the course of this task flow, it is important to make clear visual distinctions between the spaces. However, they can't be too different otherwise users could become disorientated. The quick access state and logged in state both show the same information but have different restrictions on the actions you can do in each. Because they are so similar, making them look visually similar in layout provides familiarity but clearly defines a distinction between the two.
 
 <div class="gallery vertical">
-  <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160811/gallery/banquit-screens.jpg"></iron-image>
+  <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160808/gallery/banquit-screens.jpg"></iron-image>
 </div>
 
 Key elements (the user accounts, the nav-bar items and their titles), are all in the same place when changing states. The differences are seen in the more subdued palette. The logged in state is removed of distractions, putting a focus on the serious nature of the tasks to be carried out in the logged in state. Contrast to this, the quick access state is more playful representing a more relaxed space to comfort users, reminding them they have access to their account but nothing is going to go wrong in this space. The state of these spaces is also represented by the state of the lock icon. In quick access, the lock is closed signifying the account is secured. Logged in, the lock is open meaning the user is now free to do what they choose with their accounts.
@@ -29,7 +29,7 @@ The pad-lock icon is an important element in communicating state and intention o
 When they do, an animation plays to show the change in the space:
 
 <div class="gallery">
-  <video-frame source="/src/content/thoughts_items/160811/gallery/banquit-lock.mp4"></video-frame>
+  <video-frame source="/src/content/thoughts_items/160808/gallery/banquit-lock.mp4"></video-frame>
 </div>
 
 Notice how when the user taps on the button, the button itself expands and changes shape to fill the entire screen and reveals a keypad. This shows how the user is transitioning from the quick access space to the unlocking space. With the use of the lock icon, we set the user's expectations for some sort of method of verification and revealing the keypad rewards this expectation.
@@ -39,7 +39,7 @@ Animations like this are incredibly useful in communicating a change in state of
 Again we're referring back to the metaphor we used with the padlock. Now we are showing that the PIN keys are tied to the padlock and using them is acting on the padlock meaning we are in the process of unlocking it. There's also an indicator that changes state when we press a key to let the user know that the press was registered and infers how many more key presses we have to go. The key press is the execution, the pad-lock rotates, a key indicator is filled and now the user is able to evaluate their action. When all the keys are entered one of two results will happen:
 
 <div class="gallery">
-  <video-frame source="/src/content/thoughts_items/160811/gallery/banquit-error.mp4"></video-frame>
+  <video-frame source="/src/content/thoughts_items/160808/gallery/banquit-error.mp4"></video-frame>
 </div>
 
 If the PIN is entered in wrong, the lock will shake and an error message will appear. Inspired by the way Apple animates an incorrect password on macOS, the shaking immediately catches the eye of the user. The animation is reminiscent of someone shaking their head or the jarring feedback you get when you go to open a locked door. Its sharp and intrusive, a stark contrast to the smoothness demonstrated by previous animations. We want to tell the user something went wrong and when things go wrong it’s usually sudden, unpleasant and unexpected. Shaking the padlock this way communicates this.
@@ -47,7 +47,7 @@ If the PIN is entered in wrong, the lock will shake and an error message will ap
 This is one of the few times where going against a user’s expectations makes sense. Here, we are trying to highlight this result is not the expected action. Humans, to the surprise of some, are not perfect beings. We have make sure our interfaces allow for failure and communicate it clearly. When people evaluate the execution of their goals, it is measured by success or failure.
 
 <div class="gallery">
-  <video-frame source="/src/content/thoughts_items/160811/gallery/banquit-success.mp4"></video-frame>
+  <video-frame source="/src/content/thoughts_items/160808/gallery/banquit-success.mp4"></video-frame>
 </div>
 
 If the PIN is correct, the keypad disappears but that doesn't mean we're at the end. Banks have a myriad of security checks going on in the background but having the loading screens linger on a single animation can convey a sense of slowness. This can leave users thinking something has gone wrong when everything is perfectly fine. Having the feeling something has gone wrong when you're dealing with somebody's money is never a feeling you want to convey. So here we show some sort of progress or representation of something going on behind the scenes can give the user confidence in your app's ability to function.
