@@ -1,0 +1,19 @@
+{
+  "link" : "#/thoughts/160919",
+  "title" : "Ways of Listening: Interviews",
+  "meta" : [
+    "UX",
+    "Design Process"
+  ],
+  "date" : {
+    "day" : "19th",
+    "month" : "of September",
+    "year" : "2016"
+  },
+  "preview" : [
+    "Research interviews are more like a conversation rather than a quiz; the answers sought after are not well defined or known. Interviews are like mining. Questions, like prospecting, picks out a spot to start looking. There are signs to follow that roughly determine how successful that spot will be. Sometimes a rich vein will be struck. Other times there will be nothing. However, people aren’t inanimate mines filled with ore waiting to be extracted. Humans are living beings; access to their minds requires privileged access. Conversation is the means of surveying the mind of another empathetically. An interviewee that feels valued is more willing to let you explore what makes them tick. The more comfortable they are, the more likely it is that a rich nugget of insight into their mind will be found.",
+    "Before starting, we had to make sure that any interviewees we had lined up were worth talking to and that there were enough of them. Quantity is as important as quality; anywhere between 8 to 16 people is best to start out with. In addition, we had to make sure that they would provide rich answers that gave enough depth to draw meaning from. One way to do this was to go through a screening process: a short list of questions, representative of what you will have in a proper interview. Their purpose is to test people to see if they give you lengthy, well thought out answers. Screeners help to cull those that provide short snippet answers that provide very little insight. The downside with this process is that it is very lengthy and expensive. Due to time and funding constraints we decided to go through a second hand vetting process. We asked people involved across the project if they knew anyone that would be a good interviewee. Because our user focus was so broad we could get away with it thought this isn’t the best practice for all projects. ",
+    "It's important to avoid interviewing anyone with a personal connection to you. Answers from someone you know can be skewed because they will tend to go out of their way to help you and bias in questioning can set in. You will also tend to ignore the important minute details of the interviewee because you are used to the presence of people you are familiar with. Selecting people from second hand connections is a nice compromise between all out screening and talking to people you know."
+  ],
+  "text": "src/content/thoughts_items/160919/ways-of-listening-interviews.md"
+}

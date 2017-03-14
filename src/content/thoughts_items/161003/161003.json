@@ -1,0 +1,19 @@
+{
+  "link" : "#/thoughts/161003",
+  "title" : "Building the Model",
+  "meta" : [
+    "UX",
+    "Design Process"
+  ],
+  "date" : {
+    "day" : "3rd",
+    "month" : "of October",
+    "year" : "2016"
+  },
+  "preview" : [
+    "Understanding through language is an important aspect of design. Knowing what language to use; the medium it travels through; all of it must be considered. Like using a subject’s own language in an interview, adopting the correct language among third parties is crucial in achieving consensus in design. Stake-holders, collaborators and internal teams not directly involved with the design all have their own language. Using the right one ensures that all parties are on the same page when identifying problem, solutions and how everything fits together. Language is the lubricant that enables efficient practice. Models are one way of establishing a shared language.",
+    "Remember the demographic example I mentioned in a part earlier on in this series? The National Library’s focus on appealing to the interests of tweens and teenagers? Our research showed that behaviours in tweens could also be seen in other demographics. How do show a stake-holder that their perspective of the problem is a limited one? How do you implicitly teach them about task-based audience segments from scratch? Presenting our models using their own language was the solution we used.",
+    "Once the quotes from the interviews had been broken down into the core tasks, they needed to be organised into groups of similar or related tasks. One of the best tools I found to help with this type of organisation is a web app called Mural. Think of it as an online, shareable Post-it note board. It’s also a convenient tool that organises the tasks from your spreadsheet. Plus the small size of the virtual Post-It notes provide a good guide for knowing if your written task isn't succinct enough. Tasks shouldn't be long winded affairs. If the task's text is too small in Mural's digital notes, then it needs to be reworded. Colour coding with a key and 2D spatial manipulation of the notes helps to show what specific topics tasks relate to. Copying over tasks into Mural also provides a great opportunity to start grouping them together. Going through each task as you transfer them from spreadsheet to Mural means by the time you've copied everything over, each task should be in clumps of roughly defined groups. Some tasks may be so closely related that they really are just the same thing. Take this for example:"
+  ],
+  "text": "src/content/thoughts_items/161003/building-the-model.md"
+}

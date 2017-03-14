@@ -1,0 +1,19 @@
+{
+  "link" : "#/thoughts/160926",
+  "title" : "Putting Qualitative Data to Work",
+  "meta" : [
+    "UX",
+    "Design Process"
+  ],
+  "date" : {
+    "day" : "26th",
+    "month" : "of September",
+    "year" : "2016"
+  },
+  "preview" : [
+    "Our ultimate goal, with the knowledge gained through listening, is to build a model. Models are the tools that let us act on the world from a specified perspective. They are world views; simulations to inform our design decisions. However, a model on its own is no good if team members or clients can’t discern meaning from it. The data must be repackaged into easily arranged nuggets of information. This way, the model can be built quickly and collaboratively, laying a foundation that ensures readability from the beginning of the process. Models are made to simulate any given scenario and the multitude of variable events that can occur. The more seamlessly it can be read, the easier and faster proposed design solutions can be measured and evaluated.",
+    "After completing the interviews, there should be 30 to 60 minutes of dialogue recorded from each person as well as notes. In order to make this data searchable and easier to parse it needs to be transcribed. Transcribing can be outsourced to a third party, but I prefer to do it myself or, if I'm part of a team, get others to help in the transcribing process. ",
+    "Additionally, transcribing interviews someone personally didn't carry out means they are listening to conversations with fresh ears, removed of any preconceptions. It makes new information easier to identify. However, probably the most beneficial aspect of having various members of the team transcribe data is that everyone is informed on the mental spaces of the audience. For us, we had the project manager, the UI designer and tech lead all involved in transcribing the data. The benefit of this approach was immediately visible during solution ideation. Because everyone had insight into the backgrounds of our audience they could combine this knowledge with their skill-set to come up with unique ideas. As team members have a greater understanding of the broader picture, they attain insight into the ‘Why’ of something being made rather that just the ‘How.’ "
+  ],
+  "text": "src/content/thoughts_items/160926/putting-qualitative-data-to-work.md"
+}
