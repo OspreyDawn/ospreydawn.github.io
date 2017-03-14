@@ -1,6 +1,14 @@
-*This is the first part in a series looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design. [Click here](#/thoughts/160926) to go to the previous part - Putting Qualitative Data to Work*
+*This is the final part in a series of five articles looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design. [Click here](#/thoughts/160926) to go to the previous part - Putting Qualitative Data to Work*
+
+1. [The Art of Listening](#/thoughts/160905)
+2. [Ways of Listening: Immersion](#/thoughts/160912)
+3. [Ways of Listening: Interviews](#/thoughts/160919)
+4. [Putting Qualitative Data to Work](#/thoughts/160926)
+5. *Building the Model*
 
 Understanding through language is an important aspect of design. Knowing what language to use; the medium it travels through; all of it must be considered. Like using a subject’s own language in an interview, adopting the correct language among third parties is crucial in achieving consensus in design. Stake-holders, collaborators and internal teams not directly involved with the design all have their own language. Using the right one ensures that all parties are on the same page when identifying problem, solutions and how everything fits together. Language is the lubricant that enables efficient practice. Models are one way of establishing a shared language.
+
+### Task Group Segments
 
 Remember the demographic example I mentioned in a part earlier on in this series? The National Library’s focus on appealing to the interests of tweens and teenagers? Our research showed that behaviours in tweens could also be seen in other demographics. How do show a stake-holder that their perspective of the problem is a limited one? How do you implicitly teach them about task-based audience segments from scratch? Presenting our models using their own language was the solution we used.
 
@@ -25,6 +33,8 @@ It's easy to see here that personal perspectives and how they help people to rel
   <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/161003/gallery/closeup-mental-model.png"></iron-image>
 </div>
 
+### The Mental Model
+
 Mental spaces evolve naturally over time as you group tasks together to the point where you end up with this, the mental model of your audience:
 
 <div class="gallery">
@@ -34,6 +44,8 @@ Mental spaces evolve naturally over time as you group tasks together to the poin
 Before a problem can be solved, the people who are most affected by it and why the problem exists needs to be understood. One must completely immerse themselves in the mind of those to be solved for. To understand their philosophies, to understand why they want the problem to be solved in the first place. To be able to empathise and identify their pain points before even starting to think of a solution. The mental model is the map of the minds of those people. Like a map, you can read the pathways of thoughts to reveal how and why someone will get to point B from point A. Mental models capture this information to inform future design decisions. To make the distance between those two points shorter and easier to travel. They are an invaluable tool to help point the designer in the right direction before even attempting to start their design journey.
 
 Mental models are great reference tools that should be a core resource in all facets of the design process. One issue however is that not everyone is involved in the research side of the process or knows how to read a mental model. There needs to be a conscious effort to distill the many elements of the mental model so that it can be easily communicated across the many involved parties in a design project. Important discoveries made from the research side of the project need to be communicated with appropriate evidence of the point. Referential tools need to be created so that they are easily accessible so that they are complimentary to thinking rather than bogging it down. Design is a language and the design process is a conversation among team-members, stakeholders and users.
+
+### Speaking the Same Language
 
 Below, I will go over some of the methods I've used to make communication between all involved parties seamless. I like to think of a design team as a brain. Each person is a neurone communicating between everyone else through multiple synapses. If communication is inefficient, it is unfocused and easily distracted. However, if everything is communicated in unison, the brain is focused and can solve the toughest problems quickly;
 
@@ -54,6 +66,8 @@ ___
 *Either way, by himself, with his children or on a school trip he’s bound by some external time factor, be it the time left on the parking meter or the attention span of the kids he’s with. He loves taking people to exhibitions that let you interact with the things on display in different ways, not just reading or visual but experiential; ways that allow you to explore stories and facts from different points of view. He knows not everyone learns or thinks the same way (he’s a teacher after all).*
 
 ___
+
+### The Lens of Personas
 
 Presenting our findings this way was done to highlight the behaviours and show how a teacher doesn't just stop the way they act outside the classroom. He engages this way with everyone. It's not exclusive behaviour to teachers. It's parents finding something to do with their kids, it's locals showing off their hometown to their out-of-town friends. This was representative of what we found through our interviews and field studies. The proof gave us the confidence to say to our stake-holders that separating teachers and students would be disingenuous and potentially damaging. It's the kind of thinking that births content that tries to appeal to certain groups but shows a complete lack of understanding. It’s visible in the many cringe inducing marketing campaigns to millennials you'll find [on social media](https://www.reddit.com/r/HelloFellowKids).
 

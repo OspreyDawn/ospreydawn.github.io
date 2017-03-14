@@ -1,12 +1,24 @@
 *This is the first part in a series looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design.*
 
+1. *The Art of Listening*
+2. [Ways of Listening: Immersion](#/thoughts/160912)
+3. [Ways of Listening: Interviews](#/thoughts/160919)
+4. [Putting Qualitative Data to Work](#/thoughts/160926)
+5. [Building the Model](#/thoughts/161003)
+
 'UX' is a term I've never been too fond of but it serves its purpose. The word ‘user’ encourages people to concede that when you are designing, there is someone you are designing for. The word ‘experience’ acknowledges design is systemic, not focused on any given individual part. There are two problems, however. The first is that the term ‘user’ is quite dehumanising. The second is people considering UX as its own discipline as if it is separate from all other facets of design. It's the one term that people know to associate with actually listening to people first before designing anything. ‘UX’ as a term is purely communicative rather than disciplinary. While I don’t like the term, I understand its purpose and that terms evolve over time. ‘User-centred design’, another similar term I’ve heard bandied about, is worse. It assumes design generally is anything but user centred. I say UX design is an unnecessary label; it’s just *design*.
 
-In 2014, I attended a session at a development conference called DevMob to see what people on the development side of things had to say about design. It was an eye-opening experience to say the least. I had my assumptions on what people perceived 'UX' to be; to see it in action was something completely different. To them, UX was what they *assumed* people wanted. If they were going to ask people anything, it was asking what users thought about a product *after* it was designed. Participants in the discussion constantly found themselves in a logic knot. A conundrum that could have been avoided had they investigated whether the problem they were trying to solve existed at all. Promoted as a discussion on UX, what actually occurred was a forum where devs having usability problems asked other devs for advice; the irony was lost on them. Even when the idea of actually talking to their users came up it was either in purely quantitive terms or dismissed citing the misleading axiom ‘users don't know what they want.’ It's true, users don't know what they want, but they do know when they're having a problem; the trick is in asking the right questions and knowing how to listen.
+### What People Sometimes Think UX Means
+
+In 2014, I attended a session at a development conference called DevMob to see what people on the development side of things had to say about design. It was an eye-opening experience to say the least. I had my assumptions on what people perceived 'UX' to be; to see it in action was something completely different. To them, UX was what they *assumed* people wanted. If they were going to ask people anything, it was asking what users thought about a product *after* it was designed. Participants in the discussion constantly found themselves in a logic knot. A conundrum that could have been avoided had they investigated whether the problem they were trying to solve existed at all.
+
+Promoted as a discussion on UX, what actually occurred was a forum where devs having usability problems asked other devs for advice; the irony was lost on them. Even when the idea of actually talking to their users came up it was either in purely quantitive terms or dismissed citing the misleading axiom ‘users don't know what they want.’ It's true, users don't know what they want, but they do know when they're having a problem; the trick is in asking the right questions and knowing how to listen.
 
 At another conference I went to, called KiwiFOO, It's highly suggested among all the first-time attendees to run their own session. Drawing on my experience from DevMob, UX was a topic I thought I could contribute to or use as way of finding others who shared the same interests. I wanted to see what people of the FOO variety saw in UX, what their views were and what they wanted to know more about, specifically and generally. After putting up my suggested session on the board amongst all the others, I was approached by Emily Loughnan, creative director at ClickSuite. She had the same idea for a session so she suggested we team up. And just like that, I had already made a connection.
 
 As I suspected, the attendees of the sessions were of the more curious this time round. The attendees had an array of different backgrounds, as one is likely to find at a FOO camp, including software engineers, lawyers and scientists. Even the party leader for Labour, one of New Zealand's major political parties, was there. If one is testing their social anxiety, why not dial it up to 11? Everyone was genuinely curious about what it was Emily and I had to say about ‘UX’, what it really meant to us, how to integrate the type of thinking that goes on behind UX into whatever it is you do.
+
+### The Definition of Design Thinking
 
 The thinking that goes behind UX, like I said earlier, is it’s just design thinking and the trick to user research is knowing how to listen to your users. Understand this and design thinking can be put to use anywhere. But what is meant by 'design thinking’? It’s the new buzzword championed at seemingly every tech company nowadays (for good reason). For reference, let's look at what IDEO, one of the progenitors design thinking in practices beyond just design, and its CEO has to say:
 
@@ -15,6 +27,8 @@ The thinking that goes behind UX, like I said earlier, is it’s just design thi
 > *-Tim Brown*
 
 Right off the bat, 'human-centred' is the first aspect mentioned; you can't have design without people. In essence, design is all about the experience people have with a product, it shouldn't be compartmentalised. Tim Brown also mentions 'innovation,' meaning to create new solutions to existing problems; new ways of doing things. So already, design thinking and therefore, design, is posited as the method of listening to people, understanding their problems and using this knowledge to inform insights into new solutions (products). The practicality of it all is dependent on understanding who the users are and the system that the problem persists in. Business success? Technology? Appealing to the human element? They are the 'how.’ Listening to people is what lets you to understand the 'why.'
+
+### The Act of Listening
 
 When I say listening to people, I mean it in the most abstract sense. Listening is not just listening through the ears, it's thoughtfully observing the context surrounding a particular event. It's observing the stimulation of the senses, both physical and social, and analysing them. It's opening the mind and wilfully letting yourself be open to the possibilities that you might not have thought of before. Willing to have your assumptions, things that you think you know, rescinded and made irrelevant. Here's a great example of this type of listening in Jesse Schell's book 'The Art of Game Design'
 
@@ -29,6 +43,8 @@ ___
 ___
 
 When you are listening to people you are considering a whole manner of things at once (the context) to properly frame the contents of the message. Language is more than just the words that are said or written, it's the context that it is said in too. Body language, choice of words, social status, facial expressions, personal familiarity, emotion; they all contribute to the meaning of the message and it is up to the designer to properly interpret it.
+
+### The Art of Listening
 
 So when someone says, 'users don't know what they want,' I like to use the phrase against itself to demonstrate how to properly listen to users. One of the most famous examples of the sentiment was used by Henry Ford when talking about his invention of the automobile. He said, ’If I asked people what they wanted, they would ask for a faster horse.' And that's completely true, but what are they really saying when they say that? Speed is important to them, they want their mode of transport to be faster. At the time of the invention of the car, the only personal mode of transport known to them is the horse. Why do they want the horse to be faster? To reduce travel time when using the horse, be it for work or leisure. So, what they are really saying is this: 'I want to get from A to B faster.' The horse is just what they use to frame their problem, it's what they are familiar with. And in that sense, Ford was actually listening to his potential users. Whether he knew it or not, he still understood the problem.
 

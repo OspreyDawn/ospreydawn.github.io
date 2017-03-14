@@ -1,6 +1,14 @@
-*This is the first part in a series looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design. [Click here](#/thoughts/160912) to go to the previous part - Ways of Listening: Immersion*
+*This is the third part in a series of five articles looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design. [Click here](#/thoughts/160912) to go to the previous part - Ways of Listening: Immersion*
+
+1. [The Art of Listening](#/thoughts/160905)
+2. [Ways of Listening: Immersion](#/thoughts/160912)
+3. *Ways of Listening: Interviews*
+4. [Putting Qualitative Data to Work](#/thoughts/160926)
+5. [Building the Model](#/thoughts/161003)
 
 Research interviews are more like a conversation rather than a quiz; the answers sought after are not well defined or known. Interviews are like mining. Questions, like prospecting, picks out a spot to start looking. There are signs to follow that roughly determine how successful that spot will be. Sometimes a rich vein will be struck. Other times there will be nothing. However, people aren’t inanimate mines filled with ore waiting to be extracted. Humans are living beings; access to their minds requires privileged access. Conversation is the means of surveying the mind of another empathetically. An interviewee that feels valued is more willing to let you explore what makes them tick. The more comfortable they are, the more likely it is that a rich nugget of insight into their mind will be found.
+
+### Finding the Right People to Talk to
 
 Before starting, we had to make sure that any interviewees we had lined up were worth talking to and that there were enough of them. Quantity is as important as quality; anywhere between 8 to 16 people is best to start out with. In addition, we had to make sure that they would provide rich answers that gave enough depth to draw meaning from. One way to do this was to go through a screening process: a short list of questions, representative of what you will have in a proper interview. Their purpose is to test people to see if they give you lengthy, well thought out answers. Screeners help to cull those that provide short snippet answers that provide very little insight. The downside with this process is that it is very lengthy and expensive. Due to time and funding constraints we decided to go through a second hand vetting process. We asked people involved across the project if they knew anyone that would be a good interviewee. Because our user focus was so broad we could get away with it thought this isn’t the best practice for all projects.
 
@@ -12,11 +20,15 @@ Finally, we needed to make sure it was worth their time to come in and talk to u
   <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160919/gallery/tools-of-trade.jpg"></iron-image>
 </div>
 
+### Prompting Conversations
+
 Once a list of interviewees is compiled and vetted, interview prompts must be established and framed to inform the questions during the interview. Prompts are used instead of questions because they provide flexibility to keep the conversation open. No interview will be that same as another. The path of an interview can weave in and out of relevancy, equally going down unexpected lines of discourse as well ad irrelevant ones. The art of conducting the interview comes from navigating these pathways on the fly, deciding what is important at a moment’s notice and progressing accordingly.
 
 The most important factors of interviewing is making sure your prompts lead to impartial questions so that assumptions are checked at the door. This is also where understanding what your assumptions are is most important. When listening, you are voluntarily making your views vulnerable. An interviewer must be willing to leave their preconceptions outside the interview so that the true meaning of whatever problem they are trying to solve is revealed. Knowing and understanding assumptions helps in understanding, when interviewing, if bias is showing through as an interview progresses. It also helps to frame your prompts in a manner that suggests you're willing to hear an alternative answer. Knowledge is never gained by asking questions that only exist to put words in people's mouths.
 
 Choosing prompts should be categorised by the nature of the problem. To start, it was finding out what goes on in people's minds when they go to an exhibition. What could we find out to help us immerse ourselves in their experience? Once that was established, we needed to understand their feelings on New Zealand history. What initially came into their minds and did any of the documents to be on display come into the equation? What were their thoughts, feelings, reasonings, habits, desires, fears, frustrations et cetera? We needed to investigate beyond just the exhibition itself. The experience isn't restricted to physical aspect alone, there's the before and after as well. The context everything takes place in influences everything. To understand why a person does the things they do, we must all learn about the context their actions take place in.
+
+### The Art of Conversation
 
 The best prompts to start with promote softball questions; questions that are simple to answer and put the interviewee at ease. It also helps to establish a conversational mood. As they open up, they become more trusting and as they become more trusting and are confident they are being listened to, the more details about themselves they will reveal. More often than not, the casual nature of the discussion will open up unexpected avenues of investigation. This is the perfect time to scribble down notes to identify potential avenues of discussion later in the interview, careful not to interrupt the interviewee’s flow. It's a conversation after all and being the interviewer is not a passive role. As the interviewee speaks you should be listening for cues and interesting tidbits of information that you think will lead to something that you will learn from later. People will often be speaking in their own language that sheds light into how they think. Using their own language as part of the interview establishes trust and understanding between both parties; a quality predetermined questions don’t have the flexibility for.
 
@@ -35,6 +47,8 @@ Conversations have rough sections with blurry divisions in the topics that are c
 * Taking people with me to an exhibition
 
 Prompts are starting points or reminders just in case there is a direction you haven't taken the conversation in yet. Notice how each prompt begins with a verb. Thinking in verbs help you put yourself into the mind of the people you will interview. It helps to expose all the different scenarios a person might go through before and after the actual meat of the topic and the intent behind them. This is where your assumptions are at their most helpful. Here they can provide starting points and context but should be nothing more that: a frame of reference.
+
+### Directing the Dialogue
 
 Sometimes one prompt can naturally weave into other topics already covered by other prompts. Each prompt is purposefully open ended to make sure that under the pressure of interviewing there aren’t limits to one type of questioning. Think of the 5 W's and H of journalistic questioning. With these, one prompt becomes 5 different questions:
 

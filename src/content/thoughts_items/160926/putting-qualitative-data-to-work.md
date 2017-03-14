@@ -1,10 +1,18 @@
-*This is the first part in a series looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design. [Click here](#/thoughts/160919) to go to the previous part - Ways of Listening: Interviews*
+*This is the fourth part in a series of five articles looking into methods and principles often associated with the term 'UX' and how they are not exclusive to the realm of design. [Click here](#/thoughts/160919) to go to the previous part - Ways of Listening: Interviews*
+
+1. [The Art of Listening](#/thoughts/160905)
+2. [Ways of Listening: Immersion](#/thoughts/160912)
+3. [Ways of Listening: Interviews](#/thoughts/160919)
+4. *Putting Qualitative Data to Work*
+5. [Building the Model](#/thoughts/161003)
 
 Our ultimate goal, with the knowledge gained through listening, is to build a model. Models are the tools that let us act on the world from a specified perspective. They are world views; simulations to inform our design decisions. However, a model on its own is no good if team members or clients can’t discern meaning from it. The data must be repackaged into easily arranged nuggets of information. This way, the model can be built quickly and collaboratively, laying a foundation that ensures readability from the beginning of the process. Models are made to simulate any given scenario and the multitude of variable events that can occur. The more seamlessly it can be read, the easier and faster proposed design solutions can be measured and evaluated.
 
 <div class="gallery">
   <iron-image class="galleryItem" style="background-color: white" sizing="contain" preload fade src="/src/content/thoughts_items/160926/gallery/mental-model.png"></iron-image>
 </div>
+
+### Combing the Data
 
 After completing the interviews, there should be 30 to 60 minutes of dialogue recorded from each person as well as notes. In order to make this data searchable and easier to parse it needs to be transcribed. Transcribing can be outsourced to a third party, but I prefer to do it myself or, if I'm part of a team, get others to help in the transcribing process.
 
@@ -19,6 +27,8 @@ The greatest aspect of this process is that everyone becomes more personally inv
 </div>
 
 Listening back over interviews also puts the team back into the mind of the person talking. Directing the conversation is no longer a concern at this point, it's all about understanding the meaning behind what the interviewee says.
+
+### Identifying Tasks
 
 Not everything said in an interview needs to be transcribed. Each individual recorded quote from the combing process needs to be transcribed in a particular way. It needs to be disseminated into a sharable, contextless format for frictionless sharing and understanding. Knowing what to transcribe can be guided by looking out for mentions of tasks. Tasks can be thought of as behaviours that occur across demographics like in the following example:
 
@@ -51,6 +61,8 @@ Notice how it's very generalised. We're not worried about the specifics of the t
 Young goes into more detail, but for that you can just read the book for yourself.
 
 Interviews provide the raw data for a design researcher to mine through. With the first part of the listening process done, next begins what I believe (contrary to convention) is the fun part: combing through the data. When combing, we are trying to find patterns, correlations and nuggets of insight that will provide perspective into how people think about their problems. Why do I think this is the fun part? While the prospect of reading through lines of text and listening to hours of dialogue seems dreary and daunting, the true joy comes from immersing yourself in the language of others. Getting familiar with their language  means, over time, patterns in the data start to become predictable. As you learn more about the people you interview, the more trends are revealed. All of a sudden the wide swaths of data, that on the surface seem unruly and unrelated, start to come together to form groups of behavioural patterns. These are the patterns that can be targeted and solved for. There are many tools and methods to help comb through all this data to make it easier to organise and share. Below I will share some of these ways that these patterns can be revealed.
+
+### Parsing Insights
 
 When all the quotes have been transcribed and identified as tasks in the sense that Young describes, they must be broken down into a more manageable format. Here's an example of a spreadsheet I put together for the interviews we did for the exhibition:
 
