@@ -32,6 +32,24 @@
       .compressor {
         width: 35rem;
       }
+      td {
+        padding: 0.5rem 0 0.25rem 1rem;
+      }
+      td a {
+        font-family: var(--lato);
+        font-weight: 400;
+      }
+      td:nth-child(1) {
+        padding-left: 0;
+        font-weight: 400;
+      }
+      td:nth-child(2) {
+        padding-left: 1rem;
+        color: var(--light-grey);
+      }
+      tbody {
+        vertical-align: baseline;
+      }
       #logo {
         width: 93px;
         height: 93px;
@@ -44,7 +62,7 @@
       }
       #sub-title {
         @apply(--od-header-font-style);
-        color: var(--white-grey);
+        color: var(--default-grey);
         font-size: 1.125rem;
         line-height: 1;
         margin-bottom: 0.5rem;
@@ -61,11 +79,16 @@
         @apply(--layout-horizontal);
       }
       #divider {
+        color: var(--white-grey);
         margin: 0 1rem;
       }
-      #emailLink {
-        width: 100%;
+      #callToAction {
         font-size: calc((14/16) * 1rem);
+        margin-top: 4.5rem;
+        color: var(--light-grey);
+      }
+      #primaryCTA {
+        margin-right: 0.5rem;
       }
       /* Mobile Screen Layout Styles */
       .container[mobile-layout] > div {
@@ -99,18 +122,29 @@
     <div class="container" mobile-layout$="{{smallScreen}}">
       <div id="heroContainer" class="heroContainer">
         <div id="logo"><iron-icon icon="od-icons:logo"></iron-icon></div>
-        <div id="sub-title">OSPREY DAWN IS</div>
-        <div id="title">MAX O'BRIEN</div>
+        <div id="sub-title">OSPREY DAWN  /  MAX O'BRIEN IS</div>
+        <div id="title">A Product Designer, a Game Designer, a User Researcher & Product Strategist.</div>
         <div id="hero-links">
-          <a href="#/work" class="heroLink">WORK</a><div id="divider">|</div><a href="#/thoughts" class="heroLink">THOUGHTS</a>
+          <a href="#/work" class="heroLink">Work</a><div id="divider">•</div><a href="#/thoughts" class="heroLink">Writing</a><div id="divider">•</div><a href="#/about" class="heroLink">More about me</a>
         </div>
         <div id="hero-text">
-          A UX &amp; UI Designer with experience in Game Design, User Research, Product Strategy, and Front-End Web Development.
+          <table id="statusTable">
+            <tbody>
+              <tr>
+                <td>Currently</td>
+                <td>Looking for a full-time position in Ottawa, ON or remotely anywhere in Canada &#127809;</td>
+              </tr>
+              <tr>
+                <td>Previously</td>
+                <td>A Product Designer @ <a class="a2" href="http://www.lightspeedhq.com/">Lightspeed POS</a> in Montréal, QC</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <a class="button" href="#/about">More about me</a>
-        <div id="emailLink"><a href="mailto:hello@ospreydawn.com">hello@ospreydawn.com</a></div>
+        <div id="callToAction">
+          <a id="primaryCTA" class="button" href="mailto:hello@ospreydawn.com">Request latest work</a>or contact me at <a class="a2" href="mailto:hello@ospreydawn.com">hello@ospreydawn.com</a>
+        </div>
       </div>
-      <div class="compressor"></div>
     </div>
 
   </template>

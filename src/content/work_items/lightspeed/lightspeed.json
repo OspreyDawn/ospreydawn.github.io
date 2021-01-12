@@ -1,0 +1,16 @@
+{
+  "link" : "#/work/lightspeed",
+  "title" : "Lightspeed Retail",
+  "meta" : [
+    "Product Design",
+    "Design Systems"
+  ],
+  "date" : {
+    "day" : "",
+    "month" : "",
+    "year" : "2020"
+  },
+  "thumb" : "/src/content/work_items/lightspeed/lightspeed_thumb.jpg",
+  "head" : "/src/content/work_items/lightspeed/lightspeed_head.jpg",
+  "text": "src/content/work_items/lightspeed/lightspeed.md"
+}

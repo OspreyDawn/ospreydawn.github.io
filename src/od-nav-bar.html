@@ -55,7 +55,9 @@
         line-height: 1;
       }
       #divider {
+        color: var(--white-grey);
         margin: 0 1rem;
+        font-size: 1rem;
       }
       /* Mobile Screen Layout Styles */
       #navBar[mobile-layout] {
@@ -76,22 +78,22 @@
         <div id="mainNavItems">
           <div id="title">MAX O'BRIEN</div>
           <div id="heroLinks">
-            <a href="#/work" class="heroLink">WORK</a>
-            <div id="divider">|</div>
-            <a href="#/thoughts" class="heroLink">THOUGHTS</a>
+            <a href="#/work" class="heroLink">Work</a>
+            <div id="divider">•</div>
+            <a href="#/thoughts" class="heroLink">Writing</a>
           </div>
         </div>
         <span class="flex"></span>
-        <a id="emailLink" href="mailto:hello@ospreydawn.com">hello@ospreydawn.com</a>
+        <a id="emailLink" class="button" href="mailto:hello@ospreydawn.com">Request latest work</a>
       </template>
 
       <template is="dom-if" if="{{smallScreen}}">
         <div class="flex">
-          <a href="#/work" class="heroLink">WORK</a>
+          <a href="#/work" class="heroLink">Work</a>
         </div>
         <div id="logo"><a href="#/home"><iron-icon icon="od-icons:logo"></iron-icon></a></div>
         <div class="flex">
-          <a href="#/thoughts" class="heroLink">THOUGHTS</a>
+          <a href="#/thoughts" class="heroLink">Writing</a>
         </div>
       </template>
     </div>

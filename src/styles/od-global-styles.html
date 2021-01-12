@@ -45,6 +45,13 @@
           text-decoration: none;
         }
 
+        --od-link-font-style-2: {
+          font-family: var(--montserrat);
+          font-weight: 400;
+          color: var(--light-grey);
+          text-decoration: underline;
+        }
+
         --od-bold-font-style: {
           font-family: var(--montserrat);
           font-weight: 700;
@@ -65,9 +72,15 @@
       a:hover {
         text-decoration: underline;
       }
+      .a2 {
+        @apply(--od-link-font-style-2);
+      }
+      .a2:hover {
+        color: var(--deep-grey);
+      }
       .button {
         display: inline-block;
-        padding: 1rem;
+        padding: 0.75rem 1rem 0.75rem 1rem;
         border: 1px solid var(--default-blue);
         border-radius: 5px;
         cursor: pointer;
